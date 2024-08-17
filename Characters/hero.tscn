@@ -1,0 +1,32 @@
+[gd_scene load_steps=6 format=3 uid="uid://csbw7e8w63gif"]
+
+[ext_resource type="Texture2D" uid="uid://8hbdg7yclweg" path="res://Characters/Art/PurpleSlime1.1WalkingUp.png" id="1_0pjmv"]
+[ext_resource type="Script" path="res://Characters/hero.gd" id="1_hje2x"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_aeal7"]
+size = Vector2(15, 6.5)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_2f42k"]
+
+[sub_resource type="AnimationRootNode" id="AnimationRootNode_caa4m"]
+
+[node name="hero" type="CharacterBody2D"]
+script = ExtResource("1_hje2x")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_0pjmv")
+hframes = 6
+frame = 5
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.5, 4.25)
+shape = SubResource("RectangleShape2D_aeal7")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_2f42k")
+
+[node name="AnimationTree" type="AnimationTree" parent="."]
+tree_root = SubResource("AnimationRootNode_caa4m")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]

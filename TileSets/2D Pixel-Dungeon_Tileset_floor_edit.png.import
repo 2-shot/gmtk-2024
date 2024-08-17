@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dud7xs2xe1aep"
-path="res://.godot/imported/Props.png-da08d90f843e624ad9fceba3edadf2dd.ctex"
+uid="uid://1wius8ss63pg"
+path="res://.godot/imported/2D Pixel-Dungeon_Tileset_floor_edit.png-37cb4d208758c96ae68024f446f65d1a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://TileSets/Props.png"
-dest_files=["res://.godot/imported/Props.png-da08d90f843e624ad9fceba3edadf2dd.ctex"]
+source_file="res://TileSets/2D Pixel-Dungeon_Tileset_floor_edit.png"
+dest_files=["res://.godot/imported/2D Pixel-Dungeon_Tileset_floor_edit.png-37cb4d208758c96ae68024f446f65d1a.ctex"]
 
 [params]
 

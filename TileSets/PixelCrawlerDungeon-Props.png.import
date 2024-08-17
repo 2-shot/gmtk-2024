@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dnfflq3qda548"
-path="res://.godot/imported/Dungeon_Tileset.png-33ebde6c10348786ef6fd2948e4f21b8.ctex"
+uid="uid://dud7xs2xe1aep"
+path="res://.godot/imported/PixelCrawlerDungeon-Props.png-bc3a5d0083ed5451a7d469fb0740c898.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://TileSets/Dungeon_Tileset.png"
-dest_files=["res://.godot/imported/Dungeon_Tileset.png-33ebde6c10348786ef6fd2948e4f21b8.ctex"]
+source_file="res://TileSets/PixelCrawlerDungeon-Props.png"
+dest_files=["res://.godot/imported/PixelCrawlerDungeon-Props.png-bc3a5d0083ed5451a7d469fb0740c898.ctex"]
 
 [params]
 

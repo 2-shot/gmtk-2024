@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://1wius8ss63pg"
-path="res://.godot/imported/Dungeon_Tileset_floor_edit.png-4921f63cc6835504237df3893e7986f5.ctex"
+uid="uid://bo600lexahsu"
+path="res://.godot/imported/PurpleSlime1.1Twerk.png-2202266017127c988f313baae4c80c60.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://TileSets/Dungeon_Tileset_floor_edit.png"
-dest_files=["res://.godot/imported/Dungeon_Tileset_floor_edit.png-4921f63cc6835504237df3893e7986f5.ctex"]
+source_file="res://Characters/Art/PurpleSlime1.1Twerk.png"
+dest_files=["res://.godot/imported/PurpleSlime1.1Twerk.png-2202266017127c988f313baae4c80c60.ctex"]
 
 [params]
 
