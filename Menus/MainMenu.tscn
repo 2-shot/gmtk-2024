@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://diufct4yn4n1i"]
+[gd_scene load_steps=4 format=3 uid="uid://diufct4yn4n1i"]
 
 [ext_resource type="Theme" uid="uid://bewgrgj1ylev2" path="res://Menus/MenuTheme.tres" id="1_lgf1a"]
 [ext_resource type="Script" path="res://Menus/MainMenu.gd" id="2_dukak"]
+[ext_resource type="Script" path="res://Scripts/Nodes/SceneButton.gd" id="3_o5i7w"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -53,21 +54,24 @@ layout_mode = 2
 
 [node name="Start" type="Button" parent="Panel/MarginContainer/PanelContainer/GridContainer/VBoxContainer"]
 layout_mode = 2
+disabled = true
 text = "Start"
+script = ExtResource("3_o5i7w")
 
 [node name="Info" type="Button" parent="Panel/MarginContainer/PanelContainer/GridContainer/VBoxContainer"]
 layout_mode = 2
 text = "Info"
+script = ExtResource("3_o5i7w")
+scene_path = "res://Menus/PauseMenu.tscn"
 
 [node name="Tests" type="Button" parent="Panel/MarginContainer/PanelContainer/GridContainer/VBoxContainer"]
 layout_mode = 2
 text = "Tests"
+script = ExtResource("3_o5i7w")
+scene_path = "res://Levels/TestLevel.tscn"
 
 [node name="Quit" type="Button" parent="Panel/MarginContainer/PanelContainer/GridContainer/VBoxContainer"]
 layout_mode = 2
 text = "Quit"
 
-[connection signal="pressed" from="Panel/MarginContainer/PanelContainer/GridContainer/VBoxContainer/Start" to="." method="_on_start_pressed"]
-[connection signal="pressed" from="Panel/MarginContainer/PanelContainer/GridContainer/VBoxContainer/Info" to="." method="_on_info_pressed"]
-[connection signal="pressed" from="Panel/MarginContainer/PanelContainer/GridContainer/VBoxContainer/Tests" to="Panel/MarginContainer/PanelContainer/GridContainer/VBoxContainer/Tests" method="_on_pressed"]
 [connection signal="pressed" from="Panel/MarginContainer/PanelContainer/GridContainer/VBoxContainer/Quit" to="." method="_on_quit_pressed"]
