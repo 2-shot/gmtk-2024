@@ -5,7 +5,10 @@ extends Control
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	if OS.has_feature("web"):
+	var is_web : bool = OS.has_feature("web")
+	quit.visible = not is_web
+
+	if is_web:
 		quit.queue_free()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -24,5 +27,5 @@ func _on_quit_pressed():
 	get_tree().quit()
 
 func _input(event: InputEvent):
-	if(event.is_action_pressed("Escape")):
+	if(event.is_action_pressed("escape")):
 		get_tree().change_scene_to_file("res://Scenes/MainMenu.tscn")
