@@ -8,7 +8,7 @@ var is_player_dead: bool = false
 
 @export var walk_speed = 100
 @export var run_speed = 200
-@export var slime_size = 1
+@export var hero_size = 100
 #animations
 @export var run_anim_scale = 2
 @onready var animationTree = $AnimationTree
@@ -29,8 +29,9 @@ func size_changed(size: int):
 	prints("New size", size)
 
 func _ready():
-	GlobalSignals.slime_size.connect(size_changed)
-
+	GlobalSignals.hero_size.connect(size_changed)
+	GlobalSignals.hero_size.emit(hero_size)
+	
 func _physics_process(_delta):
 	get_input()
 	move_and_slide()

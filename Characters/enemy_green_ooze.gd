@@ -1,24 +1,62 @@
 extends CharacterBody2D
 
-var movement_speed=140
-var detected_hero: bool = false
-var damagable: bool =false
+@onready var navigation_agent_2d: NavigationAgent2D = $NavigationAgent2D
+@onready var los = $LineOfSight
 
-func _physics_process(delta: float) -> void:
-	# Add the gravity.
-	if not is_on_floor():
-		velocity += get_gravity() * delta
+#slime properties
+var movement_speed=40
+@export var slime_size: int = 100
 
-	# Handle jump.
-	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
-		velocity.y = JUMP_VELOCITY
+@export var target: Node2D = null
+#interaction with hero
+var detected_hero: bool = true
+var can_eat_hero: bool=false
+var hero_can_eat_me: bool=false
 
-	# Get the input direction and handle the movement/deceleration.
-	# As good practice, you should replace UI actions with custom gameplay actions.
-	var direction := Input.get_axis("ui_left", "ui_right")
-	if direction:
-		velocity.x = direction * SPEED
-	else:
-		velocity.x = move_toward(velocity.x, 0, SPEED)
+#line of sight
+var player_spotted:bool=false
 
+
+func _ready():
+	GlobalSignals.hero_size.connect(size_changed)
+	get_node("Timer").start()
+	
+
+func _on_timer_timeout() -> void:
+	update_pathfinding()
+	navigation_agent_2d.target_position = target.global_position
+
+func update_pathfinding():
+	print("trying to update pathfinding")
+	if target and detected_hero:
+		print("updating pathfinding")
+		navigation_agent_2d.target_position = target.global_position
+		
+	
+func _physics_process(_delta):
+	if navigation_agent_2d.is_navigation_finished():
+		return
+	
+	los.look_at(target.global_position)
+	#if player_spotted:
+		
+		
+	var current_agent_position = global_position
+	var next_path_position = navigation_agent_2d.get_next_path_position()
+	velocity = current_agent_position.direction_to(next_path_position) * movement_speed
 	move_and_slide()
+	
+func check_player_in_direction():
+	var collider = los.get_collider()
+	if collider and collider.is_in_group("Player"):
+		player_spotted=true
+		print("Player Spotted")
+		
+
+	
+func size_changed(hero_size:int):
+	assert(not (hero_size == slime_size),"HERO SIZE SAME AS ENEMY")
+	if hero_size >= slime_size:
+		can_eat_hero=false
+	else:
+		can_eat_hero=true
