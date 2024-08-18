@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://c4bb5dcwvv8so"]
+
+[ext_resource type="Texture2D" uid="uid://comywouca617" path="res://TileSets/books_byBatuhan.png" id="1_qx4o7"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1x5br"]
+size = Vector2(12, 16)
+
+[node name="StaticBody2D" type="StaticBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+y_sort_enabled = true
+shape = SubResource("RectangleShape2D_1x5br")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(2.68221e-07, 2.38419e-07)
+scale = Vector2(0.631579, 0.592593)
+texture = ExtResource("1_qx4o7")
+region_enabled = true
+region_rect = Rect2(39, 4, 19, 27)

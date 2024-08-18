@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://d286oxenjlily"]
+
+[ext_resource type="Texture2D" uid="uid://b8bh2koex8dwj" path="res://Objects/Art Sets/Pencils/pencil11.png" id="1_oshvm"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1x5br"]
+size = Vector2(6, 34)
+
+[node name="StaticBody2D" type="StaticBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+y_sort_enabled = true
+position = Vector2(0, 1)
+shape = SubResource("RectangleShape2D_1x5br")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+rotation = -0.785398
+texture = ExtResource("1_oshvm")
+region_enabled = true
+region_rect = Rect2(0, 0, 26, 26)
