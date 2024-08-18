@@ -60,9 +60,9 @@ script = ExtResource("3_o5i7w")
 
 [node name="Info" type="Button" parent="Panel/MarginContainer/PanelContainer/GridContainer/VBoxContainer"]
 layout_mode = 2
+disabled = true
 text = "Info"
 script = ExtResource("3_o5i7w")
-scene_path = "res://Menus/PauseMenu.tscn"
 
 [node name="Tests" type="Button" parent="Panel/MarginContainer/PanelContainer/GridContainer/VBoxContainer"]
 layout_mode = 2

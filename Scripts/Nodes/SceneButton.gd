@@ -7,7 +7,7 @@ extends Button
 
 func set_scene(value : String) -> void:
 	scene_path = value
-	disabled = valid_scene_path()
+	disabled = not valid_scene_path()
 	update_configuration_warnings()
 
 func check_scene_path() -> String:
@@ -29,9 +29,8 @@ func _get_configuration_warnings() -> PackedStringArray:
 func valid_scene_path() -> bool:
 	var scene_status = check_scene_path()
 	if scene_status:
-		prints(scene_status, scene_path)
-		push_warning(scene_path)
-		push_warning(scene_status)
+		push_warning(self, " ", scene_status)
+		print_rich("[color=yellow]%s [b]'%s'[/b][/color]" % [text, scene_path])
 
 	return scene_status.is_empty()
 
@@ -40,7 +39,8 @@ func change_scene() -> void:
 	var err = get_tree().change_scene_to_packed(resource)
 	if err:
 		push_error("failed to change scenes: %d" % err)
-		get_tree().quit()
+		get_tree().quit(1)
+	GlobalSignals.change_scene.emit()
 
 func load_scene() -> void:
 	prints("Changing scene to", scene_path)
