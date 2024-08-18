@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bt3q8mtdkh1gc"
-path="res://.godot/imported/Orb on Wood Pillar.png-dc7cbd01059f356eb77924e4d757d82e.ctex"
+uid="uid://c3ddbeqbn45nb"
+path="res://.godot/imported/testCat.png-d93a3012d88be4a3faf99ae52276e53b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Objects/Orb on Wood Pillar.png"
-dest_files=["res://.godot/imported/Orb on Wood Pillar.png-dc7cbd01059f356eb77924e4d757d82e.ctex"]
+source_file="res://Objects/Art Sets/testCat.png"
+dest_files=["res://.godot/imported/testCat.png-d93a3012d88be4a3faf99ae52276e53b.ctex"]
 
 [params]
 

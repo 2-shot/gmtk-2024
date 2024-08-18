@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://1lplon07ljj5"]
+
+[ext_resource type="Texture2D" uid="uid://dud7xs2xe1aep" path="res://TileSets/PixelCrawlerDungeon-Props.png" id="1_2pbro"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_18wmk"]
+radius = 9.05539
+
+[node name="StaticBody2D" type="StaticBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 3)
+shape = SubResource("CircleShape2D_18wmk")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_2pbro")
+region_enabled = true
+region_rect = Rect2(16.0541, 7.58712, 16.4882, 26.575)

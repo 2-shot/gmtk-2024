@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c7qd77uri0w5t"
-path="res://.godot/imported/Torch on Wood Pillar.png-0871eeacc161662d8c950bddf7306c29.ctex"
+uid="uid://c2hrlls65ft5y"
+path="res://.godot/imported/Torch.png-24d793dc49531f54276bd90516bd1436.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Objects/Torch on Wood Pillar.png"
-dest_files=["res://.godot/imported/Torch on Wood Pillar.png-0871eeacc161662d8c950bddf7306c29.ctex"]
+source_file="res://Objects/Art Sets/Torch.png"
+dest_files=["res://.godot/imported/Torch.png-24d793dc49531f54276bd90516bd1436.ctex"]
 
 [params]
 

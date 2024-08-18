@@ -1,4 +1,4 @@
-[gd_scene load_steps=59 format=4 uid="uid://cnpra2wmf1r17"]
+[gd_scene load_steps=60 format=4 uid="uid://cnpra2wmf1r17"]
 
 [ext_resource type="Texture2D" uid="uid://dnfflq3qda548" path="res://TileSets/2D Pixel-Dungeon_Tileset.png" id="1_73700"]
 [ext_resource type="Texture2D" uid="uid://1wius8ss63pg" path="res://TileSets/2D Pixel-Dungeon_Tileset_floor_edit.png" id="2_dtm0u"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://dyg6dossu6t7u" path="res://TileSets/PixelCrawlerDungeon-Tiles.png" id="5_t3cb6"]
 [ext_resource type="PackedScene" uid="uid://csbw7e8w63gif" path="res://Characters/hero.tscn" id="6_dwe6h"]
 [ext_resource type="PackedScene" uid="uid://d2glbpj75vbl8" path="res://Characters/EnemyGreenOoze.tscn" id="7_kirou"]
+[ext_resource type="PackedScene" uid="uid://1lplon07ljj5" path="res://Objects/Barrel-Justin/Barrel-Justin.tscn" id="8_a7s5f"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_tvbo5"]
 vertices = PackedVector2Array(0, 8, -8, 8, -8, -8, 0, -8)
@@ -1273,3 +1274,9 @@ zoom = Vector2(4, 4)
 [node name="EnemyGreenOoze" parent="." node_paths=PackedStringArray("target") instance=ExtResource("7_kirou")]
 position = Vector2(238, 118)
 target = NodePath("../hero")
+
+[node name="Barrel1" parent="." instance=ExtResource("8_a7s5f")]
+position = Vector2(151, 103)
+
+[node name="Barrel2" parent="." instance=ExtResource("8_a7s5f")]
+position = Vector2(63, 133)
