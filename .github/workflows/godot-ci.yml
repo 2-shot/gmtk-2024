@@ -14,6 +14,7 @@ env:
   GODOT_VERSION: 4.3
   PROJECT: 1stsoldier/gmtk-2024
   TAG: ${{ inputs.deployBranch || github.ref_name }}
+  EXPORT_NAME: HTML5
 
 jobs:
     export-web:
@@ -37,7 +38,7 @@ jobs:
           - name: Web Build
             run: |
               mkdir -v -p build/web
-              godot --headless --verbose --export-release "HTML5" ./build/web/index.html
+              godot --headless --verbose --export-release "${EXPORT_NAME}" ./build/web/index.html
             
           - name: Upload to Itch.io
             run: |
