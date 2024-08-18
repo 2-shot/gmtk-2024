@@ -17,19 +17,21 @@ var blend_pos_paths = [
 	"parameters/idle/BlendSpace2D/blend_position",
 	"parameters/run/BlendSpace2D/blend_position",
 	"parameters/eat/BlendSpace2D/blend_position"
-	]
-	
+]
+
 #animations and hitbox
 enum{IDLE, RUN, EAT, DEATH}
 var state = IDLE
 var blend_position : Vector2 =Vector2.ZERO
 var animTree_state_keys = ["idle","run","eat","death"]
 
+func size_changed(size: int):
+	prints("New size", size)
 
 func _ready():
-	pass
+	GlobalSignals.slime_size.connect(size_changed)
 
-func _physics_process(_delta):		
+func _physics_process(_delta):
 	get_input()
 	move_and_slide()
 	animate()

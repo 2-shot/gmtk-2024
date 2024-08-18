@@ -1,0 +1,75 @@
+[gd_scene load_steps=3 format=3 uid="uid://1i58ywllppmf"]
+
+[ext_resource type="Theme" uid="uid://bewgrgj1ylev2" path="res://Menus/MenuTheme.tres" id="1_7oddk"]
+[ext_resource type="Script" path="res://Scripts/Nodes/SceneButton.gd" id="2_vi0o8"]
+
+[node name="Info" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_7oddk")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="Panel/MarginContainer"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Panel/MarginContainer/PanelContainer"]
+layout_mode = 2
+
+[node name="GridContainer" type="GridContainer" parent="Panel/MarginContainer/PanelContainer/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="Label" type="Label" parent="Panel/MarginContainer/PanelContainer/MarginContainer/GridContainer"]
+layout_mode = 2
+theme_type_variation = &"GameTitle"
+text = "2 Shot Game"
+horizontal_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel/MarginContainer/PanelContainer/MarginContainer/GridContainer"]
+layout_mode = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Panel/MarginContainer/PanelContainer/MarginContainer/GridContainer/VBoxContainer"]
+layout_mode = 2
+bbcode_enabled = true
+text = "[center]
+A game created by 
+[b]2 Shot Gaming[/b]
+
+Created By:
+1stSoldier
+hj4jh
+space-lord-dev
+DapperHamster
+thelastasian
+
+Made with Godot
+
+[/center]"
+fit_content = true
+
+[node name="Exit" type="Button" parent="Panel/MarginContainer/PanelContainer/MarginContainer/GridContainer"]
+layout_mode = 2
+size_flags_vertical = 10
+text = "Back"
+script = ExtResource("2_vi0o8")
+scene_path = "res://Menus/MainMenu.tscn"
+to_menu = true

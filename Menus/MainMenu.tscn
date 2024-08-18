@@ -57,12 +57,14 @@ layout_mode = 2
 disabled = true
 text = "Start"
 script = ExtResource("3_o5i7w")
+to_menu = null
 
 [node name="Info" type="Button" parent="Panel/MarginContainer/PanelContainer/GridContainer/VBoxContainer"]
 layout_mode = 2
-disabled = true
 text = "Info"
 script = ExtResource("3_o5i7w")
+scene_path = "res://Menus/Info.tscn"
+to_menu = true
 
 [node name="Tests" type="Button" parent="Panel/MarginContainer/PanelContainer/GridContainer/VBoxContainer"]
 layout_mode = 2

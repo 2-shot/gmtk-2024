@@ -50,3 +50,4 @@ layout_mode = 2
 text = "Main Menu"
 script = ExtResource("1_3l33t")
 scene_path = "res://Menus/MainMenu.tscn"
+to_menu = true
