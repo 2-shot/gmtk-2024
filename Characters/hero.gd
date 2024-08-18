@@ -8,32 +8,31 @@ var is_player_dead: bool = false
 
 @export var walk_speed = 100
 @export var run_speed = 200
+@export var slime_size = 1
+#animations
 @export var run_anim_scale = 2
 @onready var animationTree = $AnimationTree
-
+@onready var state_machine = animationTree["parameters/playback"]
+var blend_pos_paths = [
+	"parameters/idle/BlendSpace2D/blend_position",
+	"parameters/run/BlendSpace2D/blend_position",
+	"parameters/eat/BlendSpace2D/blend_position"
+	]
+	
 #animations and hitbox
-enum{IDLE, RUN, SWORD, DEATH}
+enum{IDLE, RUN, EAT, DEATH}
 var state = IDLE
-
 var blend_position : Vector2 =Vector2.ZERO
-
-
-#var blend_pos_paths = [
-#	"parameters/idle/idle_blendspace2d/blend_position",
-#	"parameters/run/run_blendspace2d/blend_position",
-#	"parameters/sword/sword_attack_blendspace2d/blend_position"
-#	]
-var animTree_state_keys = ["idle","run","death"]
+var animTree_state_keys = ["idle","run","eat","death"]
 
 
 func _ready():
-	#if $DamageCooldown:
-	#	$DamageCooldown.start()
 	pass
 
 func _physics_process(_delta):		
 	get_input()
 	move_and_slide()
+	animate()
 
 func get_input():
 	#var run := Input.is_action_pressed("run")
@@ -43,11 +42,14 @@ func get_input():
 
 	if input_direction:
 		last_dir = input_direction
-
 	if rest:
 		state=IDLE
 		velocity = Vector2.ZERO
 	else:
 		state=RUN
 		velocity = input_direction * walk_speed
-		#blend_position = input_direction
+		blend_position = input_direction
+
+func animate() -> void:
+	state_machine.travel(animTree_state_keys[state])
+	animationTree.set(blend_pos_paths[state],blend_position)
