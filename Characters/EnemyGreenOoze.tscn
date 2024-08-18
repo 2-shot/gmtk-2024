@@ -25,14 +25,17 @@ texture = ExtResource("1_b2p6u")
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
 radius = 16.0
 avoidance_mask = 0
-debug_enabled = true
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 0.5
 
 [node name="LineOfSight" type="RayCast2D" parent="."]
-exclude_parent = false
-target_position = Vector2(75, 0)
+modulate = Color(1, 0, 1, 1)
+target_position = Vector2(120, 0)
 script = ExtResource("3_lpnfg")
 
+[node name="DetectionTimeoutTimer" type="Timer" parent="."]
+wait_time = 3.0
+
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="DetectionTimeoutTimer" to="." method="_on_detection_timeout_timer_timeout"]
