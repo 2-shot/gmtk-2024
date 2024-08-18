@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://c08pph71i0cy1"]
+
+[ext_resource type="Texture2D" uid="uid://dud7xs2xe1aep" path="res://TileSets/PixelCrawlerDungeon-Props.png" id="1_efstv"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1x5br"]
+size = Vector2(32, 22)
+
+[node name="StaticBody2D" type="StaticBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+y_sort_enabled = true
+position = Vector2(0, 3)
+shape = SubResource("RectangleShape2D_1x5br")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_efstv")
+region_enabled = true
+region_rect = Rect2(64, 2, 31, 27)

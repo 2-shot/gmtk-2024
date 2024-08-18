@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://ktmgryih1qhp"]
+
+[ext_resource type="Texture2D" uid="uid://dyg6dossu6t7u" path="res://TileSets/PixelCrawlerDungeon-Tiles.png" id="1_ay78x"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1x5br"]
+size = Vector2(32, 32)
+
+[node name="StaticBody2D" type="StaticBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+y_sort_enabled = true
+shape = SubResource("RectangleShape2D_1x5br")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_ay78x")
+region_enabled = true
+region_rect = Rect2(112, 160, 32, 32)
