@@ -11,7 +11,7 @@ on:
         default: 'v0.0.1'
 
 env:
-  GODOT_VERSION: 4.3.0
+  GODOT_VERSION: 4.3
   PROJECT: 1stsoldier/gmtk-2024
   TAG: ${{ inputs.deployBranch || github.ref_name }}
 
