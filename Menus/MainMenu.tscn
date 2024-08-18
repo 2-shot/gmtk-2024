@@ -54,10 +54,9 @@ layout_mode = 2
 
 [node name="Start" type="Button" parent="Panel/MarginContainer/PanelContainer/GridContainer/VBoxContainer"]
 layout_mode = 2
-disabled = true
 text = "Start"
 script = ExtResource("3_o5i7w")
-to_menu = null
+scene_path = "res://Levels/level_01/Level_01.tscn"
 
 [node name="Info" type="Button" parent="Panel/MarginContainer/PanelContainer/GridContainer/VBoxContainer"]
 layout_mode = 2
@@ -70,7 +69,8 @@ to_menu = true
 layout_mode = 2
 text = "Tests"
 script = ExtResource("3_o5i7w")
-scene_path = "res://Levels/TestLevel.tscn"
+scene_path = "res://Menus/TestsMenu.tscn"
+to_menu = true
 
 [node name="Quit" type="Button" parent="Panel/MarginContainer/PanelContainer/GridContainer/VBoxContainer"]
 layout_mode = 2

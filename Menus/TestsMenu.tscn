@@ -1,0 +1,88 @@
+[gd_scene load_steps=2 format=3 uid="uid://cwq8v58dte2aj"]
+
+[ext_resource type="Script" path="res://Scripts/Nodes/SceneButton.gd" id="1_6xlkx"]
+
+[node name="Tests" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="PanelContainer" type="PanelContainer" parent="Panel/MarginContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel/MarginContainer/PanelContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Label" type="Label" parent="Panel/MarginContainer/PanelContainer/VBoxContainer"]
+layout_mode = 2
+theme_type_variation = &"GameTitle"
+text = "Test Menu"
+horizontal_alignment = 1
+
+[node name="VSplitContainer" type="VSplitContainer" parent="Panel/MarginContainer/PanelContainer/VBoxContainer"]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+
+[node name="GridContainer" type="GridContainer" parent="Panel/MarginContainer/PanelContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_constants/h_separation = 10
+theme_override_constants/v_separation = 10
+columns = 2
+
+[node name="Test Level 1" type="Button" parent="Panel/MarginContainer/PanelContainer/VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Test Level 1"
+script = ExtResource("1_6xlkx")
+scene_path = "res://Levels/Level_01.tscn"
+
+[node name="Test Level 2" type="Button" parent="Panel/MarginContainer/PanelContainer/VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Test Level 2"
+script = ExtResource("1_6xlkx")
+scene_path = "res://Levels/Level_02.tscn"
+
+[node name="Test Level 3" type="Button" parent="Panel/MarginContainer/PanelContainer/VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Test Level"
+script = ExtResource("1_6xlkx")
+scene_path = "res://Levels/TestLevel.tscn"
+
+[node name="Test Level 4" type="Button" parent="Panel/MarginContainer/PanelContainer/VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Hunger Test"
+script = ExtResource("1_6xlkx")
+scene_path = "res://Levels/HungerTest.tscn"
