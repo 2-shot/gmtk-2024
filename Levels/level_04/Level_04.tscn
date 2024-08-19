@@ -1,4 +1,4 @@
-[gd_scene load_steps=60 format=4 uid="uid://b0jirm4rc8rx2"]
+[gd_scene load_steps=65 format=4 uid="uid://b0jirm4rc8rx2"]
 
 [ext_resource type="Texture2D" uid="uid://dnfflq3qda548" path="res://TileSets/2D Pixel-Dungeon_Tileset.png" id="1_3echw"]
 [ext_resource type="Texture2D" uid="uid://1wius8ss63pg" path="res://TileSets/2D Pixel-Dungeon_Tileset_floor_edit.png" id="2_8cfeb"]
@@ -16,6 +16,10 @@
 [ext_resource type="PackedScene" uid="uid://b44rli6rn55jh" path="res://Objects/Props/Chairs/Obj_Chair_Facing_Right_01.tscn" id="14_eawwi"]
 [ext_resource type="PackedScene" uid="uid://dpt226133ba7u" path="res://Objects/Props/Tables/Obj_Table_01.tscn" id="15_5qf7o"]
 [ext_resource type="PackedScene" uid="uid://kslpw64f50r3" path="res://Objects/Props/Bookcases/Obj_Bookcase_01.tscn" id="15_vm4qt"]
+[ext_resource type="AudioStream" uid="uid://htkcydmx1tfa" path="res://Audio/soundtrack/Burn The World Waltz .mp3" id="17_iraqi"]
+[ext_resource type="AudioStream" uid="uid://bldv1om1tod3o" path="res://Audio/soundtrack/Metalmania.mp3" id="18_drpjf"]
+[ext_resource type="AudioStream" uid="uid://bahb4ibce667t" path="res://Audio/soundtrack/Noise Attack.mp3" id="19_am4tp"]
+[ext_resource type="AudioStream" uid="uid://ca8tcht4ban0m" path="res://Audio/soundtrack/Summon the Rawk.mp3" id="20_vxw6r"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_ufibj"]
 vertices = PackedVector2Array(8, 8, 0, 8, 0, 0, 8, 0)
@@ -1499,6 +1503,14 @@ sources/3 = SubResource("TileSetAtlasSource_44xv7")
 sources/4 = SubResource("TileSetAtlasSource_ke5eq")
 sources/5 = SubResource("TileSetAtlasSource_7a1e8")
 
+[sub_resource type="AudioStreamPlaylist" id="AudioStreamPlaylist_wxc4m"]
+shuffle = true
+stream_count = 4
+stream_0 = ExtResource("17_iraqi")
+stream_1 = ExtResource("18_drpjf")
+stream_2 = ExtResource("19_am4tp")
+stream_3 = ExtResource("20_vxw6r")
+
 [node name="testlevel" type="Node2D"]
 y_sort_enabled = true
 
@@ -1646,3 +1658,7 @@ scale = Vector2(1.5, 1.5)
 [node name="obj_barrel_05" parent="." instance=ExtResource("11_bqk20")]
 position = Vector2(152, 376)
 scale = Vector2(1.5, 1.5)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = SubResource("AudioStreamPlaylist_wxc4m")
+autoplay = true
