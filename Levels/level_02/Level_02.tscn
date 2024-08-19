@@ -1,4 +1,4 @@
-[gd_scene load_steps=62 format=4 uid="uid://bxug41xovxe8p"]
+[gd_scene load_steps=63 format=4 uid="uid://bxug41xovxe8p"]
 
 [ext_resource type="Texture2D" uid="uid://dnfflq3qda548" path="res://TileSets/2D Pixel-Dungeon_Tileset.png" id="1_iofhs"]
 [ext_resource type="Texture2D" uid="uid://1wius8ss63pg" path="res://TileSets/2D Pixel-Dungeon_Tileset_floor_edit.png" id="2_keywq"]
@@ -17,6 +17,7 @@
 [ext_resource type="AudioStream" uid="uid://bldv1om1tod3o" path="res://Audio/soundtrack/Metalmania.mp3" id="15_5cp77"]
 [ext_resource type="AudioStream" uid="uid://bahb4ibce667t" path="res://Audio/soundtrack/Noise Attack.mp3" id="16_6o66l"]
 [ext_resource type="AudioStream" uid="uid://ca8tcht4ban0m" path="res://Audio/soundtrack/Summon the Rawk.mp3" id="17_h4iq4"]
+[ext_resource type="PackedScene" uid="uid://d2glbpj75vbl8" path="res://Characters/EnemyGreenOoze.tscn" id="18_bakr2"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_ufibj"]
 vertices = PackedVector2Array(8, 8, 0, 8, 0, 0, 8, 0)
@@ -1569,3 +1570,9 @@ scale = Vector2(3, 3)
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = SubResource("AudioStreamPlaylist_fkmgx")
 autoplay = true
+
+[node name="EnemyGreenOoze3" parent="." node_paths=PackedStringArray("target") instance=ExtResource("18_bakr2")]
+position = Vector2(313, 52)
+scale = Vector2(1.5, 1.5)
+slime_size = 400
+target = NodePath("../hero")

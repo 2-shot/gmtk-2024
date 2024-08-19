@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=3 uid="uid://bgogck1k1rl0i"]
+[gd_scene load_steps=22 format=3 uid="uid://bgogck1k1rl0i"]
 
 [ext_resource type="Script" path="res://Characters/Rat/enemy_rat.gd" id="1_i034o"]
 [ext_resource type="Texture2D" uid="uid://bfo1ffb8o8bdg" path="res://Characters/Rat/RatAnimations.png" id="2_n6qgb"]
@@ -96,34 +96,6 @@ _data = {
 "walk": SubResource("Animation_wpmag")
 }
 
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_hsgmo"]
-animation = &"is_eaten_from_left"
-
-[sub_resource type="AnimationNodeTimeScale" id="AnimationNodeTimeScale_slg0y"]
-
-[sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_pwd2n"]
-graph_offset = Vector2(-101, -1)
-nodes/Animation/node = SubResource("AnimationNodeAnimation_hsgmo")
-nodes/Animation/position = Vector2(100, 100)
-nodes/TimeScale/node = SubResource("AnimationNodeTimeScale_slg0y")
-nodes/TimeScale/position = Vector2(340, 100)
-nodes/output/position = Vector2(520, 120)
-node_connections = [&"TimeScale", 0, &"Animation", &"output", 0, &"TimeScale"]
-
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_i3alo"]
-animation = &"is_eaten_from_right"
-
-[sub_resource type="AnimationNodeTimeScale" id="AnimationNodeTimeScale_bryfs"]
-
-[sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_156pd"]
-graph_offset = Vector2(-116, -6)
-nodes/Animation/node = SubResource("AnimationNodeAnimation_i3alo")
-nodes/Animation/position = Vector2(139, 155)
-nodes/TimeScale/node = SubResource("AnimationNodeTimeScale_bryfs")
-nodes/TimeScale/position = Vector2(420, 140)
-nodes/output/position = Vector2(620, 160)
-node_connections = [&"TimeScale", 0, &"Animation", &"output", 0, &"TimeScale"]
-
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_mgglk"]
 animation = &"Idle"
 
@@ -158,29 +130,13 @@ advance_mode = 2
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_swycp"]
 
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_chj2c"]
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_qul8h"]
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_01n5f"]
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_vvhs2"]
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_h64ga"]
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_8nv36"]
-
 [sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_n6kqg"]
 states/Start/position = Vector2(64, 133)
-states/eaten_left/node = SubResource("AnimationNodeBlendTree_pwd2n")
-states/eaten_left/position = Vector2(634, 100)
-states/eaten_right/node = SubResource("AnimationNodeBlendTree_156pd")
-states/eaten_right/position = Vector2(648, 164)
 states/idle/node = SubResource("AnimationNodeBlendTree_jildm")
 states/idle/position = Vector2(328, 49)
 states/run/node = SubResource("AnimationNodeBlendTree_u8vwk")
 states/run/position = Vector2(328, 261)
-transitions = ["Start", "idle", SubResource("AnimationNodeStateMachineTransition_on6sh"), "idle", "run", SubResource("AnimationNodeStateMachineTransition_75hwq"), "run", "idle", SubResource("AnimationNodeStateMachineTransition_swycp"), "idle", "eaten_left", SubResource("AnimationNodeStateMachineTransition_chj2c"), "eaten_left", "End", SubResource("AnimationNodeStateMachineTransition_qul8h"), "run", "eaten_left", SubResource("AnimationNodeStateMachineTransition_01n5f"), "idle", "eaten_right", SubResource("AnimationNodeStateMachineTransition_vvhs2"), "eaten_right", "End", SubResource("AnimationNodeStateMachineTransition_h64ga"), "run", "eaten_right", SubResource("AnimationNodeStateMachineTransition_8nv36")]
+transitions = ["Start", "idle", SubResource("AnimationNodeStateMachineTransition_on6sh"), "idle", "run", SubResource("AnimationNodeStateMachineTransition_75hwq"), "run", "idle", SubResource("AnimationNodeStateMachineTransition_swycp")]
 graph_offset = Vector2(-41, 3)
 
 [node name="EnemyRat" type="CharacterBody2D" groups=["Enemy"]]
@@ -224,8 +180,6 @@ libraries = {
 [node name="AnimationTree" type="AnimationTree" parent="."]
 tree_root = SubResource("AnimationNodeStateMachine_n6kqg")
 anim_player = NodePath("../AnimationPlayer")
-parameters/eaten_left/TimeScale/scale = 1.0
-parameters/eaten_right/TimeScale/scale = 1.0
 parameters/idle/TimeScale/scale = 1.0
 parameters/run/TimeScale/scale = 1.0
 

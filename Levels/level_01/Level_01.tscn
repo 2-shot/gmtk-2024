@@ -1510,6 +1510,7 @@ stream_2 = ExtResource("13_y83ts")
 y_sort_enabled = true
 script = ExtResource("1_6x71g")
 size_target = 800
+level_complete = "res://Menus/Level_Transistion_Scene.tscn"
 
 [node name="Walls and Ground" type="TileMapLayer" parent="."]
 use_parent_material = true

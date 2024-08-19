@@ -23,9 +23,9 @@ var player_visible:bool=false
 @export var run_anim_scale = 1
 @onready var animationTree = $AnimationTree
 @onready var state_machine = animationTree["parameters/playback"]
-enum{IDLE, RUN, EATEN_LEFT, EATEN_RIGHT}
+enum{IDLE, RUN}
 var state = IDLE
-var animTree_state_keys = ["idle","run","eaten_left","eaten_right"]
+var animTree_state_keys = ["idle","run"]
 var being_eaten := false
 
 
@@ -43,16 +43,14 @@ func _on_timer_timeout() -> void:
 #detection timer
 func _on_detection_timeout_timer_timeout() -> void:
 	player_detected=false
-	
-#draw circle for raycast adjustment (debugging)
-#func _draw():
-#	draw_circle(target.global_position- global_position + Vector2(0,2),5,Color.RED)
+
+
 func eaten_by(player : Node2D):
 	being_eaten = true
-	if player.position.x > position.x:
-		state = EATEN_RIGHT
-	else:
-		state = EATEN_LEFT
+	#if player.position.x > position.x:
+		#state = EATEN_RIGHT
+	#else:
+		#state = EATEN_LEFT
 
 
 func _physics_process(_delta):
@@ -91,7 +89,10 @@ func _physics_process(_delta):
 	else:
 		velocity = Vector2.ZERO
 		state=IDLE
-		
+
+	# flip depending on velocity
+	$Sprite2D.flip_h = velocity > Vector2.ZERO
+
 	move_and_slide()
 	animate()
 	
