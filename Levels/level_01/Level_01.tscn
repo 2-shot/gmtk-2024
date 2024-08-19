@@ -1,4 +1,4 @@
-[gd_scene load_steps=62 format=4 uid="uid://cusexa1ykedaf"]
+[gd_scene load_steps=61 format=4 uid="uid://cusexa1ykedaf"]
 
 [ext_resource type="Texture2D" uid="uid://dnfflq3qda548" path="res://TileSets/2D Pixel-Dungeon_Tileset.png" id="1_yny1y"]
 [ext_resource type="Texture2D" uid="uid://1wius8ss63pg" path="res://TileSets/2D Pixel-Dungeon_Tileset_floor_edit.png" id="2_dlclb"]
@@ -7,10 +7,9 @@
 [ext_resource type="Texture2D" uid="uid://dyg6dossu6t7u" path="res://TileSets/PixelCrawlerDungeon-Tiles.png" id="5_si5dv"]
 [ext_resource type="PackedScene" uid="uid://csbw7e8w63gif" path="res://Characters/hero.tscn" id="6_1veeq"]
 [ext_resource type="Texture2D" uid="uid://rldsv3refwao" path="res://TileSets/PixelCrawlerDungeon-Tiles_andrew_edit_v2.png" id="6_hrxxm"]
-[ext_resource type="Script" path="res://UI/progress_bar.gd" id="7_r8pku"]
-[ext_resource type="Script" path="res://Scripts/Debug.gd" id="8_e8mk2"]
 [ext_resource type="PackedScene" uid="uid://b1p77kho11wc" path="res://Objects/Props/Barrels/Obj_Barrel_01.tscn" id="9_f7gfs"]
 [ext_resource type="PackedScene" uid="uid://d2glbpj75vbl8" path="res://Characters/EnemyGreenOoze.tscn" id="11_opamk"]
+[ext_resource type="PackedScene" uid="uid://c4f4xoibdq0s3" path="res://UI/UI.tscn" id="12_gvknc"]
 [ext_resource type="AudioStream" uid="uid://htkcydmx1tfa" path="res://Audio/soundtrack/Burn The World Waltz .mp3" id="13_kw5mq"]
 [ext_resource type="AudioStream" uid="uid://bldv1om1tod3o" path="res://Audio/soundtrack/Metalmania.mp3" id="13_y83ts"]
 [ext_resource type="AudioStream" uid="uid://bahb4ibce667t" path="res://Audio/soundtrack/Noise Attack.mp3" id="14_46txv"]
@@ -1552,34 +1551,7 @@ target = NodePath("../hero")
 position = Vector2(438, 531)
 target = NodePath("../hero")
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-
-[node name="ProgressBar" type="ProgressBar" parent="CanvasLayer"]
-modulate = Color(0.12549, 1, 0.247059, 1)
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -168.0
-offset_top = 16.0
-offset_right = -18.0
-offset_bottom = 43.0
-grow_horizontal = 0
-min_value = 100.0
-max_value = 200.0
-value = 100.0
-show_percentage = false
-script = ExtResource("7_r8pku")
-metadata/_edit_use_anchors_ = true
-
-[node name="Label" type="Label" parent="CanvasLayer"]
-offset_left = 739.0
-offset_top = 62.0
-offset_right = 1137.0
-offset_bottom = 138.0
-text = "Debug"
-horizontal_alignment = 2
-script = ExtResource("8_e8mk2")
-metadata/_edit_use_anchors_ = true
+[node name="UI" parent="." instance=ExtResource("12_gvknc")]
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = SubResource("AudioStreamPlaylist_4xpmh")

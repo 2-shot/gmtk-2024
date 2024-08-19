@@ -1,16 +1,22 @@
-[gd_resource type="Theme" load_steps=2 format=3 uid="uid://bewgrgj1ylev2"]
+[gd_resource type="Theme" load_steps=3 format=3 uid="uid://bewgrgj1ylev2"]
+
+[ext_resource type="FontFile" uid="uid://cf3gxod85bf5s" path="res://UI/RifficFree-Bold.ttf" id="1_fkw2y"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ybuy4"]
 bg_color = Color(0.2145, 0.326333, 0.55, 1)
 
 [resource]
+Button/fonts/font = ExtResource("1_fkw2y")
 GameTitle/base_type = &"Label"
 GameTitle/font_sizes/font_size = 32
+GameTitle/fonts/font = ExtResource("1_fkw2y")
 GridContainer/constants/h_separation = 40
 GridContainer/constants/v_separation = 40
+Label/fonts/font = ExtResource("1_fkw2y")
 MarginContainer/constants/margin_bottom = 12
 MarginContainer/constants/margin_left = 12
 MarginContainer/constants/margin_right = 12
 MarginContainer/constants/margin_top = 12
 Panel/styles/panel = SubResource("StyleBoxFlat_ybuy4")
+RichTextLabel/fonts/normal_font = ExtResource("1_fkw2y")
 VBoxContainer/constants/separation = 40

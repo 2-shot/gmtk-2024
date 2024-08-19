@@ -6,6 +6,8 @@ var last_dir: Vector2
 var damagable: bool = false
 var is_player_dead: bool = false
 
+var finished_func
+
 @export var walk_speed := 100
 @export var eat_speed := 50
 #@export var run_speed := 200
@@ -99,16 +101,19 @@ func start_eating(enemy : Node2D):
 	enemy.eaten_by(self)
 	hero_speed = eat_speed
 	
-	$EatTimer.connect("timeout", finished_eating(enemy))
+	finished_func = finished_eating(enemy)
+	$EatTimer.connect("timeout", finished_func)
 	$EatTimer.start()
 
 func finished_eating(body : Node2D):
-	return func finished():
+	return func():
 		if body:
 			print("finished")
 			hero_size += body.slime_size
 			body.queue_free()
 			hero_speed = walk_speed
+			$EatTimer.disconnect("timeout", finished_func)
+
 
 func _on_area_2d_body_entered(body : Node2D):
 	print(body)
