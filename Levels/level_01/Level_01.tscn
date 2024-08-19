@@ -1,5 +1,6 @@
-[gd_scene load_steps=61 format=4 uid="uid://cusexa1ykedaf"]
+[gd_scene load_steps=62 format=4 uid="uid://cusexa1ykedaf"]
 
+[ext_resource type="Script" path="res://Levels/level_01/level_01.gd" id="1_6x71g"]
 [ext_resource type="Texture2D" uid="uid://dnfflq3qda548" path="res://TileSets/2D Pixel-Dungeon_Tileset.png" id="1_yny1y"]
 [ext_resource type="Texture2D" uid="uid://1wius8ss63pg" path="res://TileSets/2D Pixel-Dungeon_Tileset_floor_edit.png" id="2_dlclb"]
 [ext_resource type="Texture2D" uid="uid://ctbess4bkrwkx" path="res://TileSets/Kenny-tilemap.png" id="3_8nkc5"]
@@ -9,7 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://rldsv3refwao" path="res://TileSets/PixelCrawlerDungeon-Tiles_andrew_edit_v2.png" id="6_hrxxm"]
 [ext_resource type="PackedScene" uid="uid://b1p77kho11wc" path="res://Objects/Props/Barrels/Obj_Barrel_01.tscn" id="9_f7gfs"]
 [ext_resource type="PackedScene" uid="uid://d2glbpj75vbl8" path="res://Characters/EnemyGreenOoze.tscn" id="11_opamk"]
-[ext_resource type="PackedScene" uid="uid://c4f4xoibdq0s3" path="res://UI/UI.tscn" id="12_gvknc"]
+[ext_resource type="PackedScene" path="res://UI/UI.tscn" id="12_gvknc"]
 [ext_resource type="AudioStream" uid="uid://htkcydmx1tfa" path="res://Audio/soundtrack/Burn The World Waltz .mp3" id="13_kw5mq"]
 [ext_resource type="AudioStream" uid="uid://bldv1om1tod3o" path="res://Audio/soundtrack/Metalmania.mp3" id="13_y83ts"]
 [ext_resource type="AudioStream" uid="uid://bahb4ibce667t" path="res://Audio/soundtrack/Noise Attack.mp3" id="14_46txv"]
@@ -1507,8 +1508,9 @@ stream_1 = ExtResource("13_y83ts")
 stream_2 = ExtResource("14_46txv")
 stream_3 = ExtResource("15_rv6rp")
 
-[node name="testlevel2" type="Node2D"]
+[node name="level1" type="Node2D"]
 y_sort_enabled = true
+script = ExtResource("1_6x71g")
 
 [node name="Walls and Ground" type="TileMapLayer" parent="."]
 use_parent_material = true

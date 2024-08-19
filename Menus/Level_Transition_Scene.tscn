@@ -1,0 +1,114 @@
+[gd_scene load_steps=8 format=3 uid="uid://dsjdtyli4m3o8"]
+
+[ext_resource type="Theme" uid="uid://bewgrgj1ylev2" path="res://Menus/MenuTheme.tres" id="1_s701w"]
+[ext_resource type="Script" path="res://Menus/level_transition_scene.gd" id="2_hq2x5"]
+[ext_resource type="Script" path="res://Scripts/Nodes/SceneButton.gd" id="2_teyae"]
+[ext_resource type="Texture2D" uid="uid://dlo788ow6ge6f" path="res://Characters/Art/PurpleSlime1.1Twerk.png" id="3_g8eup"]
+
+[sub_resource type="Animation" id="Animation_p44ei"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_xmjnb"]
+resource_name = "twerk"
+length = 0.24
+loop_mode = 2
+step = 0.01
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.02, 0.07, 0.15, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [1, 2, 3, 4]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_6wffx"]
+_data = {
+"RESET": SubResource("Animation_p44ei"),
+"twerk": SubResource("Animation_xmjnb")
+}
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_s701w")
+script = ExtResource("2_hq2x5")
+
+[node name="Grow" type="Timer" parent="."]
+wait_time = 0.2
+autostart = true
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 400
+theme_override_constants/margin_top = 200
+theme_override_constants/margin_right = 400
+theme_override_constants/margin_bottom = 200
+
+[node name="PanelContainer" type="PanelContainer" parent="MarginContainer"]
+layout_mode = 2
+theme = ExtResource("1_s701w")
+
+[node name="GridContainer" type="GridContainer" parent="MarginContainer/PanelContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Label" type="RichTextLabel" parent="MarginContainer/PanelContainer/GridContainer"]
+layout_mode = 2
+theme_type_variation = &"GameTitle"
+bbcode_enabled = true
+text = "[center] [b][color=Purple]Level Completed![/color][/b]
+"
+fit_content = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/PanelContainer/GridContainer"]
+layout_mode = 2
+
+[node name="VSplitContainer" type="VSplitContainer" parent="MarginContainer/PanelContainer/GridContainer/VBoxContainer"]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+
+[node name="Next Level Button" type="Button" parent="MarginContainer/PanelContainer/GridContainer/VBoxContainer/VSplitContainer"]
+layout_mode = 2
+text = "Go to Next Level"
+script = ExtResource("2_teyae")
+scene_path = "res://Levels/level_02/Level_02.tscn"
+to_menu = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(698, 252)
+texture = ExtResource("3_g8eup")
+hframes = 6
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_6wffx")
+}
+
+[connection signal="timeout" from="Grow" to="." method="_on_grow_timeout"]

@@ -5,7 +5,9 @@ extends CharacterBody2D
 @onready var detection_timeout_timer: Timer = $DetectionTimeoutTimer
 
 #slime properties
-var movement_speed=40
+@export var movement_speed=40
+@export var runaway_speed=20
+@export var runs_away: bool= true
 @export var slime_size: int = 100
 
 @export var target: Node2D = null
@@ -79,7 +81,10 @@ func _physics_process(_delta):
 			detection_timeout_timer.start()
 		
 	if player_detected:
-		velocity = current_agent_position.direction_to(next_path_position) * movement_speed
+		if can_eat_hero or not runs_away:
+			velocity = current_agent_position.direction_to(next_path_position) * movement_speed
+		else:
+			velocity = current_agent_position.direction_to(next_path_position) * -runaway_speed
 		state=RUN
 	else:
 		velocity = Vector2.ZERO

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dlo788ow6ge6f"
-path="res://.godot/imported/PurpleSlime1.1Twerk.png-2202266017127c988f313baae4c80c60.ctex"
+uid="uid://6pdbr5xc1lax"
+path="res://.godot/imported/PurpleSlime1.1Twerk.png-dbe50fb9752628bea510ad3a9ee68a68.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Characters/Art/PurpleSlime1.1Twerk.png"
-dest_files=["res://.godot/imported/PurpleSlime1.1Twerk.png-2202266017127c988f313baae4c80c60.ctex"]
+source_file="res://Menus/PurpleSlime1.1Twerk.png"
+dest_files=["res://.godot/imported/PurpleSlime1.1Twerk.png-dbe50fb9752628bea510ad3a9ee68a68.ctex"]
 
 [params]
 

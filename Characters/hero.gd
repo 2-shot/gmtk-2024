@@ -70,10 +70,10 @@ func get_input():
 		if interact:
 			state=EXPLODE
 			velocity = Vector2.ZERO
-		if interact2:
-			state=EAT
-			eating=true
-			$EatTimer.start()
+		#if interact2:
+			#state=EAT
+			#eating=true
+			#$EatTimer.start()
 
 	if eating:
 		velocity = input_direction * hero_speed
