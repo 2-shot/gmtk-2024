@@ -55,7 +55,7 @@ func _physics_process(_delta):
 #	queue_redraw()
 		
 	check_player_in_direction()
-	#prints("Player Detected: ",player_detected,"  Player Visible:", player_visible)
+	GlobalSignals.debug.emit("RayCast", "Player Detected: %s Player Visible: %s" % [player_detected, player_visible])
 	var current_agent_position = global_position
 	var next_path_position = navigation_agent_2d.get_next_path_position()
 	
@@ -88,7 +88,7 @@ func check_player_in_direction():
 
 	
 func size_changed(hero_size:int):
-	assert(not (hero_size == slime_size),"HERO SIZE SAME AS ENEMY")
+	#assert(not (hero_size == slime_size),"HERO SIZE SAME AS ENEMY")
 	if hero_size >= slime_size:
 		can_eat_hero=false
 	else:

@@ -8,7 +8,7 @@ var is_player_dead: bool = false
 
 @export var walk_speed = 100
 @export var run_speed = 200
-@export var hero_size = 100
+@export var hero_size : int = 100 : set = size_changed
 #animations
 @export var run_anim_scale = 2
 @onready var animationTree = $AnimationTree
@@ -27,10 +27,16 @@ var animTree_state_keys = ["idle","run","eat","is_eaten","explode"]
 var eating : bool = false
 
 func size_changed(size: int):
-	prints("New size", size)
+	hero_size = size
+	GlobalSignals.hero_size.emit(hero_size)
+	var scale_size = pow(float(hero_size) / 100.0, 1.0/3.0)
+	
+	GlobalSignals.debug.emit("hero size", "%d" % hero_size)
+	scale = Vector2(scale_size, scale_size)
+	
+	GlobalSignals.debug.emit("hero scale", "%f, %f" % [scale.x, scale.x])
 
 func _ready():
-	GlobalSignals.hero_size.connect(size_changed)
 	GlobalSignals.hero_size.emit(hero_size)
 	
 func _physics_process(_delta):
@@ -73,3 +79,11 @@ func animate() -> void:
 
 func _on_eat_timer_timeout() -> void:
 	eating=false
+	animationTree.set(blend_pos_paths[state],blend_position)
+
+
+func _on_grow_timeout():
+	hero_size += 10
+	if hero_size > 200:
+		hero_size = 100
+		#$Grow.stop()
