@@ -1,4 +1,4 @@
-[gd_scene load_steps=62 format=4 uid="uid://ds48pystsani0"]
+[gd_scene load_steps=61 format=4 uid="uid://ds48pystsani0"]
 
 [ext_resource type="Texture2D" uid="uid://dnfflq3qda548" path="res://TileSets/2D Pixel-Dungeon_Tileset.png" id="1_isurb"]
 [ext_resource type="Texture2D" uid="uid://1wius8ss63pg" path="res://TileSets/2D Pixel-Dungeon_Tileset_floor_edit.png" id="2_5o52v"]
@@ -11,7 +11,6 @@
 [ext_resource type="PackedScene" uid="uid://cpm1xkkqq5ofc" path="res://Objects/Props/Chairs/Obj_Chair_01.tscn" id="9_4m11e"]
 [ext_resource type="PackedScene" uid="uid://l5xprugykcf" path="res://Objects/Props/Chairs/Obj_Chair_Facing_Left_01.tscn" id="10_agbkx"]
 [ext_resource type="PackedScene" uid="uid://c7wjcyb3i4uc8" path="res://Objects/Props/Crate/Obj_Crate_01.tscn" id="11_d1xes"]
-[ext_resource type="PackedScene" uid="uid://c08pph71i0cy1" path="res://Objects/Props/Tables/Obj_Table_02.tscn" id="12_ravyp"]
 [ext_resource type="PackedScene" uid="uid://dpt226133ba7u" path="res://Objects/Props/Tables/Obj_Table_01.tscn" id="13_fdipu"]
 [ext_resource type="PackedScene" uid="uid://b44rli6rn55jh" path="res://Objects/Props/Chairs/Obj_Chair_Facing_Right_01.tscn" id="14_a18ks"]
 [ext_resource type="PackedScene" uid="uid://kslpw64f50r3" path="res://Objects/Props/Bookcases/Obj_Bookcase_01.tscn" id="15_eks6g"]
@@ -1576,14 +1575,8 @@ position = Vector2(296, 344)
 position = Vector2(208, 160)
 scale = Vector2(1.5, 1.5)
 
-[node name="obj_table_01" parent="." instance=ExtResource("12_ravyp")]
-position = Vector2(616, 200)
-
 [node name="obj_table_02" parent="." instance=ExtResource("13_fdipu")]
 position = Vector2(376, 160)
-
-[node name="obj_table_03" parent="." instance=ExtResource("13_fdipu")]
-position = Vector2(608, 264)
 
 [node name="obj_chair_facing_right_01" parent="." instance=ExtResource("14_a18ks")]
 position = Vector2(144, 144)
