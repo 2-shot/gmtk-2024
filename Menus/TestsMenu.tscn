@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://cwq8v58dte2aj"]
+[gd_scene load_steps=3 format=3 uid="uid://cwq8v58dte2aj"]
 
 [ext_resource type="Script" path="res://Scripts/Nodes/SceneButton.gd" id="1_6xlkx"]
+[ext_resource type="Theme" uid="uid://bewgrgj1ylev2" path="res://Menus/MenuTheme.tres" id="1_ulus4"]
 
 [node name="Tests" type="Control"]
 layout_mode = 3
@@ -9,6 +10,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("1_ulus4")
 
 [node name="Panel" type="Panel" parent="."]
 layout_mode = 1
@@ -49,10 +51,11 @@ custom_minimum_size = Vector2(300, 0)
 layout_mode = 2
 
 [node name="GridContainer" type="GridContainer" parent="Panel/MarginContainer/PanelContainer/VBoxContainer"]
+custom_minimum_size = Vector2(600, 0)
 layout_mode = 2
 size_flags_vertical = 4
-theme_override_constants/h_separation = 10
-theme_override_constants/v_separation = 10
+theme_override_constants/h_separation = 20
+theme_override_constants/v_separation = 20
 columns = 2
 
 [node name="Test Level" type="Button" parent="Panel/MarginContainer/PanelContainer/VBoxContainer/GridContainer"]

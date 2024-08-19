@@ -1,10 +1,13 @@
-[gd_scene load_steps=4 format=3 uid="uid://c4f4xoibdq0s3"]
+[gd_scene load_steps=5 format=3 uid="uid://c4f4xoibdq0s3"]
 
 [ext_resource type="Script" path="res://UI/progress_bar.gd" id="1_0ykeg"]
 [ext_resource type="Theme" uid="uid://bewgrgj1ylev2" path="res://Menus/MenuTheme.tres" id="1_1l0h6"]
+[ext_resource type="Script" path="res://UI/ui.gd" id="1_ikb5b"]
 [ext_resource type="Script" path="res://Scripts/Debug.gd" id="2_i4ly0"]
 
 [node name="UI" type="CanvasLayer"]
+script = ExtResource("1_ikb5b")
+show_debug = true
 
 [node name="Control" type="Control" parent="."]
 layout_mode = 3
@@ -48,4 +51,5 @@ offset_bottom = 138.0
 text = "Debug"
 horizontal_alignment = 2
 script = ExtResource("2_i4ly0")
+show_debug = true
 metadata/_edit_use_anchors_ = true

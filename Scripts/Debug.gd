@@ -1,6 +1,6 @@
 extends Label
 
-@export var show_debug := false
+@export var show_debug : bool = false
 
 var debug_log := {}
 

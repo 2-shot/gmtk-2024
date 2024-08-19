@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://diufct4yn4n1i"]
+[gd_scene load_steps=5 format=3 uid="uid://diufct4yn4n1i"]
 
 [ext_resource type="Theme" uid="uid://bewgrgj1ylev2" path="res://Menus/MenuTheme.tres" id="1_lgf1a"]
 [ext_resource type="Script" path="res://Menus/MainMenu.gd" id="2_dukak"]
 [ext_resource type="Script" path="res://Scripts/Nodes/SceneButton.gd" id="3_o5i7w"]
+[ext_resource type="Texture2D" uid="uid://qa8kh38eudaj" path="res://Menus/gmtk2024-logo.png" id="4_xf6fx"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -41,8 +42,7 @@ size_flags_vertical = 4
 [node name="Label" type="Label" parent="Panel/MarginContainer/PanelContainer/GridContainer"]
 layout_mode = 2
 theme_type_variation = &"GameTitle"
-text = "GMTK 2024 Game
-"
+text = "SLIME-AGEDDON"
 horizontal_alignment = 1
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Panel/MarginContainer/PanelContainer/GridContainer"]
@@ -75,5 +75,10 @@ to_menu = true
 [node name="Quit" type="Button" parent="Panel/MarginContainer/PanelContainer/GridContainer/VBoxContainer"]
 layout_mode = 2
 text = "Quit"
+
+[node name="Gmtk2024-logo" type="Sprite2D" parent="."]
+position = Vector2(1016.4, 567.125)
+scale = Vector2(0.127493, 0.127493)
+texture = ExtResource("4_xf6fx")
 
 [connection signal="pressed" from="Panel/MarginContainer/PanelContainer/GridContainer/VBoxContainer/Quit" to="." method="_on_quit_pressed"]

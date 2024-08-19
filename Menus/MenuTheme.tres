@@ -9,6 +9,7 @@ bg_color = Color(0.2145, 0.326333, 0.55, 1)
 bg_color = Color(0.0983847, 0.495851, 0.794289, 1)
 
 [resource]
+Button/font_sizes/font_size = 30
 Button/fonts/font = ExtResource("1_fkw2y")
 GameTitle/base_type = &"Label"
 GameTitle/font_sizes/font_size = 32
