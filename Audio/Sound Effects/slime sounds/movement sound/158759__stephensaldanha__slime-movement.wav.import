@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://b0a7rududx8lj"
+path="res://.godot/imported/158759__stephensaldanha__slime-movement.wav-31fe787e9a09384144255f570a8f8386.sample"
+
+[deps]
+
+source_file="res://Audio/Sound Effects/slime sounds/movement sound/158759__stephensaldanha__slime-movement.wav"
+dest_files=["res://.godot/imported/158759__stephensaldanha__slime-movement.wav-31fe787e9a09384144255f570a8f8386.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

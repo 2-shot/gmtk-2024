@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://brnr4nnt6e5p1"
+path="res://.godot/imported/Ready Aim Fire.mp3-19bd6430789ff8d3dbf31c28874e78e2.mp3str"
+
+[deps]
+
+source_file="res://Audio/soundtrack/Ready Aim Fire.mp3"
+dest_files=["res://.godot/imported/Ready Aim Fire.mp3-19bd6430789ff8d3dbf31c28874e78e2.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

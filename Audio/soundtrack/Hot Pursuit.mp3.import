@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cfjxg3b36kulr"
+path="res://.godot/imported/Hot Pursuit.mp3-b513d212e17f00820a4c904522d2b8c8.mp3str"
+
+[deps]
+
+source_file="res://Audio/soundtrack/Hot Pursuit.mp3"
+dest_files=["res://.godot/imported/Hot Pursuit.mp3-b513d212e17f00820a4c904522d2b8c8.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
