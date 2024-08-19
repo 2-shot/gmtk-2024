@@ -1,6 +1,7 @@
-[gd_scene load_steps=16 format=4 uid="uid://ct1vog5mch6be"]
+[gd_scene load_steps=18 format=4 uid="uid://ct1vog5mch6be"]
 
 [ext_resource type="TileSet" uid="uid://btn2hyppj2rla" path="res://TileSets/TestTileSet.tres" id="1_34k1u"]
+[ext_resource type="Script" path="res://Levels/level_03/level_03.gd" id="1_i5d5g"]
 [ext_resource type="PackedScene" uid="uid://csbw7e8w63gif" path="res://Characters/hero.tscn" id="7_c2dx7"]
 [ext_resource type="PackedScene" uid="uid://jieygowtle5v" path="res://Objects/Props/Chests/Obj_Chest_01.tscn" id="8_o1h3o"]
 [ext_resource type="PackedScene" uid="uid://cpm1xkkqq5ofc" path="res://Objects/Props/Chairs/Obj_Chair_01.tscn" id="9_0ntih"]
@@ -9,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://c7wjcyb3i4uc8" path="res://Objects/Props/Crate/Obj_Crate_01.tscn" id="13_eelta"]
 [ext_resource type="PackedScene" uid="uid://ytcxvthipdkj" path="res://Objects/Props/Beds/Obj_Bed_01.tscn" id="13_xtnpy"]
 [ext_resource type="PackedScene" uid="uid://d2glbpj75vbl8" path="res://Characters/EnemyGreenOoze.tscn" id="14_nvsyv"]
+[ext_resource type="PackedScene" path="res://Characters/Rat/EnemyRat.tscn" id="15_h3epo"]
 [ext_resource type="PackedScene" uid="uid://dpt226133ba7u" path="res://Objects/Props/Tables/Obj_Table_01.tscn" id="15_qdx4y"]
 [ext_resource type="AudioStream" uid="uid://htkcydmx1tfa" path="res://Audio/soundtrack/Burn The World Waltz .mp3" id="15_rve0a"]
 [ext_resource type="AudioStream" uid="uid://bldv1om1tod3o" path="res://Audio/soundtrack/Metalmania.mp3" id="16_gr3cj"]
@@ -25,6 +27,7 @@ stream_3 = ExtResource("18_gp4pk")
 
 [node name="level3" type="Node2D"]
 y_sort_enabled = true
+script = ExtResource("1_i5d5g")
 
 [node name="Walls and Ground" type="TileMapLayer" parent="."]
 use_parent_material = true
@@ -85,17 +88,38 @@ scale = Vector2(2, 2)
 stream = SubResource("AudioStreamPlaylist_825qo")
 autoplay = true
 
-[node name="EnemyGreenOoze_med1" parent="." node_paths=PackedStringArray("target") instance=ExtResource("14_nvsyv")]
-visible = false
-position = Vector2(226, 151)
-slime_size = 250
-target = NodePath("../hero")
-
 [node name="EnemyGreenOoze_small2" parent="." node_paths=PackedStringArray("target") instance=ExtResource("14_nvsyv")]
 position = Vector2(348, 184)
 target = NodePath("../hero")
 
 [node name="EnemyGreenOoze_small1" parent="." node_paths=PackedStringArray("target") instance=ExtResource("14_nvsyv")]
-visible = false
 position = Vector2(375, 369)
 target = NodePath("../hero")
+
+[node name="EnemyGreenOozeLarge" parent="." instance=ExtResource("14_nvsyv")]
+modulate = Color(1, 0.615686, 0.584314, 1)
+position = Vector2(317, 185)
+scale = Vector2(1.5, 1.5)
+slime_size = 400
+
+[node name="EnemyGreenOozeLarge2" parent="." instance=ExtResource("14_nvsyv")]
+modulate = Color(1, 0.615686, 0.584314, 1)
+position = Vector2(158, 243)
+scale = Vector2(1.5, 1.5)
+slime_size = 400
+
+[node name="EnemyGreenOoze_small3" parent="." node_paths=PackedStringArray("target") instance=ExtResource("14_nvsyv")]
+position = Vector2(249, 224)
+target = NodePath("../hero")
+
+[node name="EnemyRat" parent="." node_paths=PackedStringArray("target") instance=ExtResource("15_h3epo")]
+position = Vector2(202, 446)
+scale = Vector2(0.7, 0.7)
+slime_size = 50
+target = NodePath("")
+
+[node name="EnemyRat2" parent="." node_paths=PackedStringArray("target") instance=ExtResource("15_h3epo")]
+position = Vector2(140, 215)
+scale = Vector2(0.7, 0.7)
+slime_size = 50
+target = NodePath("")

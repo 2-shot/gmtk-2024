@@ -114,7 +114,7 @@ func start_eating(enemy : Node2D):
 func finished_eating(body : Node2D):
 	return func():
 		if body:
-			print("finished")
+			#print("finished")
 			hero_size += body.slime_size
 			body.queue_free()
 			hero_speed = walk_speed
@@ -129,12 +129,12 @@ func eaten_by(enemy : Node2D):
 	get_tree().create_timer(3).timeout.connect(get_tree().reload_current_scene)
 
 func _on_area_2d_body_entered(body : Node2D):
-	print(body)
+	#print(body)
 	if body.is_in_group("Enemy"):
 		var slime_size = body.slime_size
-		prints(hero_size, slime_size)
+		#prints(hero_size, slime_size)
 		if hero_size >= slime_size:
-			prints("Eat me!")
+			#prints("Eat me!")
 			start_eating(body)
 		else:
 			if body.position.x > position.x:
@@ -144,5 +144,5 @@ func _on_area_2d_body_entered(body : Node2D):
 			eaten_by(body)
 
 
-func _on_animation_tree_animation_started(anim_name: StringName) -> void:
-	prints("Animation Changed to:", anim_name)
+#func _on_animation_tree_animation_started(anim_name: StringName) -> void:
+	#prints("Animation Changed to:", anim_name)
