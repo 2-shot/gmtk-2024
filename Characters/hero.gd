@@ -20,10 +20,11 @@ var blend_pos_paths = [
 ]
 
 #animations and hitbox
-enum{IDLE, RUN, EAT, DEATH}
+enum{IDLE, RUN, EAT, IS_EATEN, EXPLODE}
 var state = IDLE
 var blend_position : Vector2 =Vector2.ZERO
-var animTree_state_keys = ["idle","run","eat","death"]
+var animTree_state_keys = ["idle","run","eat","is_eaten","explode"]
+var eating : bool = false
 
 func size_changed(size: int):
 	prints("New size", size)
@@ -42,17 +43,33 @@ func get_input():
 	#var attack := Input.is_action_pressed("attack")
 	var input_direction := Input.get_vector("left", "right", "up", "down")
 	var rest = input_direction == Vector2.ZERO
-
-	if input_direction:
-		last_dir = input_direction
-	if rest:
-		state=IDLE
-		velocity = Vector2.ZERO
-	else:
-		state=RUN
-		velocity = input_direction * walk_speed
-		blend_position = input_direction
+	var interact := Input.is_action_pressed("interact")
+	var interact2 := Input.is_action_pressed("interact2")
+	
+	if state != EXPLODE and state !=IS_EATEN and eating==false:
+		if input_direction:
+			last_dir = input_direction
+		if rest:
+			state=IDLE
+			velocity = Vector2.ZERO	
+		else:
+			state=RUN
+			velocity = input_direction * walk_speed
+			blend_position = input_direction
+		if interact:
+			state=EXPLODE
+			velocity = Vector2.ZERO
+		if interact2:
+			state=EAT
+			eating=true
+			$EatTimer.start()
+			
 
 func animate() -> void:
 	state_machine.travel(animTree_state_keys[state])
-	animationTree.set(blend_pos_paths[state],blend_position)
+	if state==IDLE or state==RUN or state==EAT or state==IS_EATEN:
+		animationTree.set(blend_pos_paths[state],blend_position)
+
+
+func _on_eat_timer_timeout() -> void:
+	eating=false

@@ -17,6 +17,14 @@ var hero_can_eat_me: bool=false
 var player_detected:bool=false
 var player_visible:bool=false
 
+#animations
+@export var run_anim_scale = 1
+@onready var animationTree = $AnimationTree
+@onready var state_machine = animationTree["parameters/playback"]
+enum{IDLE, RUN, EATEN_LEFT, EATEN_RIGHT}
+var state = IDLE
+var animTree_state_keys = ["idle","run","eaten_left","eaten_right"]
+
 
 func _ready():
 	GlobalSignals.hero_size.connect(size_changed)
@@ -47,7 +55,7 @@ func _physics_process(_delta):
 #	queue_redraw()
 		
 	check_player_in_direction()
-	prints("Player Detected: ",player_detected,"  Player Visible:", player_visible)
+	#prints("Player Detected: ",player_detected,"  Player Visible:", player_visible)
 	var current_agent_position = global_position
 	var next_path_position = navigation_agent_2d.get_next_path_position()
 	
@@ -62,20 +70,21 @@ func _physics_process(_delta):
 		
 	if player_detected:
 		velocity = current_agent_position.direction_to(next_path_position) * movement_speed
+		state=RUN
 	else:
 		velocity = Vector2.ZERO
+		state=IDLE
 		
 	move_and_slide()
+	animate()
 	
 func check_player_in_direction():
 	var collider = los.get_collider()
-	#print(collider)
 	if collider and collider.is_in_group("Player"):
 		player_detected=true
 		player_visible=true
 	else:
 		player_visible=false
-		
 
 	
 func size_changed(hero_size:int):
@@ -84,3 +93,6 @@ func size_changed(hero_size:int):
 		can_eat_hero=false
 	else:
 		can_eat_hero=true
+
+func animate():
+	state_machine.travel(animTree_state_keys[state])
