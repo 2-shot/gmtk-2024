@@ -1,0 +1,21 @@
+[gd_resource type="AudioBusLayout" load_steps=3 format=3 uid="uid://ciaf76gs73a5k"]
+
+[sub_resource type="AudioEffectEQ10" id="AudioEffectEQ10_l1kgg"]
+resource_name = "EQ10"
+band_db/125_hz = -5.3
+band_db/1000_hz = -3.8
+band_db/2000_hz = -8.9
+band_db/4000_hz = -9.0
+band_db/8000_hz = -7.7
+band_db/16000_hz = -15.0
+
+[sub_resource type="AudioEffectLowPassFilter" id="AudioEffectLowPassFilter_0dm5i"]
+resource_name = "LowPassFilter"
+cutoff_hz = 3000.0
+resonance = 0.65
+
+[resource]
+bus/0/effect/0/effect = SubResource("AudioEffectEQ10_l1kgg")
+bus/0/effect/0/enabled = false
+bus/0/effect/1/effect = SubResource("AudioEffectLowPassFilter_0dm5i")
+bus/0/effect/1/enabled = true

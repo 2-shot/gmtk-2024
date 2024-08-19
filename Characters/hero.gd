@@ -20,7 +20,8 @@ var finished_func
 var blend_pos_paths = [
 	"parameters/idle/BlendSpace2D/blend_position",
 	"parameters/run/BlendSpace2D/blend_position",
-	"parameters/eat/BlendSpace2D/blend_position"
+	"parameters/eat/BlendSpace2D/blend_position",
+	"parameters/is_eaten/BlendSpace2D/blend_position"
 ]
 
 #animations and hitbox
@@ -31,7 +32,6 @@ var animTree_state_keys = ["idle","run","eat","is_eaten","explode"]
 var eating : bool = false
 var being_eaten : bool = false
 var hero_speed := walk_speed
-
 
 func size_changed(size: int):
 	hero_size = size
@@ -44,14 +44,15 @@ func size_changed(size: int):
 	GlobalSignals.debug.emit("hero scale", "%f, %f" % [scale.x, scale.x])
 
 func _ready():
-	get_tree().create_timer(3).timeout.connect(func (): GlobalSignals.hero_size.emit(hero_size))
+	get_tree().create_timer(1).timeout.connect(func (): GlobalSignals.hero_size.emit(hero_size))
 	#GlobalSignals.hero_size.emit(hero_size)
-	
+
 func _physics_process(_delta):
+	#print(being_eaten)
+	GlobalSignals.debug.emit("Being Eaten", str(being_eaten), state, $AnimationTree)
 	if being_eaten:
+		#print("Being Eaten!",state, blend_position)
 		$Collision.disabled = true
-		animate()
-		return
 		
 	get_input()
 	move_and_slide()
@@ -65,7 +66,7 @@ func get_input():
 	var interact := Input.is_action_pressed("interact")
 	var interact2 := Input.is_action_pressed("interact2")
 	
-	if state != EXPLODE and state !=IS_EATEN and eating==false:
+	if state != EXPLODE and eating==false and being_eaten==false:
 		if input_direction:
 			last_dir = input_direction
 		if rest:
@@ -79,14 +80,14 @@ func get_input():
 			state=EXPLODE
 			velocity = Vector2.ZERO
 
-	if eating:
-		velocity = input_direction * hero_speed
+	if eating or being_eaten:
+		velocity = input_direction * hero_speed		
 
 	GlobalSignals.debug.emit("Hero Speed", "Player velocity: %f, %f" % [velocity.x, velocity.y])
 
 func animate() -> void:
 	state_machine.travel(animTree_state_keys[state])
-	if state==IDLE or state==RUN or state==EAT :
+	if (state==IDLE or state==RUN or state==EAT or state==IS_EATEN):
 		animationTree.set(blend_pos_paths[state],blend_position)
 
 
@@ -119,11 +120,11 @@ func finished_eating(body : Node2D):
 			$EatTimer.disconnect("timeout", finished_func)
 
 func eaten_by(enemy : Node2D):
+	print("I've Been Eaten!!")
 	state=IS_EATEN
-	if enemy.position.x > position.x:
-		blend_position=Vector2(1,0)
-	else:
-		blend_position=Vector2(-1,0)
+	being_eaten=true
+	hero_speed = 10
+	#state_machine.travel(animTree_state_keys[state])
 	get_tree().create_timer(3).timeout.connect(get_tree().reload_current_scene)
 
 func _on_area_2d_body_entered(body : Node2D):
@@ -135,5 +136,12 @@ func _on_area_2d_body_entered(body : Node2D):
 			prints("Eat me!")
 			start_eating(body)
 		else:
-			being_eaten = true
+			if body.position.x > position.x:
+				blend_position=Vector2(1,0)
+			else:
+				blend_position=Vector2(-1,0)
 			eaten_by(body)
+
+
+func _on_animation_tree_animation_started(anim_name: StringName) -> void:
+	prints("Animation Changed to:", anim_name)
