@@ -17,3 +17,8 @@ scale = Vector2(0.631579, 0.592593)
 texture = ExtResource("1_qx4o7")
 region_enabled = true
 region_rect = Rect2(39, 4, 19, 27)
+
+[node name="NavigationObstacle2D" type="NavigationObstacle2D" parent="."]
+radius = 11.27
+affect_navigation_mesh = true
+carve_navigation_mesh = true
