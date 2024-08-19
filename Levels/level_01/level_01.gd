@@ -11,9 +11,8 @@ func _ready() -> void:
 func check_level_finished(hero_size: int):
 	if hero_size >= size_target:
 		print("YOU'RE WINNER")
-		# TODO: preload scenes
-		GlobalSignals.request_scene.emit(level_complete)
-		get_tree().create_timer(1).timeout.connect(func (): get_tree().change_scene_to_file("res://Menus/Level_Transition_Scene.tscn"))
+		get_tree().create_timer(1).timeout.connect(func(): GlobalSignals.request_scene.emit(level_complete))
+
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:

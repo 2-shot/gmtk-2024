@@ -6,10 +6,10 @@
 [ext_resource type="PackedScene" uid="uid://csbw7e8w63gif" path="res://Characters/hero.tscn" id="6_1veeq"]
 [ext_resource type="PackedScene" uid="uid://b1p77kho11wc" path="res://Objects/Props/Barrels/Obj_Barrel_01.tscn" id="9_f7gfs"]
 [ext_resource type="PackedScene" uid="uid://d2glbpj75vbl8" path="res://Characters/EnemyGreenOoze.tscn" id="11_opamk"]
-[ext_resource type="PackedScene" path="res://UI/UI.tscn" id="12_gvknc"]
+[ext_resource type="PackedScene" uid="uid://c4f4xoibdq0s3" path="res://UI/UI.tscn" id="12_gvknc"]
 [ext_resource type="AudioStream" uid="uid://htkcydmx1tfa" path="res://Audio/soundtrack/Burn The World Waltz .mp3" id="13_kw5mq"]
 [ext_resource type="PackedScene" uid="uid://c4bb5dcwvv8so" path="res://Objects/Props/Book/Obj_Book_01.tscn" id="17_68np3"]
-[ext_resource type="PackedScene" path="res://Characters/Rat/EnemyRat.tscn" id="17_lavig"]
+[ext_resource type="PackedScene" uid="uid://bgogck1k1rl0i" path="res://Characters/Rat/EnemyRat.tscn" id="17_lavig"]
 [ext_resource type="PackedScene" uid="uid://d286oxenjlily" path="res://Objects/Props/Pencil/Obj_Pencil_01.tscn" id="18_tdhot"]
 
 [sub_resource type="AudioStreamPlaylist" id="AudioStreamPlaylist_4xpmh"]
@@ -20,7 +20,7 @@ stream_0 = ExtResource("13_kw5mq")
 y_sort_enabled = true
 script = ExtResource("1_6x71g")
 size_target = 800
-level_complete = "res://Menus/Level_Transistion_Scene.tscn"
+level_complete = "res://Menus/Level_Transition_Scene.tscn"
 
 [node name="Walls and Ground" type="TileMapLayer" parent="."]
 use_parent_material = true
