@@ -1,4 +1,4 @@
-[gd_scene load_steps=61 format=4 uid="uid://cusexa1ykedaf"]
+[gd_scene load_steps=62 format=4 uid="uid://cusexa1ykedaf"]
 
 [ext_resource type="Script" path="res://Levels/level_01/level_01.gd" id="1_6x71g"]
 [ext_resource type="Texture2D" uid="uid://dnfflq3qda548" path="res://TileSets/2D Pixel-Dungeon_Tileset.png" id="1_yny1y"]
@@ -10,11 +10,12 @@
 [ext_resource type="Texture2D" uid="uid://rldsv3refwao" path="res://TileSets/PixelCrawlerDungeon-Tiles_andrew_edit_v2.png" id="6_hrxxm"]
 [ext_resource type="PackedScene" uid="uid://b1p77kho11wc" path="res://Objects/Props/Barrels/Obj_Barrel_01.tscn" id="9_f7gfs"]
 [ext_resource type="PackedScene" uid="uid://d2glbpj75vbl8" path="res://Characters/EnemyGreenOoze.tscn" id="11_opamk"]
-[ext_resource type="PackedScene" path="res://UI/UI.tscn" id="12_gvknc"]
+[ext_resource type="PackedScene" uid="uid://c4f4xoibdq0s3" path="res://UI/UI.tscn" id="12_gvknc"]
 [ext_resource type="AudioStream" uid="uid://htkcydmx1tfa" path="res://Audio/soundtrack/Burn The World Waltz .mp3" id="13_kw5mq"]
 [ext_resource type="AudioStream" uid="uid://bldv1om1tod3o" path="res://Audio/soundtrack/Metalmania.mp3" id="13_y83ts"]
 [ext_resource type="AudioStream" uid="uid://cxuybaeetxf1w" path="res://Audio/soundtrack/District Four.mp3" id="15_p0ifm"]
 [ext_resource type="PackedScene" uid="uid://c4bb5dcwvv8so" path="res://Objects/Props/Book/Obj_Book_01.tscn" id="17_68np3"]
+[ext_resource type="PackedScene" uid="uid://bgogck1k1rl0i" path="res://Characters/Rat/EnemyRat.tscn" id="17_lavig"]
 [ext_resource type="PackedScene" uid="uid://d286oxenjlily" path="res://Objects/Props/Pencil/Obj_Pencil_01.tscn" id="18_tdhot"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_ufibj"]
@@ -1508,6 +1509,7 @@ stream_2 = ExtResource("13_y83ts")
 [node name="level1" type="Node2D"]
 y_sort_enabled = true
 script = ExtResource("1_6x71g")
+size_target = 800
 
 [node name="Walls and Ground" type="TileMapLayer" parent="."]
 use_parent_material = true
@@ -1538,17 +1540,10 @@ scale = Vector2(8, 8)
 position = Vector2(320, 352)
 scale = Vector2(4, 4)
 
-[node name="EnemyGreenOoze" parent="." node_paths=PackedStringArray("target") instance=ExtResource("11_opamk")]
-position = Vector2(270, 161)
-slime_size = 400
-target = NodePath("../hero")
-
-[node name="EnemyGreenOoze2" parent="." node_paths=PackedStringArray("target") instance=ExtResource("11_opamk")]
-position = Vector2(426, 77)
-target = NodePath("../hero")
-
 [node name="EnemyGreenOoze3" parent="." node_paths=PackedStringArray("target") instance=ExtResource("11_opamk")]
 position = Vector2(438, 531)
+scale = Vector2(1.5, 1.5)
+slime_size = 400
 target = NodePath("../hero")
 
 [node name="UI" parent="." instance=ExtResource("12_gvknc")]
@@ -1556,3 +1551,15 @@ target = NodePath("../hero")
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = SubResource("AudioStreamPlaylist_4xpmh")
 autoplay = true
+
+[node name="EnemyRat" parent="." node_paths=PackedStringArray("target") instance=ExtResource("17_lavig")]
+position = Vector2(383, 74)
+target = NodePath("../hero")
+
+[node name="EnemyRat2" parent="." node_paths=PackedStringArray("target") instance=ExtResource("17_lavig")]
+position = Vector2(58, 404)
+target = NodePath("../hero")
+
+[node name="EnemyRat3" parent="." node_paths=PackedStringArray("target") instance=ExtResource("17_lavig")]
+position = Vector2(275, 209)
+target = NodePath("../hero")

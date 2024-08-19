@@ -44,6 +44,7 @@ script = ExtResource("1_0ykeg")
 metadata/_edit_use_anchors_ = true
 
 [node name="Label" type="Label" parent="Control"]
+layout_mode = 0
 offset_left = 739.0
 offset_top = 62.0
 offset_right = 1137.0
