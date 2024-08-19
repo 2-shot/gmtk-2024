@@ -6,13 +6,15 @@ var last_dir: Vector2
 var damagable: bool = false
 var is_player_dead: bool = false
 
-@export var walk_speed = 100
-@export var run_speed = 200
+@export var walk_speed := 100
+@export var eat_speed := 50
+#@export var run_speed := 200
 @export var hero_size : int = 100 : set = size_changed
 #animations
 @export var run_anim_scale = 2
 @onready var animationTree = $AnimationTree
 @onready var state_machine = animationTree["parameters/playback"]
+
 var blend_pos_paths = [
 	"parameters/idle/BlendSpace2D/blend_position",
 	"parameters/run/BlendSpace2D/blend_position",
@@ -25,6 +27,7 @@ var state = IDLE
 var blend_position : Vector2 =Vector2.ZERO
 var animTree_state_keys = ["idle","run","eat","is_eaten","explode"]
 var eating : bool = false
+var hero_speed := walk_speed
 
 func size_changed(size: int):
 	hero_size = size
@@ -60,7 +63,7 @@ func get_input():
 			velocity = Vector2.ZERO	
 		else:
 			state=RUN
-			velocity = input_direction * walk_speed
+			velocity = input_direction * hero_speed
 			blend_position = input_direction
 		if interact:
 			state=EXPLODE
@@ -69,7 +72,11 @@ func get_input():
 			state=EAT
 			eating=true
 			$EatTimer.start()
-			
+
+	if eating:
+		velocity = input_direction * hero_speed
+
+	GlobalSignals.debug.emit("Hero Speed", "Player velocity: %f, %f" % [velocity.x, velocity.y])
 
 func animate() -> void:
 	state_machine.travel(animTree_state_keys[state])
@@ -79,9 +86,37 @@ func animate() -> void:
 
 func _on_eat_timer_timeout() -> void:
 	eating=false
+	print("eating")
 
 func _on_grow_timeout():
 	hero_size += 10
 	if hero_size > 200:
-		hero_size = 100
-		#$Grow.stop()
+		hero_size = 50
+
+func start_eating(enemy : Node2D):
+	state=EAT
+	eating=true
+	enemy.eaten_by(self)
+	hero_speed = eat_speed
+	
+	$EatTimer.connect("timeout", finished_eating(enemy))
+	$EatTimer.start()
+
+func finished_eating(body : Node2D):
+	return func finished():
+		if body:
+			print("finished")
+			hero_size += body.slime_size
+			body.queue_free()
+			hero_speed = walk_speed
+
+func _on_area_2d_body_entered(body : Node2D):
+	print(body)
+	if body.is_in_group("Enemy"):
+		var slime_size = body.slime_size
+		prints(hero_size, slime_size)
+		if hero_size >= slime_size:
+			prints("Eat me!")
+			start_eating(body)
+		else:
+			print("Prepare to die!")

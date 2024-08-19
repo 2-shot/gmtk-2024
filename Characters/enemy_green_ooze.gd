@@ -24,7 +24,7 @@ var player_visible:bool=false
 enum{IDLE, RUN, EATEN_LEFT, EATEN_RIGHT}
 var state = IDLE
 var animTree_state_keys = ["idle","run","eaten_left","eaten_right"]
-
+var being_eaten := false
 
 func _ready():
 	GlobalSignals.hero_size.connect(size_changed)
@@ -44,10 +44,20 @@ func _on_detection_timeout_timer_timeout() -> void:
 #draw circle for raycast adjustment (debugging)
 #func _draw():
 #	draw_circle(target.global_position- global_position + Vector2(0,2),5,Color.RED)
+func eaten_by(player : Node2D):
+	being_eaten = true
+	if player.position.x > position.x:
+		state = EATEN_RIGHT
+	else:
+		state = EATEN_LEFT
 
-	
 func _physics_process(_delta):
 	if navigation_agent_2d.is_navigation_finished():
+		return
+		
+	if being_eaten:
+		$Collision.disabled = true
+		animate()
 		return
 		
 	#Move Line of Sight Raycast to look toward player
