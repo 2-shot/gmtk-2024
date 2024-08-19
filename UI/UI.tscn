@@ -31,13 +31,13 @@ grow_horizontal = 0
 layout_mode = 2
 text = "Hunger"
 
-[node name="ProgressBar" type="ProgressBar" parent="Control/HBoxContainer"]
-modulate = Color(0.12549, 1, 0.247059, 1)
+[node name="HungerBar" type="ProgressBar" parent="Control/HBoxContainer"]
+modulate = Color(1, 0.172549, 0.247059, 1)
 custom_minimum_size = Vector2(150, 25)
 layout_mode = 2
 size_flags_vertical = 4
-min_value = 100.0
-max_value = 400.0
+min_value = 95.0
+max_value = 800.0
 value = 100.0
 show_percentage = false
 script = ExtResource("1_0ykeg")

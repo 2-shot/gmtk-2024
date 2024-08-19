@@ -1576,3 +1576,8 @@ position = Vector2(313, 52)
 scale = Vector2(1.5, 1.5)
 slime_size = 400
 target = NodePath("../hero")
+
+[node name="Out of bounds" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Out of bounds"]
+polygon = PackedVector2Array(529, -46, 786, -184, 793, 739, -245, 747, -251, -174, 787, -184, 786, -184, 529, -46, -17, -49, -16, 592, 529, 593)
