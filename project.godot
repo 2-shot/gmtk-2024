@@ -20,6 +20,10 @@ config/icon="res://icon.svg"
 GlobalSignals="*res://Scripts/GlobalSignals.gd"
 GameManager="*res://Scripts/GameManager.gd"
 
+[global_group]
+
+Player=""
+
 [input]
 
 escape={
