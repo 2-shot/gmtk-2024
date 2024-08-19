@@ -55,6 +55,22 @@ theme_override_constants/h_separation = 10
 theme_override_constants/v_separation = 10
 columns = 2
 
+[node name="Test Level" type="Button" parent="Panel/MarginContainer/PanelContainer/VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Test Level"
+script = ExtResource("1_6xlkx")
+scene_path = "res://Levels/TestLevel.tscn"
+
+[node name="Hunger Test Level" type="Button" parent="Panel/MarginContainer/PanelContainer/VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Hunger Test"
+script = ExtResource("1_6xlkx")
+scene_path = "res://Levels/HungerTest.tscn"
+
 [node name="Test Level 1" type="Button" parent="Panel/MarginContainer/PanelContainer/VBoxContainer/GridContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
@@ -75,14 +91,30 @@ scene_path = "res://Levels/Level_02.tscn"
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-text = "Test Level"
+text = "Test Level 3"
 script = ExtResource("1_6xlkx")
-scene_path = "res://Levels/TestLevel.tscn"
+scene_path = "res://Levels/level_03/Level_03.tscn"
 
 [node name="Test Level 4" type="Button" parent="Panel/MarginContainer/PanelContainer/VBoxContainer/GridContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-text = "Hunger Test"
+text = "Test Level 4"
 script = ExtResource("1_6xlkx")
-scene_path = "res://Levels/HungerTest.tscn"
+scene_path = "res://Levels/level_04/Level_04.tscn"
+
+[node name="Test Level 5" type="Button" parent="Panel/MarginContainer/PanelContainer/VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Test Level 5"
+script = ExtResource("1_6xlkx")
+scene_path = "res://Levels/level_05/Level_05.tscn"
+
+[node name="Test Level 6" type="Button" parent="Panel/MarginContainer/PanelContainer/VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Test Level 6"
+script = ExtResource("1_6xlkx")
+scene_path = "res://Levels/level_06/Level_06.tscn"
