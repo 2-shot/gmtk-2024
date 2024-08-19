@@ -79,8 +79,6 @@ func animate() -> void:
 
 func _on_eat_timer_timeout() -> void:
 	eating=false
-	animationTree.set(blend_pos_paths[state],blend_position)
-
 
 func _on_grow_timeout():
 	hero_size += 10

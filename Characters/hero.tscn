@@ -1,7 +1,7 @@
 [gd_scene load_steps=55 format=3 uid="uid://csbw7e8w63gif"]
 
 [ext_resource type="Script" path="res://Characters/hero.gd" id="1_hje2x"]
-[ext_resource type="Texture2D" uid="uid://dh8trbmlroqr1" path="res://Characters/Art/PurpleSlimeAnimations.png" id="2_4t7wk"]
+[ext_resource type="Texture2D" uid="uid://cgfrhm8hxs6pn" path="res://Characters/Art/PurpleSlimeAnimations.png" id="2_4t7wk"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_aeal7"]
 size = Vector2(14, 6.5)
