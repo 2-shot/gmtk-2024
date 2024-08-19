@@ -1,4 +1,4 @@
-[gd_scene load_steps=62 format=4 uid="uid://cusexa1ykedaf"]
+[gd_scene load_steps=61 format=4 uid="uid://cusexa1ykedaf"]
 
 [ext_resource type="Script" path="res://Levels/level_01/level_01.gd" id="1_6x71g"]
 [ext_resource type="Texture2D" uid="uid://dnfflq3qda548" path="res://TileSets/2D Pixel-Dungeon_Tileset.png" id="1_yny1y"]
@@ -13,8 +13,7 @@
 [ext_resource type="PackedScene" path="res://UI/UI.tscn" id="12_gvknc"]
 [ext_resource type="AudioStream" uid="uid://htkcydmx1tfa" path="res://Audio/soundtrack/Burn The World Waltz .mp3" id="13_kw5mq"]
 [ext_resource type="AudioStream" uid="uid://bldv1om1tod3o" path="res://Audio/soundtrack/Metalmania.mp3" id="13_y83ts"]
-[ext_resource type="AudioStream" uid="uid://bahb4ibce667t" path="res://Audio/soundtrack/Noise Attack.mp3" id="14_46txv"]
-[ext_resource type="AudioStream" uid="uid://ca8tcht4ban0m" path="res://Audio/soundtrack/Summon the Rawk.mp3" id="15_rv6rp"]
+[ext_resource type="AudioStream" uid="uid://cxuybaeetxf1w" path="res://Audio/soundtrack/District Four.mp3" id="15_p0ifm"]
 [ext_resource type="PackedScene" uid="uid://c4bb5dcwvv8so" path="res://Objects/Props/Book/Obj_Book_01.tscn" id="17_68np3"]
 [ext_resource type="PackedScene" uid="uid://d286oxenjlily" path="res://Objects/Props/Pencil/Obj_Pencil_01.tscn" id="18_tdhot"]
 
@@ -1501,12 +1500,10 @@ sources/4 = SubResource("TileSetAtlasSource_ke5eq")
 sources/5 = SubResource("TileSetAtlasSource_7a1e8")
 
 [sub_resource type="AudioStreamPlaylist" id="AudioStreamPlaylist_4xpmh"]
-shuffle = true
-stream_count = 4
+stream_count = 3
 stream_0 = ExtResource("13_kw5mq")
-stream_1 = ExtResource("13_y83ts")
-stream_2 = ExtResource("14_46txv")
-stream_3 = ExtResource("15_rv6rp")
+stream_1 = ExtResource("15_p0ifm")
+stream_2 = ExtResource("13_y83ts")
 
 [node name="level1" type="Node2D"]
 y_sort_enabled = true
@@ -1543,6 +1540,7 @@ scale = Vector2(4, 4)
 
 [node name="EnemyGreenOoze" parent="." node_paths=PackedStringArray("target") instance=ExtResource("11_opamk")]
 position = Vector2(270, 161)
+slime_size = 400
 target = NodePath("../hero")
 
 [node name="EnemyGreenOoze2" parent="." node_paths=PackedStringArray("target") instance=ExtResource("11_opamk")]

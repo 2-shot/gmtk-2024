@@ -28,6 +28,7 @@ var state = IDLE
 var animTree_state_keys = ["idle","run","eaten_left","eaten_right"]
 var being_eaten := false
 
+
 func _ready():
 	GlobalSignals.hero_size.connect(size_changed)
 	#await get_tree().create_timer(randi()*3).timeout
@@ -52,6 +53,7 @@ func eaten_by(player : Node2D):
 		state = EATEN_RIGHT
 	else:
 		state = EATEN_LEFT
+
 
 func _physics_process(_delta):
 	if navigation_agent_2d.is_navigation_finished():

@@ -29,7 +29,9 @@ var state = IDLE
 var blend_position : Vector2 =Vector2.ZERO
 var animTree_state_keys = ["idle","run","eat","is_eaten","explode"]
 var eating : bool = false
+var being_eaten : bool = false
 var hero_speed := walk_speed
+
 
 func size_changed(size: int):
 	hero_size = size
@@ -42,9 +44,15 @@ func size_changed(size: int):
 	GlobalSignals.debug.emit("hero scale", "%f, %f" % [scale.x, scale.x])
 
 func _ready():
-	GlobalSignals.hero_size.emit(hero_size)
+	get_tree().create_timer(3).timeout.connect(func (): GlobalSignals.hero_size.emit(hero_size))
+	#GlobalSignals.hero_size.emit(hero_size)
 	
 func _physics_process(_delta):
+	if being_eaten:
+		$Collision.disabled = true
+		animate()
+		return
+		
 	get_input()
 	move_and_slide()
 	animate()
@@ -70,10 +78,6 @@ func get_input():
 		if interact:
 			state=EXPLODE
 			velocity = Vector2.ZERO
-		#if interact2:
-			#state=EAT
-			#eating=true
-			#$EatTimer.start()
 
 	if eating:
 		velocity = input_direction * hero_speed
@@ -82,7 +86,7 @@ func get_input():
 
 func animate() -> void:
 	state_machine.travel(animTree_state_keys[state])
-	if state==IDLE or state==RUN or state==EAT or state==IS_EATEN:
+	if state==IDLE or state==RUN or state==EAT :
 		animationTree.set(blend_pos_paths[state],blend_position)
 
 
@@ -114,6 +118,13 @@ func finished_eating(body : Node2D):
 			hero_speed = walk_speed
 			$EatTimer.disconnect("timeout", finished_func)
 
+func eaten_by(enemy : Node2D):
+	state=IS_EATEN
+	if enemy.position.x > position.x:
+		blend_position=Vector2(1,0)
+	else:
+		blend_position=Vector2(-1,0)
+	get_tree().create_timer(3).timeout.connect(get_tree().reload_current_scene)
 
 func _on_area_2d_body_entered(body : Node2D):
 	print(body)
@@ -124,4 +135,5 @@ func _on_area_2d_body_entered(body : Node2D):
 			prints("Eat me!")
 			start_eating(body)
 		else:
-			print("Prepare to die!")
+			being_eaten = true
+			eaten_by(body)

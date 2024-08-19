@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://dsjdtyli4m3o8"]
+[gd_scene load_steps=9 format=3 uid="uid://dsjdtyli4m3o8"]
 
 [ext_resource type="Theme" uid="uid://bewgrgj1ylev2" path="res://Menus/MenuTheme.tres" id="1_s701w"]
 [ext_resource type="Script" path="res://Menus/level_transition_scene.gd" id="2_hq2x5"]
 [ext_resource type="Script" path="res://Scripts/Nodes/SceneButton.gd" id="2_teyae"]
 [ext_resource type="Texture2D" uid="uid://dlo788ow6ge6f" path="res://Characters/Art/PurpleSlime1.1Twerk.png" id="3_g8eup"]
+[ext_resource type="AudioStream" uid="uid://8glohscomuup" path="res://Audio/soundtrack/Twisted.mp3" id="5_iiyt5"]
 
 [sub_resource type="Animation" id="Animation_p44ei"]
 length = 0.001
@@ -110,5 +111,9 @@ hframes = 6
 libraries = {
 "": SubResource("AnimationLibrary_6wffx")
 }
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_iiyt5")
+autoplay = true
 
 [connection signal="timeout" from="Grow" to="." method="_on_grow_timeout"]
