@@ -28,8 +28,8 @@ var animTree_state_keys = ["idle","run","eaten_left","eaten_right"]
 
 func _ready():
 	GlobalSignals.hero_size.connect(size_changed)
+	#await get_tree().create_timer(randi()*3).timeout
 	get_node("Timer").start()
-
 	
 # pathfinding timer, update pathfinding target
 func _on_timer_timeout() -> void:
