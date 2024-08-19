@@ -49,7 +49,8 @@ func _ready():
 
 func _physics_process(_delta):
 	#print(being_eaten)
-	GlobalSignals.debug.emit("Being Eaten", str(being_eaten), state, $AnimationTree)
+	#GlobalSignals.debug.emit("Being Eaten", str(being_eaten), state, $AnimationTree)
+	GlobalSignals.debug.emit("Being Eaten", str(being_eaten))
 	if being_eaten:
 		#print("Being Eaten!",state, blend_position)
 		$Collision.disabled = true

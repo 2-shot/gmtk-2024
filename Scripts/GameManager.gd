@@ -9,6 +9,8 @@ var is_menu := true
 
 var scene_path : String
 
+var game_state = {}
+
 # ---
 # Pause Menu
 # ---

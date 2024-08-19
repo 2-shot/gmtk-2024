@@ -21,6 +21,7 @@ y_sort_enabled = true
 script = ExtResource("1_6x71g")
 size_target = 800
 level_complete = "res://Menus/Level_Transition_Scene.tscn"
+next_level = "res://Levels/level_02/Level_02.tscn"
 
 [node name="Walls and Ground" type="TileMapLayer" parent="."]
 use_parent_material = true
