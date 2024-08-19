@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=4 uid="uid://dapo50skmtngs"]
+[gd_scene load_steps=21 format=4 uid="uid://dapo50skmtngs"]
 
 [ext_resource type="TileSet" uid="uid://btn2hyppj2rla" path="res://TileSets/TestTileSet.tres" id="1_atfta"]
 [ext_resource type="Script" path="res://Levels/level_06/level_06.gd" id="1_qkjec"]
@@ -14,6 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://b1p77kho11wc" path="res://Objects/Props/Barrels/Obj_Barrel_01.tscn" id="16_rlf2t"]
 [ext_resource type="PackedScene" uid="uid://cotlskxgjlbhs" path="res://Objects/Props/Pillars/Obj_Pillar_01.tscn" id="17_vgvyu"]
 [ext_resource type="PackedScene" uid="uid://ktmgryih1qhp" path="res://Objects/Props/Vents/Obj_Vent_01.tscn" id="18_lnd0p"]
+[ext_resource type="PackedScene" uid="uid://d2glbpj75vbl8" path="res://Characters/EnemyGreenOoze.tscn" id="19_kq05h"]
 [ext_resource type="AudioStream" uid="uid://htkcydmx1tfa" path="res://Audio/soundtrack/Burn The World Waltz .mp3" id="19_wpbmm"]
 [ext_resource type="AudioStream" uid="uid://bldv1om1tod3o" path="res://Audio/soundtrack/Metalmania.mp3" id="20_2yv8h"]
 [ext_resource type="AudioStream" uid="uid://bahb4ibce667t" path="res://Audio/soundtrack/Noise Attack.mp3" id="21_u72dl"]
@@ -30,6 +31,8 @@ stream_3 = ExtResource("22_utdo3")
 [node name="level6" type="Node2D"]
 y_sort_enabled = true
 script = ExtResource("1_qkjec")
+level_complete = "res://Menus/You_Win.tscn"
+next_level = "res://Menus/MainMenu.tscn"
 
 [node name="Walls and Ground" type="TileMapLayer" parent="."]
 use_parent_material = true
@@ -441,3 +444,33 @@ scale = Vector2(0.5, 0.5)
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = SubResource("AudioStreamPlaylist_vfsqf")
 autoplay = true
+
+[node name="EnemyGreenOozeHuge" parent="." node_paths=PackedStringArray("target") instance=ExtResource("19_kq05h")]
+modulate = Color(1, 0.615686, 0.584314, 1)
+position = Vector2(39, 320)
+scale = Vector2(1.5, 1.5)
+slime_size = 400
+target = NodePath("../hero")
+
+[node name="EnemyGreenOoze_small2" parent="." node_paths=PackedStringArray("target") instance=ExtResource("19_kq05h")]
+position = Vector2(24, 90)
+target = NodePath("../hero")
+
+[node name="EnemyGreenOoze_small1" parent="." node_paths=PackedStringArray("target") instance=ExtResource("19_kq05h")]
+position = Vector2(69, 85)
+target = NodePath("../hero")
+
+[node name="EnemyGreenOoze_small3" parent="." node_paths=PackedStringArray("target") instance=ExtResource("19_kq05h")]
+position = Vector2(66, 129)
+target = NodePath("../hero")
+
+[node name="EnemyGreenOoze_small4" parent="." node_paths=PackedStringArray("target") instance=ExtResource("19_kq05h")]
+position = Vector2(35, 133)
+target = NodePath("../hero")
+
+[node name="EnemyGreenOozeHuge2" parent="." node_paths=PackedStringArray("target") instance=ExtResource("19_kq05h")]
+modulate = Color(1, 0.615686, 0.584314, 1)
+position = Vector2(91, 326)
+scale = Vector2(1.5, 1.5)
+slime_size = 400
+target = NodePath("../hero")
