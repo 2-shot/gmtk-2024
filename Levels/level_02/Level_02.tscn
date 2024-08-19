@@ -14,7 +14,7 @@
 [ext_resource type="AudioStream" uid="uid://bahb4ibce667t" path="res://Audio/soundtrack/Noise Attack.mp3" id="16_6o66l"]
 [ext_resource type="AudioStream" uid="uid://ca8tcht4ban0m" path="res://Audio/soundtrack/Summon the Rawk.mp3" id="17_h4iq4"]
 [ext_resource type="PackedScene" uid="uid://d2glbpj75vbl8" path="res://Characters/EnemyGreenOoze.tscn" id="18_bakr2"]
-[ext_resource type="PackedScene" path="res://UI/UI.tscn" id="19_5c338"]
+[ext_resource type="PackedScene" uid="uid://c4f4xoibdq0s3" path="res://UI/UI.tscn" id="19_5c338"]
 
 [sub_resource type="AudioStreamPlaylist" id="AudioStreamPlaylist_fkmgx"]
 shuffle = true
@@ -27,6 +27,8 @@ stream_3 = ExtResource("17_h4iq4")
 [node name="level2" type="Node2D"]
 y_sort_enabled = true
 script = ExtResource("1_4rviw")
+level_complete = "res://Menus/Level_Transition_Scene.tscn"
+next_level = "res://Levels/level_03/Level_03.tscn"
 
 [node name="Walls and Ground" type="TileMapLayer" parent="."]
 use_parent_material = true

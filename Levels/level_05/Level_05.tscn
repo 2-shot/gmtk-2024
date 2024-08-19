@@ -1,6 +1,7 @@
-[gd_scene load_steps=18 format=4 uid="uid://ds48pystsani0"]
+[gd_scene load_steps=19 format=4 uid="uid://ds48pystsani0"]
 
 [ext_resource type="TileSet" uid="uid://btn2hyppj2rla" path="res://TileSets/TestTileSet.tres" id="1_3itpt"]
+[ext_resource type="Script" path="res://Levels/level_05/level_05.gd" id="1_rhhw5"]
 [ext_resource type="PackedScene" uid="uid://csbw7e8w63gif" path="res://Characters/hero.tscn" id="7_5qovs"]
 [ext_resource type="PackedScene" uid="uid://jieygowtle5v" path="res://Objects/Props/Chests/Obj_Chest_01.tscn" id="8_cejmw"]
 [ext_resource type="PackedScene" uid="uid://cpm1xkkqq5ofc" path="res://Objects/Props/Chairs/Obj_Chair_01.tscn" id="9_4m11e"]
@@ -27,6 +28,9 @@ stream_3 = ExtResource("21_66apb")
 
 [node name="level5" type="Node2D"]
 y_sort_enabled = true
+script = ExtResource("1_rhhw5")
+level_complete = "res://Menus/Level_Transition_Scene.tscn"
+next_level = "res://Levels/level_06/Level_05.tscn"
 
 [node name="Walls and Ground" type="TileMapLayer" parent="."]
 use_parent_material = true
