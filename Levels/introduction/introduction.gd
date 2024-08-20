@@ -1,6 +1,6 @@
 extends Control
 
-@onready var next_button := $"MarginContainer/PanelContainer/GridContainer/VBoxContainer/VSplitContainer/Next Level Button"
+#@onready var next_button := $"MarginContainer/PanelContainer/GridContainer/VBoxContainer/VSplitContainer/Next Level Button"
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

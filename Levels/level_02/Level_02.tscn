@@ -77,6 +77,7 @@ scale = Vector2(3, 3)
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("10_66sxs")
 autoplay = true
+bus = &"music"
 
 [node name="EnemyGreenOoze1" parent="." node_paths=PackedStringArray("target") instance=ExtResource("18_bakr2")]
 position = Vector2(252, 362)

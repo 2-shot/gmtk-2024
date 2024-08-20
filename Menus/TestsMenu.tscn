@@ -80,7 +80,7 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 text = "Test Level 1"
 script = ExtResource("1_6xlkx")
-scene_path = "res://Levels/Level_01.tscn"
+scene_path = "res://Levels/level_01/Level_01.tscn"
 
 [node name="Test Level 2" type="Button" parent="Panel/MarginContainer/PanelContainer/VBoxContainer/GridContainer"]
 layout_mode = 2
@@ -88,7 +88,7 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 text = "Test Level 2"
 script = ExtResource("1_6xlkx")
-scene_path = "res://Levels/Level_02.tscn"
+scene_path = "res://Levels/level_02/Level_02.tscn"
 
 [node name="Test Level 3" type="Button" parent="Panel/MarginContainer/PanelContainer/VBoxContainer/GridContainer"]
 layout_mode = 2

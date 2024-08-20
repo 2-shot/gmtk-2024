@@ -1,8 +1,16 @@
-[gd_scene load_steps=2 format=3 uid="uid://b1lngu4oarqur"]
+[gd_scene load_steps=5 format=3 uid="uid://dimrftv2xfu1t"]
 
 [ext_resource type="Script" path="res://Scripts/Nodes/SceneButton.gd" id="1_3l33t"]
+[ext_resource type="Script" path="res://Menus/pause_menu.gd" id="1_gmyn3"]
+[ext_resource type="PackedScene" uid="uid://bdnl0pgy68e2n" path="res://UI/VolumeSlider.tscn" id="1_kebto"]
+[ext_resource type="Theme" uid="uid://bewgrgj1ylev2" path="res://Menus/MenuTheme.tres" id="1_quje6"]
 
-[node name="PauseMenu" type="Control"]
+[node name="CanvasLayer" type="CanvasLayer"]
+process_mode = 3
+script = ExtResource("1_gmyn3")
+
+[node name="PauseMenu" type="Control" parent="."]
+process_mode = 3
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -10,44 +18,84 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-
-[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer"]
+[node name="MarginContainer" type="MarginContainer" parent="PauseMenu"]
+layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_top = -86.0
+offset_bottom = 86.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("1_quje6")
 theme_override_constants/margin_left = 400
 theme_override_constants/margin_top = 200
 theme_override_constants/margin_right = 400
 theme_override_constants/margin_bottom = 200
 
-[node name="PanelContainer" type="PanelContainer" parent="CanvasLayer/MarginContainer"]
+[node name="PanelContainer" type="PanelContainer" parent="PauseMenu/MarginContainer"]
 layout_mode = 2
 
-[node name="GridContainer" type="GridContainer" parent="CanvasLayer/MarginContainer/PanelContainer"]
+[node name="GridContainer" type="GridContainer" parent="PauseMenu/MarginContainer/PanelContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
-size_flags_vertical = 4
+size_flags_vertical = 0
 
-[node name="Label" type="Label" parent="CanvasLayer/MarginContainer/PanelContainer/GridContainer"]
-layout_mode = 2
-theme_type_variation = &"GameTitle"
-text = "GMTK 2024 Game
-"
-horizontal_alignment = 1
-
-[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/MarginContainer/PanelContainer/GridContainer"]
-layout_mode = 2
-
-[node name="VSplitContainer" type="VSplitContainer" parent="CanvasLayer/MarginContainer/PanelContainer/GridContainer/VBoxContainer"]
+[node name="VSplitContainer" type="VSplitContainer" parent="PauseMenu/MarginContainer/PanelContainer/GridContainer"]
 custom_minimum_size = Vector2(300, 0)
 layout_mode = 2
 
-[node name="Main Menu" type="Button" parent="CanvasLayer/MarginContainer/PanelContainer/GridContainer/VBoxContainer/VSplitContainer"]
+[node name="Label" type="Label" parent="PauseMenu/MarginContainer/PanelContainer/GridContainer"]
+layout_mode = 2
+theme_type_variation = &"GameTitle"
+text = "SLIME-AGEDDON"
+horizontal_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PauseMenu/MarginContainer/PanelContainer/GridContainer"]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="Main Menu" type="Button" parent="PauseMenu/MarginContainer/PanelContainer/GridContainer/VBoxContainer"]
 layout_mode = 2
 text = "Main Menu"
 script = ExtResource("1_3l33t")
 scene_path = "res://Menus/MainMenu.tscn"
-to_menu = true
+
+[node name="Restart Level" type="Button" parent="PauseMenu/MarginContainer/PanelContainer/GridContainer/VBoxContainer"]
+layout_mode = 2
+text = "Restart Level"
+
+[node name="Label" type="Label" parent="PauseMenu/MarginContainer/PanelContainer/GridContainer/VBoxContainer"]
+layout_mode = 2
+text = "Master Volume"
+
+[node name="Volume Slider" parent="PauseMenu/MarginContainer/PanelContainer/GridContainer/VBoxContainer" instance=ExtResource("1_kebto")]
+layout_mode = 2
+bus_name = "Master"
+
+[node name="Label2" type="Label" parent="PauseMenu/MarginContainer/PanelContainer/GridContainer/VBoxContainer"]
+layout_mode = 2
+text = "Music Volume"
+
+[node name="Volume Slider2" parent="PauseMenu/MarginContainer/PanelContainer/GridContainer/VBoxContainer" instance=ExtResource("1_kebto")]
+layout_mode = 2
+bus_name = "music"
+
+[node name="Label3" type="Label" parent="PauseMenu/MarginContainer/PanelContainer/GridContainer/VBoxContainer"]
+layout_mode = 2
+text = "Sound Effects Volume"
+
+[node name="Volume Slider3" parent="PauseMenu/MarginContainer/PanelContainer/GridContainer/VBoxContainer" instance=ExtResource("1_kebto")]
+layout_mode = 2
+bus_name = "sfx"
+
+[node name="Resume" type="Button" parent="PauseMenu/MarginContainer/PanelContainer/GridContainer/VBoxContainer"]
+layout_mode = 2
+text = "Resume"
+
+[node name="VSplitContainer2" type="VSplitContainer" parent="PauseMenu/MarginContainer/PanelContainer/GridContainer"]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+
+[connection signal="pressed" from="PauseMenu/MarginContainer/PanelContainer/GridContainer/VBoxContainer/Restart Level" to="." method="_on_restart_level_pressed"]
+[connection signal="pressed" from="PauseMenu/MarginContainer/PanelContainer/GridContainer/VBoxContainer/Resume" to="." method="_on_continue_pressed"]

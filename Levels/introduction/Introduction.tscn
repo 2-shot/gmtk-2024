@@ -134,6 +134,30 @@ tracks/3/keys = {
 "update": 0,
 "values": [Vector2(1, 1)]
 }
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Skip Introduction:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Continue:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
 
 [sub_resource type="Animation" id="Animation_gdvoa"]
 resource_name = "intro_animation"
@@ -187,6 +211,30 @@ tracks/3/keys = {
 "update": 0,
 "values": [Vector2(0.4, 0.4), Vector2(7, 7)]
 }
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Skip Introduction:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0.1, 8.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Continue:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 8.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_6wffx"]
 _data = {
@@ -194,7 +242,9 @@ _data = {
 "intro_animation": SubResource("Animation_gdvoa")
 }
 
-[node name="Control" type="Control"]
+[node name="CanvasLayer" type="CanvasLayer"]
+
+[node name="Control" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -204,87 +254,60 @@ grow_vertical = 2
 theme = ExtResource("1_m07i0")
 script = ExtResource("2_0g6ex")
 
-[node name="MarginContainer" type="MarginContainer" parent="."]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_constants/margin_left = 400
-theme_override_constants/margin_top = 200
-theme_override_constants/margin_right = 400
-theme_override_constants/margin_bottom = 200
-
-[node name="PanelContainer" type="PanelContainer" parent="MarginContainer"]
-layout_mode = 2
-theme = ExtResource("1_m07i0")
-
-[node name="GridContainer" type="GridContainer" parent="MarginContainer/PanelContainer"]
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-
-[node name="Label" type="RichTextLabel" parent="MarginContainer/PanelContainer/GridContainer"]
-layout_mode = 2
-theme_type_variation = &"GameTitle"
-bbcode_enabled = true
-text = "[center] [b][color=Purple][/color][/b]
-"
-fit_content = true
-
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/PanelContainer/GridContainer"]
-layout_mode = 2
-
-[node name="VSplitContainer" type="VSplitContainer" parent="MarginContainer/PanelContainer/GridContainer/VBoxContainer"]
-custom_minimum_size = Vector2(300, 0)
-layout_mode = 2
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Sprite2D" type="Sprite2D" parent="Control"]
 position = Vector2(580, 326)
 texture = ExtResource("4_rrcaf")
 hframes = 9
 frame = 1
 
-[node name="enemy_intro" type="Sprite2D" parent="Sprite2D"]
+[node name="enemy_intro" type="Sprite2D" parent="Control/Sprite2D"]
 position = Vector2(-400, -126)
 scale = Vector2(1.34375, 1.34375)
 texture = ExtResource("4_b22mh")
 hframes = 5
 vframes = 4
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite2D/enemy_intro"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Control/Sprite2D/enemy_intro"]
 libraries = {
 "": SubResource("AnimationLibrary_7nkha")
 }
 
-[node name="hero_intro" type="Sprite2D" parent="Sprite2D"]
+[node name="hero_intro" type="Sprite2D" parent="Control/Sprite2D"]
 position = Vector2(7, 182)
 texture = ExtResource("5_kchjs")
 hframes = 6
 vframes = 12
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite2D/hero_intro"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Control/Sprite2D/hero_intro"]
 libraries = {
 "": SubResource("AnimationLibrary_1lgi3")
 }
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Control"]
 libraries = {
 "": SubResource("AnimationLibrary_6wffx")
 }
 speed_scale = 0.33
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Control"]
 stream = ExtResource("5_woxqo")
 autoplay = true
+bus = &"music"
 
-[node name="Next Level Button" type="Button" parent="."]
-layout_mode = 2
+[node name="Skip Introduction" type="Button" parent="Control"]
 offset_left = 846.0
 offset_top = 569.0
 offset_right = 1093.0
 offset_bottom = 615.0
 text = "Skip Introduction"
+script = ExtResource("3_ymqj0")
+scene_path = "res://Levels/level_01/Level_01.tscn"
+
+[node name="Continue" type="Button" parent="Control"]
+offset_left = 462.0
+offset_top = 565.0
+offset_right = 709.0
+offset_bottom = 611.0
+text = "Continue"
 script = ExtResource("3_ymqj0")
 scene_path = "res://Levels/level_01/Level_01.tscn"

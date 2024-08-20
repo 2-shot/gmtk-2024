@@ -60,6 +60,7 @@ target = NodePath("../hero")
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("10_7pqt0")
 autoplay = true
+bus = &"music"
 
 [node name="EnemyRat" parent="." node_paths=PackedStringArray("target") instance=ExtResource("17_lavig")]
 position = Vector2(383, 74)

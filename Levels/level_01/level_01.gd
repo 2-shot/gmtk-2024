@@ -16,5 +16,5 @@ func check_level_finished(hero_size: int):
 		GameManager.game_state["next_level"] = next_level
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	pass

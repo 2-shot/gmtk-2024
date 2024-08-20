@@ -439,6 +439,7 @@ scale = Vector2(0.5, 0.5)
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = SubResource("AudioStreamPlaylist_vfsqf")
 autoplay = true
+bus = &"music"
 
 [node name="EnemyGreenOozeHuge" parent="." node_paths=PackedStringArray("target") instance=ExtResource("19_kq05h")]
 modulate = Color(1, 0.615686, 0.584314, 1)
