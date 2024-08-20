@@ -5,12 +5,12 @@ extends Control
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	$AnimationPlayer.play("twerk")
-	var next_level = GameManager.game_state["next_level"]
-	var level_number = GameManager.game_state["level_number"]
-	if next_level:
+	if GameManager.game_state.has("next_level"):
+		var next_level = GameManager.game_state["next_level"]
 		next_button.scene_path = next_level
 		GameManager.game_state.erase("next_level")
-	if level_number:
+	if GameManager.game_state.has("level_number"):
+		var level_number = GameManager.game_state["level_number"]
 		completed_label.text = completed_label.text % level_number
 	else:
 		completed_label.text = completed_label.text % ""

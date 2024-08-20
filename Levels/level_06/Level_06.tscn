@@ -445,6 +445,7 @@ slime_size = 50
 target = NodePath("../hero")
 
 [node name="UI" parent="." instance=ExtResource("20_tlnke")]
+hunger_goal = 6000
 
 [node name="EnemyGreenOozeHuge3" parent="." node_paths=PackedStringArray("target") instance=ExtResource("19_kq05h")]
 modulate = Color(1, 0.615686, 0.584314, 1)

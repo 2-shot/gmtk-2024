@@ -12,12 +12,12 @@ var show_debug := false
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	maxLength *= scale.x
+	prints(OS.has_feature("mobile"), show_debug)
 	visible = OS.has_feature("mobile") or show_debug
 	set_process(visible)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-
 	if pressing:
 		if get_global_mouse_position().distance_to(global_position) <= maxLength:
 			knob.global_position = get_global_mouse_position()
