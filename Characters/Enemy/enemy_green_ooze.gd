@@ -6,7 +6,7 @@ extends CharacterBody2D
 
 #slime properties
 @export var movement_speed=40
-@export var runaway_speed=20
+@export var runaway_speed=25
 @export var runs_away: bool= true
 @export var slime_size: int = 100
 
