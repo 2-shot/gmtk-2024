@@ -1,0 +1,94 @@
+[gd_scene load_steps=3 format=3 uid="uid://bcdbwg76iq3dk"]
+
+[ext_resource type="Theme" uid="uid://bewgrgj1ylev2" path="res://Menus/MenuTheme.tres" id="1_r5h2d"]
+[ext_resource type="PackedScene" uid="uid://bdnl0pgy68e2n" path="res://UI/VolumeSlider.tscn" id="2_yehdp"]
+
+[node name="SettingsMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_r5h2d")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="PanelContainer" type="PanelContainer" parent="Panel/MarginContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel/MarginContainer/PanelContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Label" type="Label" parent="Panel/MarginContainer/PanelContainer/VBoxContainer"]
+layout_mode = 2
+theme_type_variation = &"GameTitle"
+text = "Settings"
+horizontal_alignment = 1
+
+[node name="HSeparator" type="HSeparator" parent="Panel/MarginContainer/PanelContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label2" type="Label" parent="Panel/MarginContainer/PanelContainer/VBoxContainer"]
+layout_mode = 2
+theme_type_variation = &"GameTitle"
+theme_override_font_sizes/font_size = 24
+text = "Audio"
+horizontal_alignment = 1
+
+[node name="VSplitContainer" type="VSplitContainer" parent="Panel/MarginContainer/PanelContainer/VBoxContainer"]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+
+[node name="GridContainer" type="GridContainer" parent="Panel/MarginContainer/PanelContainer/VBoxContainer"]
+custom_minimum_size = Vector2(600, 0)
+layout_mode = 2
+size_flags_vertical = 4
+columns = 2
+
+[node name="Label" type="Label" parent="Panel/MarginContainer/PanelContainer/VBoxContainer/GridContainer"]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+text = "Master Volume"
+
+[node name="Volume Slider" parent="Panel/MarginContainer/PanelContainer/VBoxContainer/GridContainer" instance=ExtResource("2_yehdp")]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+bus_name = "Master"
+
+[node name="Label2" type="Label" parent="Panel/MarginContainer/PanelContainer/VBoxContainer/GridContainer"]
+layout_mode = 2
+text = "Music Volume"
+
+[node name="Volume Slider2" parent="Panel/MarginContainer/PanelContainer/VBoxContainer/GridContainer" instance=ExtResource("2_yehdp")]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+bus_name = "music"
+
+[node name="Label3" type="Label" parent="Panel/MarginContainer/PanelContainer/VBoxContainer/GridContainer"]
+layout_mode = 2
+text = "Sound Effects Volume"
+
+[node name="Volume Slider3" parent="Panel/MarginContainer/PanelContainer/VBoxContainer/GridContainer" instance=ExtResource("2_yehdp")]
+layout_mode = 2
+bus_name = "sfx"

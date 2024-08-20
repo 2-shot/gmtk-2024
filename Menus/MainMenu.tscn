@@ -64,6 +64,12 @@ text = "Info"
 script = ExtResource("3_o5i7w")
 scene_path = "res://Menus/Info.tscn"
 
+[node name="Settings" type="Button" parent="Panel/MarginContainer/PanelContainer/GridContainer/VBoxContainer"]
+layout_mode = 2
+text = "Settings"
+script = ExtResource("3_o5i7w")
+scene_path = "res://Menus/SettingsMenu.tscn"
+
 [node name="Tests" type="Button" parent="Panel/MarginContainer/PanelContainer/GridContainer/VBoxContainer"]
 layout_mode = 2
 text = "Tests"
