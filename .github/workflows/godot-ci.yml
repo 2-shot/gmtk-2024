@@ -12,7 +12,7 @@ on:
 
 env:
   GODOT_VERSION: 4.3
-  PROJECT: 1stsoldier/gmtk-2024
+  PROJECT: 1stsoldier/slimeageddon
   TAG: ${{ inputs.deployBranch || github.ref_name }}
   EXPORT_NAME: HTML5
 
