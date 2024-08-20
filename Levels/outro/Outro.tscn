@@ -1,7 +1,7 @@
 [gd_scene load_steps=10 format=3 uid="uid://ct26866ckf6dh"]
 
 [ext_resource type="Theme" uid="uid://bewgrgj1ylev2" path="res://Menus/MenuTheme.tres" id="1_7yeum"]
-[ext_resource type="Script" path="res://Levels/introduction/introduction.gd" id="2_lgix8"]
+[ext_resource type="Script" path="res://Levels/outro/outro.gd" id="2_uy51p"]
 [ext_resource type="Texture2D" uid="uid://mngoyfr7ppsa" path="res://Levels/outro/EndingwithShading.png" id="3_on6kx"]
 [ext_resource type="AudioStream" uid="uid://det15l3mypd0j" path="res://Levels/outro/slimeaggedon-end.mp3" id="5_h1mgj"]
 [ext_resource type="AudioStream" uid="uid://fwky5gmb5iok" path="res://Levels/introduction/apostatas-177057.mp3" id="6_6q2tb"]
@@ -103,7 +103,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_7yeum")
-script = ExtResource("2_lgix8")
+script = ExtResource("2_uy51p")
 
 [node name="Sprite2D" type="Sprite2D" parent="Control"]
 position = Vector2(580, 326)
