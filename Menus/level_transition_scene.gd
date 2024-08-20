@@ -8,6 +8,7 @@ func _ready() -> void:
 	var next_level = GameManager.game_state["next_level"]
 	if next_level:
 		next_button.scene_path = next_level
+		GameManager.game_state.erase("next_level")
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:

@@ -4,7 +4,6 @@ class_name SceneButton
 extends Button
 
 @export_file("*.tscn") var scene_path : String : set = set_scene
-@export var to_menu : bool = false
 
 func set_scene(value : String) -> void:
 	scene_path = value

@@ -4,7 +4,6 @@ const main_menu := "res://Menus/MainMenu.tscn"
 const pause_menu := "res://Menus/PauseMenu.tscn"
 var pause := preload(pause_menu).instantiate()
 
-signal in_menu(value : bool)
 var is_menu := true
 
 var scene_path : String
@@ -14,6 +13,13 @@ var game_state = {}
 # ---
 # Pause Menu
 # ---
+
+func check_menu() -> bool:
+	var children = get_tree().root.get_children()
+	for child in children:
+		if child is Control and child != pause:
+			return true
+	return false
 
 func hide_menu():
 	if pause.is_inside_tree():
@@ -98,14 +104,11 @@ func _ready():
 	process_mode = Node.PROCESS_MODE_ALWAYS
 	GlobalSignals.change_scene.connect(hide_menu)
 	GlobalSignals.request_scene.connect(change_scene)
-	in_menu.connect(func(value): is_menu = value)
 	set_process(false)
 
 func _input(event: InputEvent):
 	if(event.is_action_pressed("escape")):
-		# TODO: check if menu using root
-		#print(get_tree().root.get_child(0))
-		if is_menu:
+		if check_menu():
 			get_tree().change_scene_to_file(main_menu)
 		else:
 			toggle_menu()

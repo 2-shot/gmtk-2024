@@ -100,7 +100,6 @@ layout_mode = 2
 text = "Go to Next Level"
 script = ExtResource("2_teyae")
 scene_path = "res://Levels/level_02/Level_02.tscn"
-to_menu = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(698, 252)
