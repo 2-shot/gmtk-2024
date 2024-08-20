@@ -108,11 +108,11 @@ position = Vector2(352, 264)
 scale = Vector2(0.5, 0.5)
 
 [node name="obj_chair_07" parent="." instance=ExtResource("9_gybfj")]
-position = Vector2(182, 155)
+position = Vector2(184, 157)
 scale = Vector2(0.5, 0.5)
 
 [node name="obj_chair_08" parent="." instance=ExtResource("9_gybfj")]
-position = Vector2(184, 163)
+position = Vector2(183, 163)
 scale = Vector2(0.5, 0.5)
 
 [node name="obj_chair_09" parent="." instance=ExtResource("9_gybfj")]
@@ -120,7 +120,7 @@ position = Vector2(183, 172)
 scale = Vector2(0.5, 0.5)
 
 [node name="obj_chair_10" parent="." instance=ExtResource("9_gybfj")]
-position = Vector2(182, 148)
+position = Vector2(183, 152)
 scale = Vector2(0.5, 0.5)
 
 [node name="obj_chair_11" parent="." instance=ExtResource("9_gybfj")]
@@ -289,14 +289,6 @@ scale = Vector2(0.5, 0.5)
 
 [node name="obj_table_v_08" parent="." instance=ExtResource("13_pkrgu")]
 position = Vector2(384, 448)
-scale = Vector2(0.5, 0.5)
-
-[node name="obj_chair_facing_right_01" parent="." instance=ExtResource("14_imxvx")]
-position = Vector2(144, 144)
-scale = Vector2(0.5, 0.5)
-
-[node name="obj_chair_facing_right_02" parent="." instance=ExtResource("14_imxvx")]
-position = Vector2(144, 152)
 scale = Vector2(0.5, 0.5)
 
 [node name="obj_chair_facing_right_03" parent="." instance=ExtResource("14_imxvx")]

@@ -24,6 +24,7 @@ stream_0 = ExtResource("14_o8tex")
 [node name="level5" type="Node2D"]
 y_sort_enabled = true
 script = ExtResource("1_rhhw5")
+size_target = 2600
 level_complete = "res://Menus/Level_Transition_Scene.tscn"
 next_level = "res://Levels/level_06/Level_06.tscn"
 
@@ -230,7 +231,7 @@ target = NodePath("../hero")
 modulate = Color(0.272385, 0.231333, 0.0928313, 1)
 position = Vector2(323, 155)
 scale = Vector2(3, 3)
-slime_size = 800
+slime_size = 1200
 target = NodePath("../hero")
 
 [node name="EnemyGreenOoze_small2" parent="." node_paths=PackedStringArray("target") instance=ExtResource("18_ibk7t")]

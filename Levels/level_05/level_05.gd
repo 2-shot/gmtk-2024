@@ -1,5 +1,5 @@
 extends Node2D
-@export var size_target: int = 1200
+@export var size_target: int = 2200
 
 @export_file("*.tscn") var level_complete : String
 @export_file("*.tscn") var next_level : String
