@@ -1,8 +1,12 @@
-[gd_scene load_steps=63 format=3 uid="uid://csbw7e8w63gif"]
+[gd_scene load_steps=67 format=3 uid="uid://csbw7e8w63gif"]
 
 [ext_resource type="Script" path="res://Characters/Hero/hero.gd" id="1_hje2x"]
 [ext_resource type="Texture2D" uid="uid://cmwujtvl0uror" path="res://Characters/Art/PurpleSlimeAnimations.png" id="2_4t7wk"]
 [ext_resource type="AudioStream" uid="uid://dq6u73uny278t" path="res://Audio/Sound Effects/slime sounds/eating other slimes sound/521253__maugusto_sfx__eatingsfx.wav" id="3_7axv4"]
+[ext_resource type="AudioStream" uid="uid://de4vsuo67qedj" path="res://Audio/Sound Effects/slime sounds/death sound/167074__drminky__slime-death-1.wav" id="4_xak5m"]
+[ext_resource type="AudioStream" uid="uid://swg1phhbsax1" path="res://Audio/Sound Effects/slime sounds/being eaten by other slimes sound/641145__sussyyousuckidiot__popcorn_eating.wav" id="5_nnmtr"]
+[ext_resource type="AudioStream" uid="uid://bxoiqlb2hwim8" path="res://Audio/Sound Effects/slime sounds/idle sound/671112__silverillusionist__slime-creature-movement-large-and-messy.wav" id="5_r4rcc"]
+[ext_resource type="AudioStream" uid="uid://b4b3bgkwabkso" path="res://Audio/Sound Effects/slime sounds/movement sound/SlimeWalk1_edit.wav" id="6_l1ehw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_aeal7"]
 size = Vector2(14, 7.25)
@@ -217,14 +221,14 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("EatSound:playing")
+tracks/1/path = NodePath("SFXs:volume_db")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
+"update": 0,
+"values": [0.0]
 }
 
 [sub_resource type="Animation" id="Animation_nas2x"]
@@ -238,23 +242,26 @@ tracks/0/path = NodePath("Sprite2D:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.15, 0.4, 0.55, 0.7),
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 1,
 "values": [36, 37, 38, 39, 40]
 }
-tracks/1/type = "value"
+tracks/1/type = "audio"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("EatSound:playing")
+tracks/1/path = NodePath("SFXs")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("3_7axv4")
+}],
+"times": PackedFloat32Array(0)
 }
+tracks/1/use_blend = true
 
 [sub_resource type="Animation" id="Animation_nmql7"]
 resource_name = "eat_right"
@@ -272,18 +279,21 @@ tracks/0/keys = {
 "update": 1,
 "values": [30, 31, 32, 33, 34]
 }
-tracks/1/type = "value"
+tracks/1/type = "audio"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("EatSound:playing")
+tracks/1/path = NodePath("SFXs")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0.05),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("3_7axv4")
+}],
+"times": PackedFloat32Array(0)
 }
+tracks/1/use_blend = true
 
 [sub_resource type="Animation" id="Animation_03ckj"]
 resource_name = "explode"
@@ -301,6 +311,21 @@ tracks/0/keys = {
 "update": 1,
 "values": [42, 43, 44, 45, 46]
 }
+tracks/1/type = "audio"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("SFXs")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"clips": [{
+"end_offset": 0.659274,
+"start_offset": 0.0,
+"stream": ExtResource("4_xak5m")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/1/use_blend = true
 
 [sub_resource type="Animation" id="Animation_peg64"]
 resource_name = "idle"
@@ -319,6 +344,33 @@ tracks/0/keys = {
 "update": 1,
 "values": [18, 19, 20, 21]
 }
+tracks/1/type = "audio"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("SFXs")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"clips": [{
+"end_offset": 25.3,
+"start_offset": 0.05,
+"stream": ExtResource("5_r4rcc")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/1/use_blend = true
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("SFXs:volume_db")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [-20.0]
+}
 
 [sub_resource type="Animation" id="Animation_ldtya"]
 resource_name = "is_eaten_left"
@@ -336,6 +388,21 @@ tracks/0/keys = {
 "update": 1,
 "values": [48, 49, 50, 51, 52, 52]
 }
+tracks/1/type = "audio"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("SFXs")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("5_nnmtr")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/1/use_blend = true
 
 [sub_resource type="Animation" id="Animation_8pmh7"]
 resource_name = "is_eaten_right"
@@ -353,6 +420,21 @@ tracks/0/keys = {
 "update": 1,
 "values": [54, 55, 56, 57, 58, 58]
 }
+tracks/1/type = "audio"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("SFXs")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("5_nnmtr")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/1/use_blend = true
 
 [sub_resource type="Animation" id="Animation_r6xl7"]
 resource_name = "walk_left"
@@ -369,6 +451,33 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 1,
 "values": [0, 1, 2, 3, 4]
+}
+tracks/1/type = "audio"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("SFXs")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"clips": [{
+"end_offset": 1.55927,
+"start_offset": 0.0,
+"stream": ExtResource("6_l1ehw")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/1/use_blend = true
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("SFXs:volume_db")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [-10.0]
 }
 
 [sub_resource type="Animation" id="Animation_3a1nc"]
@@ -387,6 +496,33 @@ tracks/0/keys = {
 "update": 1,
 "values": [24, 25, 26, 27, 28]
 }
+tracks/1/type = "audio"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("SFXs")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"clips": [{
+"end_offset": 1.55927,
+"start_offset": 0.0,
+"stream": ExtResource("6_l1ehw")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/1/use_blend = true
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("SFXs:volume_db")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [-10.0]
+}
 
 [sub_resource type="Animation" id="Animation_l74xr"]
 resource_name = "walk_up"
@@ -403,6 +539,33 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 1,
 "values": [12, 13, 14, 15, 16]
+}
+tracks/1/type = "audio"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("SFXs")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"clips": [{
+"end_offset": 1.55927,
+"start_offset": 0.0,
+"stream": ExtResource("6_l1ehw")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/1/use_blend = true
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("SFXs:volume_db")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [-10.0]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_1chb6"]
@@ -470,12 +633,8 @@ shape = SubResource("CapsuleShape2D_xbgjx")
 
 [node name="Grow" type="Timer" parent="."]
 
-[node name="IdleSound" type="AudioStreamPlayer" parent="."]
-
-[node name="EatSound" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("3_7axv4")
-
-[node name="WalkSound" type="AudioStreamPlayer" parent="."]
+[node name="SFXs" type="AudioStreamPlayer" parent="."]
+bus = &"sfx"
 
 [connection signal="animation_started" from="AnimationTree" to="." method="_on_animation_tree_animation_started"]
 [connection signal="timeout" from="EatTimer" to="." method="_on_eat_timer_timeout"]
