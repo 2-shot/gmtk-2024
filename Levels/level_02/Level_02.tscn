@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=4 uid="uid://bxug41xovxe8p"]
+[gd_scene load_steps=13 format=4 uid="uid://bxug41xovxe8p"]
 
 [ext_resource type="Script" path="res://Levels/level_02/level_02.gd" id="1_4rviw"]
 [ext_resource type="TileSet" uid="uid://btn2hyppj2rla" path="res://TileSets/TestTileSet.tres" id="1_o4wht"]
@@ -6,23 +6,12 @@
 [ext_resource type="PackedScene" uid="uid://b1p77kho11wc" path="res://Objects/Props/Barrels/Obj_Barrel_01.tscn" id="8_2i7lh"]
 [ext_resource type="PackedScene" uid="uid://jieygowtle5v" path="res://Objects/Props/Chests/Obj_Chest_01.tscn" id="8_hv0le"]
 [ext_resource type="PackedScene" uid="uid://cpm1xkkqq5ofc" path="res://Objects/Props/Chairs/Obj_Chair_01.tscn" id="9_pahw8"]
+[ext_resource type="AudioStream" uid="uid://boy3vgdqvyc7n" path="res://Audio/soundtrack/Motherlode.mp3" id="10_66sxs"]
 [ext_resource type="PackedScene" uid="uid://c08pph71i0cy1" path="res://Objects/Props/Tables/Obj_Table_02.tscn" id="11_rccfa"]
 [ext_resource type="PackedScene" uid="uid://l5xprugykcf" path="res://Objects/Props/Chairs/Obj_Chair_Facing_Left_01.tscn" id="12_1ql1x"]
 [ext_resource type="PackedScene" uid="uid://c7wjcyb3i4uc8" path="res://Objects/Props/Crate/Obj_Crate_01.tscn" id="13_tyc8k"]
-[ext_resource type="AudioStream" uid="uid://htkcydmx1tfa" path="res://Audio/soundtrack/Burn The World Waltz .mp3" id="14_u13fj"]
-[ext_resource type="AudioStream" uid="uid://bldv1om1tod3o" path="res://Audio/soundtrack/Metalmania.mp3" id="15_5cp77"]
-[ext_resource type="AudioStream" uid="uid://bahb4ibce667t" path="res://Audio/soundtrack/Noise Attack.mp3" id="16_6o66l"]
-[ext_resource type="AudioStream" uid="uid://ca8tcht4ban0m" path="res://Audio/soundtrack/Summon the Rawk.mp3" id="17_h4iq4"]
 [ext_resource type="PackedScene" uid="uid://d2glbpj75vbl8" path="res://Characters/Enemy/EnemyGreenOoze.tscn" id="18_bakr2"]
 [ext_resource type="PackedScene" uid="uid://c4f4xoibdq0s3" path="res://UI/UI.tscn" id="19_5c338"]
-
-[sub_resource type="AudioStreamPlaylist" id="AudioStreamPlaylist_fkmgx"]
-shuffle = true
-stream_count = 4
-stream_0 = ExtResource("14_u13fj")
-stream_1 = ExtResource("15_5cp77")
-stream_2 = ExtResource("16_6o66l")
-stream_3 = ExtResource("17_h4iq4")
 
 [node name="level2" type="Node2D"]
 y_sort_enabled = true
@@ -86,7 +75,7 @@ position = Vector2(264, 296)
 scale = Vector2(3, 3)
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = SubResource("AudioStreamPlaylist_fkmgx")
+stream = ExtResource("10_66sxs")
 autoplay = true
 
 [node name="EnemyGreenOoze1" parent="." node_paths=PackedStringArray("target") instance=ExtResource("18_bakr2")]
@@ -115,4 +104,3 @@ position = Vector2(0, -2)
 polygon = PackedVector2Array(529, -46, 786, -184, 793, 739, -245, 747, -251, -174, 787, -184, 786, -184, 529, -46, -17, -49, -16, 592, 529, 593)
 
 [node name="UI" parent="." instance=ExtResource("19_5c338")]
-show_debug = false

@@ -4,7 +4,7 @@ extends Control
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	#$AnimationPlayer.play("intro_animation")
+	$AnimationPlayer.play("twerk")
 	var next_level = GameManager.game_state["next_level"]
 	if next_level:
 		next_button.scene_path = next_level

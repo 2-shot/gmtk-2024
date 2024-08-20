@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=4 uid="uid://b0jirm4rc8rx2"]
+[gd_scene load_steps=16 format=4 uid="uid://b0jirm4rc8rx2"]
 
 [ext_resource type="TileSet" uid="uid://btn2hyppj2rla" path="res://TileSets/TestTileSet.tres" id="1_awtyf"]
 [ext_resource type="Script" path="res://Levels/level_04/level_04.gd" id="1_e13qj"]
@@ -8,24 +8,13 @@
 [ext_resource type="PackedScene" uid="uid://l5xprugykcf" path="res://Objects/Props/Chairs/Obj_Chair_Facing_Left_01.tscn" id="10_n1wsc"]
 [ext_resource type="PackedScene" uid="uid://b1p77kho11wc" path="res://Objects/Props/Barrels/Obj_Barrel_01.tscn" id="11_bqk20"]
 [ext_resource type="PackedScene" uid="uid://c7wjcyb3i4uc8" path="res://Objects/Props/Crate/Obj_Crate_01.tscn" id="12_ybxis"]
+[ext_resource type="AudioStream" uid="uid://cr6451ivgo4c5" path="res://Levels/level_04/Drums of the Deep.mp3" id="13_gfgqq"]
 [ext_resource type="PackedScene" uid="uid://c08pph71i0cy1" path="res://Objects/Props/Tables/Obj_Table_02.tscn" id="14_228a6"]
 [ext_resource type="PackedScene" uid="uid://b44rli6rn55jh" path="res://Objects/Props/Chairs/Obj_Chair_Facing_Right_01.tscn" id="14_eawwi"]
 [ext_resource type="PackedScene" uid="uid://dpt226133ba7u" path="res://Objects/Props/Tables/Obj_Table_01.tscn" id="15_5qf7o"]
 [ext_resource type="PackedScene" uid="uid://kslpw64f50r3" path="res://Objects/Props/Bookcases/Obj_Bookcase_01.tscn" id="15_vm4qt"]
-[ext_resource type="AudioStream" uid="uid://htkcydmx1tfa" path="res://Audio/soundtrack/Burn The World Waltz .mp3" id="17_iraqi"]
 [ext_resource type="PackedScene" uid="uid://d2glbpj75vbl8" path="res://Characters/Enemy/EnemyGreenOoze.tscn" id="17_qhrm2"]
-[ext_resource type="AudioStream" uid="uid://bldv1om1tod3o" path="res://Audio/soundtrack/Metalmania.mp3" id="18_drpjf"]
 [ext_resource type="PackedScene" uid="uid://c4f4xoibdq0s3" path="res://UI/UI.tscn" id="18_yh1yi"]
-[ext_resource type="AudioStream" uid="uid://bahb4ibce667t" path="res://Audio/soundtrack/Noise Attack.mp3" id="19_am4tp"]
-[ext_resource type="AudioStream" uid="uid://ca8tcht4ban0m" path="res://Audio/soundtrack/Summon the Rawk.mp3" id="20_vxw6r"]
-
-[sub_resource type="AudioStreamPlaylist" id="AudioStreamPlaylist_wxc4m"]
-shuffle = true
-stream_count = 4
-stream_0 = ExtResource("17_iraqi")
-stream_1 = ExtResource("18_drpjf")
-stream_2 = ExtResource("19_am4tp")
-stream_3 = ExtResource("20_vxw6r")
 
 [node name="level4" type="Node2D"]
 y_sort_enabled = true
@@ -169,7 +158,7 @@ position = Vector2(152, 376)
 scale = Vector2(1.5, 1.5)
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = SubResource("AudioStreamPlaylist_wxc4m")
+stream = ExtResource("13_gfgqq")
 autoplay = true
 
 [node name="EnemyGreenOozeHuge" parent="." node_paths=PackedStringArray("target") instance=ExtResource("17_qhrm2")]

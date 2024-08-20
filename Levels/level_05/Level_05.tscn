@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=4 uid="uid://ds48pystsani0"]
+[gd_scene load_steps=18 format=4 uid="uid://ds48pystsani0"]
 
 [ext_resource type="TileSet" uid="uid://btn2hyppj2rla" path="res://TileSets/TestTileSet.tres" id="1_3itpt"]
 [ext_resource type="Script" path="res://Levels/level_05/level_05.gd" id="1_rhhw5"]
@@ -9,24 +9,18 @@
 [ext_resource type="PackedScene" uid="uid://c7wjcyb3i4uc8" path="res://Objects/Props/Crate/Obj_Crate_01.tscn" id="11_d1xes"]
 [ext_resource type="PackedScene" uid="uid://dpt226133ba7u" path="res://Objects/Props/Tables/Obj_Table_01.tscn" id="13_fdipu"]
 [ext_resource type="PackedScene" uid="uid://b44rli6rn55jh" path="res://Objects/Props/Chairs/Obj_Chair_Facing_Right_01.tscn" id="14_a18ks"]
+[ext_resource type="AudioStream" uid="uid://cfjxg3b36kulr" path="res://Audio/soundtrack/Hot Pursuit.mp3" id="14_o8tex"]
 [ext_resource type="PackedScene" uid="uid://kslpw64f50r3" path="res://Objects/Props/Bookcases/Obj_Bookcase_01.tscn" id="15_eks6g"]
 [ext_resource type="PackedScene" uid="uid://b1p77kho11wc" path="res://Objects/Props/Barrels/Obj_Barrel_01.tscn" id="16_vex0l"]
 [ext_resource type="PackedScene" uid="uid://cotlskxgjlbhs" path="res://Objects/Props/Pillars/Obj_Pillar_01.tscn" id="17_wn66o"]
 [ext_resource type="PackedScene" uid="uid://ktmgryih1qhp" path="res://Objects/Props/Vents/Obj_Vent_01.tscn" id="18_8bm55"]
-[ext_resource type="AudioStream" uid="uid://htkcydmx1tfa" path="res://Audio/soundtrack/Burn The World Waltz .mp3" id="18_digmq"]
 [ext_resource type="PackedScene" uid="uid://d2glbpj75vbl8" path="res://Characters/Enemy/EnemyGreenOoze.tscn" id="18_ibk7t"]
-[ext_resource type="AudioStream" uid="uid://bldv1om1tod3o" path="res://Audio/soundtrack/Metalmania.mp3" id="19_dtlyk"]
 [ext_resource type="PackedScene" uid="uid://c4f4xoibdq0s3" path="res://UI/UI.tscn" id="19_sxjxh"]
-[ext_resource type="AudioStream" uid="uid://bahb4ibce667t" path="res://Audio/soundtrack/Noise Attack.mp3" id="20_jl645"]
-[ext_resource type="AudioStream" uid="uid://ca8tcht4ban0m" path="res://Audio/soundtrack/Summon the Rawk.mp3" id="21_66apb"]
 
 [sub_resource type="AudioStreamPlaylist" id="AudioStreamPlaylist_g43te"]
 shuffle = true
-stream_count = 4
-stream_0 = ExtResource("18_digmq")
-stream_1 = ExtResource("19_dtlyk")
-stream_2 = ExtResource("20_jl645")
-stream_3 = ExtResource("21_66apb")
+stream_count = 1
+stream_0 = ExtResource("14_o8tex")
 
 [node name="level5" type="Node2D"]
 y_sort_enabled = true

@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://b4b3bgkwabkso"
+path="res://.godot/imported/SlimeWalk1_edit.wav-90ab6016c3af98d1d9c773226a2b661a.sample"
+
+[deps]
+
+source_file="res://Audio/Sound Effects/slime sounds/movement sound/SlimeWalk1_edit.wav"
+dest_files=["res://.godot/imported/SlimeWalk1_edit.wav-90ab6016c3af98d1d9c773226a2b661a.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0
