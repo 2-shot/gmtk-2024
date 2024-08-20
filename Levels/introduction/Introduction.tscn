@@ -288,4 +288,3 @@ offset_bottom = 615.0
 text = "Skip Introduction"
 script = ExtResource("3_ymqj0")
 scene_path = "res://Levels/level_01/Level_01.tscn"
-to_menu = true
