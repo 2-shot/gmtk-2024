@@ -1,8 +1,8 @@
 [gd_scene load_steps=5 format=4 uid="uid://cnpra2wmf1r17"]
 
 [ext_resource type="TileSet" uid="uid://btn2hyppj2rla" path="res://TileSets/TestTileSet.tres" id="1_sj5yq"]
-[ext_resource type="PackedScene" uid="uid://csbw7e8w63gif" path="res://Characters/hero.tscn" id="6_dwe6h"]
-[ext_resource type="PackedScene" uid="uid://d2glbpj75vbl8" path="res://Characters/EnemyGreenOoze.tscn" id="7_kirou"]
+[ext_resource type="PackedScene" uid="uid://csbw7e8w63gif" path="res://Characters/Hero/hero.tscn" id="6_dwe6h"]
+[ext_resource type="PackedScene" uid="uid://d2glbpj75vbl8" path="res://Characters/Enemy/EnemyGreenOoze.tscn" id="7_kirou"]
 [ext_resource type="PackedScene" uid="uid://1lplon07ljj5" path="res://Objects/Barrel-Justin/Barrel-Justin.tscn" id="8_a7s5f"]
 
 [node name="testlevel" type="Node2D" groups=["Player"]]

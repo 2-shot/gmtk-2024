@@ -2,7 +2,7 @@
 
 [ext_resource type="TileSet" uid="uid://btn2hyppj2rla" path="res://TileSets/TestTileSet.tres" id="1_3itpt"]
 [ext_resource type="Script" path="res://Levels/level_05/level_05.gd" id="1_rhhw5"]
-[ext_resource type="PackedScene" uid="uid://csbw7e8w63gif" path="res://Characters/hero.tscn" id="7_5qovs"]
+[ext_resource type="PackedScene" uid="uid://csbw7e8w63gif" path="res://Characters/Hero/hero.tscn" id="7_5qovs"]
 [ext_resource type="PackedScene" uid="uid://jieygowtle5v" path="res://Objects/Props/Chests/Obj_Chest_01.tscn" id="8_cejmw"]
 [ext_resource type="PackedScene" uid="uid://cpm1xkkqq5ofc" path="res://Objects/Props/Chairs/Obj_Chair_01.tscn" id="9_4m11e"]
 [ext_resource type="PackedScene" uid="uid://l5xprugykcf" path="res://Objects/Props/Chairs/Obj_Chair_Facing_Left_01.tscn" id="10_agbkx"]
@@ -14,7 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://cotlskxgjlbhs" path="res://Objects/Props/Pillars/Obj_Pillar_01.tscn" id="17_wn66o"]
 [ext_resource type="PackedScene" uid="uid://ktmgryih1qhp" path="res://Objects/Props/Vents/Obj_Vent_01.tscn" id="18_8bm55"]
 [ext_resource type="AudioStream" uid="uid://htkcydmx1tfa" path="res://Audio/soundtrack/Burn The World Waltz .mp3" id="18_digmq"]
-[ext_resource type="PackedScene" uid="uid://d2glbpj75vbl8" path="res://Characters/EnemyGreenOoze.tscn" id="18_ibk7t"]
+[ext_resource type="PackedScene" uid="uid://d2glbpj75vbl8" path="res://Characters/Enemy/EnemyGreenOoze.tscn" id="18_ibk7t"]
 [ext_resource type="AudioStream" uid="uid://bldv1om1tod3o" path="res://Audio/soundtrack/Metalmania.mp3" id="19_dtlyk"]
 [ext_resource type="PackedScene" uid="uid://c4f4xoibdq0s3" path="res://UI/UI.tscn" id="19_sxjxh"]
 [ext_resource type="AudioStream" uid="uid://bahb4ibce667t" path="res://Audio/soundtrack/Noise Attack.mp3" id="20_jl645"]

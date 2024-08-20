@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://dud7xs2xe1aep" path="res://TileSets/PixelCrawlerDungeon-Props.png" id="4_bw8n7"]
 [ext_resource type="Texture2D" uid="uid://dyg6dossu6t7u" path="res://TileSets/PixelCrawlerDungeon-Tiles.png" id="5_cnwtu"]
 [ext_resource type="Texture2D" uid="uid://rldsv3refwao" path="res://TileSets/PixelCrawlerDungeon-Tiles_andrew_edit_v2.png" id="6_5c0ux"]
-[ext_resource type="PackedScene" uid="uid://csbw7e8w63gif" path="res://Characters/hero.tscn" id="7_eibjn"]
+[ext_resource type="PackedScene" uid="uid://csbw7e8w63gif" path="res://Characters/Hero/hero.tscn" id="7_eibjn"]
 [ext_resource type="PackedScene" uid="uid://ytcxvthipdkj" path="res://Objects/Props/Beds/Obj_Bed_01.tscn" id="8_5063m"]
 [ext_resource type="PackedScene" uid="uid://b1p77kho11wc" path="res://Objects/Props/Barrels/Obj_Barrel_01.tscn" id="9_i36jp"]
 [ext_resource type="PackedScene" uid="uid://cpm1xkkqq5ofc" path="res://Objects/Props/Chairs/Obj_Chair_01.tscn" id="10_eybk2"]
