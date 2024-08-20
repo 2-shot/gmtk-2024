@@ -100,7 +100,6 @@ layout_mode = 2
 text = "Return to Main Menu"
 script = ExtResource("3_h078n")
 scene_path = "res://Menus/MainMenu.tscn"
-to_menu = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(698, 252)
@@ -115,5 +114,6 @@ libraries = {
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_crpfh")
 autoplay = true
+bus = &"music"
 
 [connection signal="timeout" from="Grow" to="." method="_on_grow_timeout"]
