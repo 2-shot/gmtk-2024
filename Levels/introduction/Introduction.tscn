@@ -162,7 +162,7 @@ tracks/5/keys = {
 
 [sub_resource type="Animation" id="Animation_gdvoa"]
 resource_name = "intro_animation"
-length = 12.0
+length = 24.0
 step = 0.1
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -171,7 +171,7 @@ tracks/0/path = NodePath("Sprite2D:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.25, 1.25, 3, 5.25, 7, 8.5, 11),
+"times": PackedFloat32Array(0, 0.25, 1.2, 6.8, 10.35, 13.2, 16.2, 18.4),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
 "update": 1,
 "values": [0, 1, 3, 5, 6, 7, 8, 8]
@@ -183,10 +183,10 @@ tracks/1/path = NodePath("Sprite2D/enemy_intro:show_behind_parent")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 5.8),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0, 8.5, 10.7),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [true, false]
+"values": [true, true, false]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -195,7 +195,7 @@ tracks/2/path = NodePath("Sprite2D/hero_intro:show_behind_parent")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0, 7.2),
+"times": PackedFloat32Array(0, 12.2),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [true, false]
@@ -207,7 +207,7 @@ tracks/3/path = NodePath("Sprite2D/hero_intro:scale")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(7.2, 11.7),
+"times": PackedFloat32Array(14.6, 19.3),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Vector2(0.4, 0.4), Vector2(7, 7)]
@@ -219,7 +219,7 @@ tracks/4/path = NodePath("Skip Introduction:visible")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
-"times": PackedFloat32Array(0.1, 8.5),
+"times": PackedFloat32Array(0.1, 17),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [true, false]
@@ -231,7 +231,7 @@ tracks/5/path = NodePath("Continue:visible")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
-"times": PackedFloat32Array(0, 8.5),
+"times": PackedFloat32Array(0, 17.1),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [false, true]
