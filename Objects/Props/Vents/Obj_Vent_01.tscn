@@ -10,6 +10,7 @@ size = Vector2(32, 32)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 y_sort_enabled = true
 shape = SubResource("RectangleShape2D_1x5br")
+disabled = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_ay78x")
