@@ -164,6 +164,7 @@ autoplay = true
 bus = &"music"
 
 [node name="UI" parent="." instance=ExtResource("18_yh1yi")]
+hunger_goal = 2900
 
 [node name="EnemyGreenOozeHuge" parent="." node_paths=PackedStringArray("target") instance=ExtResource("17_qhrm2")]
 modulate = Color(1, 0.615686, 0.584314, 1)

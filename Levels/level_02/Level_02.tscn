@@ -9,7 +9,7 @@
 [ext_resource type="AudioStream" uid="uid://boy3vgdqvyc7n" path="res://Audio/soundtrack/Motherlode.mp3" id="10_66sxs"]
 [ext_resource type="PackedScene" uid="uid://c08pph71i0cy1" path="res://Objects/Props/Tables/Obj_Table_02.tscn" id="11_rccfa"]
 [ext_resource type="PackedScene" uid="uid://l5xprugykcf" path="res://Objects/Props/Chairs/Obj_Chair_Facing_Left_01.tscn" id="12_1ql1x"]
-[ext_resource type="PackedScene" path="res://Characters/Rat/EnemyRat.tscn" id="13_6t26n"]
+[ext_resource type="PackedScene" uid="uid://bgogck1k1rl0i" path="res://Characters/Rat/EnemyRat.tscn" id="13_6t26n"]
 [ext_resource type="PackedScene" uid="uid://c7wjcyb3i4uc8" path="res://Objects/Props/Crate/Obj_Crate_01.tscn" id="13_tyc8k"]
 [ext_resource type="PackedScene" uid="uid://d2glbpj75vbl8" path="res://Characters/Enemy/EnemyGreenOoze.tscn" id="18_bakr2"]
 [ext_resource type="PackedScene" uid="uid://c4f4xoibdq0s3" path="res://UI/UI.tscn" id="19_5c338"]
@@ -107,6 +107,7 @@ position = Vector2(0, -2)
 polygon = PackedVector2Array(529, -46, 786, -184, 793, 739, -245, 747, -251, -174, 787, -184, 786, -184, 529, -46, -17, -49, -16, 592, 529, 593)
 
 [node name="UI" parent="." instance=ExtResource("19_5c338")]
+hunger_goal = 1100
 
 [node name="EnemyGreenOozeLarge2" parent="." node_paths=PackedStringArray("target") instance=ExtResource("18_bakr2")]
 modulate = Color(1, 0.615686, 0.584314, 1)

@@ -11,7 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://c7wjcyb3i4uc8" path="res://Objects/Props/Crate/Obj_Crate_01.tscn" id="13_eelta"]
 [ext_resource type="PackedScene" uid="uid://ytcxvthipdkj" path="res://Objects/Props/Beds/Obj_Bed_01.tscn" id="13_xtnpy"]
 [ext_resource type="PackedScene" uid="uid://d2glbpj75vbl8" path="res://Characters/Enemy/EnemyGreenOoze.tscn" id="14_nvsyv"]
-[ext_resource type="PackedScene" path="res://Characters/Rat/EnemyRat.tscn" id="15_h3epo"]
+[ext_resource type="PackedScene" uid="uid://bgogck1k1rl0i" path="res://Characters/Rat/EnemyRat.tscn" id="15_h3epo"]
 [ext_resource type="PackedScene" uid="uid://dpt226133ba7u" path="res://Objects/Props/Tables/Obj_Table_01.tscn" id="15_qdx4y"]
 [ext_resource type="PackedScene" uid="uid://c4f4xoibdq0s3" path="res://UI/UI.tscn" id="17_55hg4"]
 
@@ -122,6 +122,7 @@ slime_size = 50
 target = NodePath(".")
 
 [node name="UI" parent="." instance=ExtResource("17_55hg4")]
+hunger_goal = 2000
 
 [node name="EnemyGreenOozeXLarge" parent="." node_paths=PackedStringArray("target") instance=ExtResource("14_nvsyv")]
 modulate = Color(0.999987, 0.372258, 0.35613, 1)

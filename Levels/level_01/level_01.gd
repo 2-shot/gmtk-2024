@@ -14,6 +14,7 @@ func check_level_finished(hero_size: int):
 		print("YOU'RE WINNER")
 		get_tree().create_timer(1).timeout.connect(func(): GlobalSignals.request_scene.emit(level_complete))
 		GameManager.game_state["next_level"] = next_level
+		GameManager.game_state["level_number"] = level_number
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
