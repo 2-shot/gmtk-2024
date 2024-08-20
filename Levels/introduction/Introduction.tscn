@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://torsc35oycm7"]
+[gd_scene load_steps=18 format=3 uid="uid://torsc35oycm7"]
 
 [ext_resource type="Theme" uid="uid://bewgrgj1ylev2" path="res://Menus/MenuTheme.tres" id="1_m07i0"]
 [ext_resource type="Script" path="res://Levels/introduction/introduction.gd" id="2_0g6ex"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://ciu2ehe705ykj" path="res://Levels/introduction/Introduction.png" id="4_rrcaf"]
 [ext_resource type="Texture2D" uid="uid://cmwujtvl0uror" path="res://Characters/Art/PurpleSlimeAnimations.png" id="5_kchjs"]
 [ext_resource type="AudioStream" uid="uid://fwky5gmb5iok" path="res://Levels/introduction/apostatas-177057.mp3" id="5_woxqo"]
+[ext_resource type="AudioStream" uid="uid://dkjfo8lmb7a0o" path="res://Levels/introduction/slimeaggedon-intro.mp3" id="7_goeg0"]
 
 [sub_resource type="Animation" id="Animation_8msc3"]
 length = 0.001
@@ -287,14 +288,19 @@ libraries = {
 libraries = {
 "": SubResource("AnimationLibrary_6wffx")
 }
-speed_scale = 0.33
+speed_scale = 0.25
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Control"]
 stream = ExtResource("5_woxqo")
 autoplay = true
 bus = &"music"
 
+[node name="GregReading" type="AudioStreamPlayer" parent="Control"]
+stream = ExtResource("7_goeg0")
+autoplay = true
+
 [node name="Skip Introduction" type="Button" parent="Control"]
+layout_mode = 0
 offset_left = 846.0
 offset_top = 569.0
 offset_right = 1093.0
@@ -304,6 +310,7 @@ script = ExtResource("3_ymqj0")
 scene_path = "res://Levels/level_01/Level_01.tscn"
 
 [node name="Continue" type="Button" parent="Control"]
+layout_mode = 0
 offset_left = 462.0
 offset_top = 565.0
 offset_right = 709.0

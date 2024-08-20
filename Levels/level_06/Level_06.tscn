@@ -25,7 +25,7 @@ stream_0 = ExtResource("15_hl0ie")
 [node name="level6" type="Node2D"]
 y_sort_enabled = true
 script = ExtResource("1_qkjec")
-level_complete = "res://Menus/You_Win.tscn"
+level_complete = "res://Levels/outro/Outro.tscn"
 next_level = "res://Menus/MainMenu.tscn"
 
 [node name="Walls and Ground" type="TileMapLayer" parent="."]

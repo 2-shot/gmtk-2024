@@ -4,9 +4,7 @@ extends Control
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	$AnimationPlayer.play("intro_animation")
-	$Sprite2D/enemy_intro/AnimationPlayer.play("idle")
-	$Sprite2D/hero_intro/AnimationPlayer.play("idle")
+	$AnimationPlayer.play("outro_animation")
 	#var next_level = GameManager.game_state["next_level"]
 	#if next_level:
 		#next_button.scene_path = next_level

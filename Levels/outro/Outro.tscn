@@ -1,0 +1,147 @@
+[gd_scene load_steps=10 format=3 uid="uid://ct26866ckf6dh"]
+
+[ext_resource type="Theme" uid="uid://bewgrgj1ylev2" path="res://Menus/MenuTheme.tres" id="1_7yeum"]
+[ext_resource type="Script" path="res://Levels/introduction/introduction.gd" id="2_lgix8"]
+[ext_resource type="Texture2D" uid="uid://mngoyfr7ppsa" path="res://Levels/outro/EndingwithShading.png" id="3_on6kx"]
+[ext_resource type="AudioStream" uid="uid://det15l3mypd0j" path="res://Levels/outro/slimeaggedon-end.mp3" id="5_h1mgj"]
+[ext_resource type="AudioStream" uid="uid://fwky5gmb5iok" path="res://Levels/introduction/apostatas-177057.mp3" id="6_6q2tb"]
+[ext_resource type="Script" path="res://Scripts/Nodes/SceneButton.gd" id="8_b7c12"]
+
+[sub_resource type="Animation" id="Animation_p44ei"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Skip Introduction:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Continue:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_gdvoa"]
+resource_name = "outro_animation"
+length = 10.0
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.7, 5, 7, 8.5, 11),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 3, 5, 7, 8, 8]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Skip Introduction:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.1, 7.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Continue:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 7.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_6wffx"]
+_data = {
+"RESET": SubResource("Animation_p44ei"),
+"outro_animation": SubResource("Animation_gdvoa")
+}
+
+[node name="CanvasLayer" type="CanvasLayer"]
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_7yeum")
+script = ExtResource("2_lgix8")
+
+[node name="Sprite2D" type="Sprite2D" parent="Control"]
+position = Vector2(580, 326)
+texture = ExtResource("3_on6kx")
+hframes = 6
+frame = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Control"]
+libraries = {
+"": SubResource("AnimationLibrary_6wffx")
+}
+speed_scale = 0.25
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Control"]
+stream = ExtResource("6_6q2tb")
+autoplay = true
+bus = &"music"
+
+[node name="GregReading" type="AudioStreamPlayer" parent="Control"]
+stream = ExtResource("5_h1mgj")
+autoplay = true
+
+[node name="Skip Introduction" type="Button" parent="Control"]
+layout_mode = 0
+offset_left = 846.0
+offset_top = 569.0
+offset_right = 1093.0
+offset_bottom = 615.0
+text = "Skip"
+script = ExtResource("8_b7c12")
+scene_path = "res://Menus/MainMenu.tscn"
+
+[node name="Continue" type="Button" parent="Control"]
+layout_mode = 0
+offset_left = 462.0
+offset_top = 565.0
+offset_right = 709.0
+offset_bottom = 611.0
+text = "Continue"
+script = ExtResource("8_b7c12")
+scene_path = "res://Menus/MainMenu.tscn"
