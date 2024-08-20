@@ -1,0 +1,49 @@
+[gd_scene load_steps=6 format=3 uid="uid://crd0d1dxajbfi"]
+
+[ext_resource type="Script" path="res://UI/joystick.gd" id="1_0lls8"]
+
+[sub_resource type="Gradient" id="Gradient_l1esd"]
+offsets = PackedFloat32Array(0.543544, 0.54955)
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_beaca"]
+gradient = SubResource("Gradient_l1esd")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+
+[sub_resource type="Gradient" id="Gradient_04c1n"]
+offsets = PackedFloat32Array(0.552553, 0.555556, 0.606607, 0.612613)
+colors = PackedColorArray(0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_6y6lu"]
+gradient = SubResource("Gradient_04c1n")
+width = 256
+height = 256
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+
+[node name="Joystick" type="Node2D"]
+script = ExtResource("1_0lls8")
+
+[node name="Knob" type="Sprite2D" parent="."]
+texture = SubResource("GradientTexture2D_beaca")
+
+[node name="Ring" type="Sprite2D" parent="."]
+texture = SubResource("GradientTexture2D_6y6lu")
+
+[node name="Button" type="Button" parent="."]
+modulate = Color(1, 1, 1, 0)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -128.0
+offset_top = -128.0
+offset_right = 128.0
+offset_bottom = 128.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[connection signal="button_down" from="Button" to="." method="_on_button_button_down"]
+[connection signal="button_up" from="Button" to="." method="_on_button_button_up"]

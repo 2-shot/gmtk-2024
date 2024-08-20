@@ -63,6 +63,8 @@ func get_input():
 	#var run := Input.is_action_pressed("run")
 	#var attack := Input.is_action_pressed("attack")
 	var input_direction := Input.get_vector("left", "right", "up", "down")
+	if GameManager.game_state.has("joystick"):
+		input_direction = GameManager.game_state["joystick"]
 	var rest = input_direction == Vector2.ZERO
 	var interact := Input.is_action_pressed("interact")
 	var interact2 := Input.is_action_pressed("interact2")
