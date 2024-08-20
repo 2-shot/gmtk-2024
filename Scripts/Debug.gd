@@ -15,3 +15,7 @@ func _ready():
 
 func _process(_delta):
 	visible = show_debug
+
+func _input(event):
+	if event.is_action_pressed("terminal"):
+		show_debug = not show_debug;

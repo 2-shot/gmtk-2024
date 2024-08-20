@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=4 uid="uid://dapo50skmtngs"]
+[gd_scene load_steps=22 format=4 uid="uid://dapo50skmtngs"]
 
 [ext_resource type="TileSet" uid="uid://btn2hyppj2rla" path="res://TileSets/TestTileSet.tres" id="1_atfta"]
 [ext_resource type="Script" path="res://Levels/level_06/level_06.gd" id="1_qkjec"]
@@ -17,6 +17,7 @@
 [ext_resource type="PackedScene" uid="uid://d2glbpj75vbl8" path="res://Characters/EnemyGreenOoze.tscn" id="19_kq05h"]
 [ext_resource type="AudioStream" uid="uid://htkcydmx1tfa" path="res://Audio/soundtrack/Burn The World Waltz .mp3" id="19_wpbmm"]
 [ext_resource type="AudioStream" uid="uid://bldv1om1tod3o" path="res://Audio/soundtrack/Metalmania.mp3" id="20_2yv8h"]
+[ext_resource type="PackedScene" uid="uid://c4f4xoibdq0s3" path="res://UI/UI.tscn" id="20_tlnke"]
 [ext_resource type="AudioStream" uid="uid://bahb4ibce667t" path="res://Audio/soundtrack/Noise Attack.mp3" id="21_u72dl"]
 [ext_resource type="AudioStream" uid="uid://ca8tcht4ban0m" path="res://Audio/soundtrack/Summon the Rawk.mp3" id="22_utdo3"]
 
@@ -474,3 +475,5 @@ position = Vector2(91, 326)
 scale = Vector2(1.5, 1.5)
 slime_size = 400
 target = NodePath("../hero")
+
+[node name="UI" parent="." instance=ExtResource("20_tlnke")]

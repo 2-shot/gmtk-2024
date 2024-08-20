@@ -60,7 +60,6 @@ slime_size = 400
 target = NodePath("../hero")
 
 [node name="UI" parent="." instance=ExtResource("12_gvknc")]
-show_debug = false
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = SubResource("AudioStreamPlaylist_4xpmh")
