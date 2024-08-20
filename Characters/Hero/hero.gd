@@ -9,7 +9,7 @@ var is_player_dead: bool = false
 var finished_func
 
 @export var walk_speed := 100
-@export var eat_speed := 50
+@export var eat_speed := 35
 #@export var run_speed := 200
 @export var hero_size : int = 100 : set = size_changed
 #animations

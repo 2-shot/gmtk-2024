@@ -198,7 +198,7 @@ states/is_eaten/position = Vector2(892, 157)
 states/run/node = SubResource("AnimationNodeBlendTree_2au3g")
 states/run/position = Vector2(288, 294)
 transitions = ["Start", "idle", SubResource("AnimationNodeStateMachineTransition_245k0"), "run", "idle", SubResource("AnimationNodeStateMachineTransition_2oafw"), "idle", "run", SubResource("AnimationNodeStateMachineTransition_g3rlk"), "idle", "is_eaten", SubResource("AnimationNodeStateMachineTransition_ff7ee"), "run", "is_eaten", SubResource("AnimationNodeStateMachineTransition_cm32n"), "run", "eat", SubResource("AnimationNodeStateMachineTransition_0xh6o"), "eat", "run", SubResource("AnimationNodeStateMachineTransition_6chm5"), "eat", "is_eaten", SubResource("AnimationNodeStateMachineTransition_by4ho"), "idle", "eat", SubResource("AnimationNodeStateMachineTransition_vkbdi"), "eat", "idle", SubResource("AnimationNodeStateMachineTransition_fmfma"), "idle", "explode", SubResource("AnimationNodeStateMachineTransition_istgt"), "run", "explode", SubResource("AnimationNodeStateMachineTransition_k0ysl"), "is_eaten", "End", SubResource("AnimationNodeStateMachineTransition_rgvrn"), "explode", "End", SubResource("AnimationNodeStateMachineTransition_cmh38")]
-graph_offset = Vector2(83, 91)
+graph_offset = Vector2(78, 269)
 
 [sub_resource type="Animation" id="Animation_ert0c"]
 length = 0.001
@@ -229,7 +229,7 @@ tracks/1/keys = {
 
 [sub_resource type="Animation" id="Animation_nas2x"]
 resource_name = "eat_left"
-length = 0.8
+length = 1.2
 step = 0.05
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -258,6 +258,7 @@ tracks/1/keys = {
 
 [sub_resource type="Animation" id="Animation_nmql7"]
 resource_name = "eat_right"
+length = 1.2
 step = 0.05
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -455,7 +456,7 @@ libraries = {
 }
 
 [node name="EatTimer" type="Timer" parent="."]
-wait_time = 0.5
+wait_time = 0.7
 one_shot = true
 
 [node name="Area2D" type="Area2D" parent="."]

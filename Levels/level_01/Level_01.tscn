@@ -9,7 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://d2glbpj75vbl8" path="res://Characters/Enemy/EnemyGreenOoze.tscn" id="11_opamk"]
 [ext_resource type="PackedScene" uid="uid://c4f4xoibdq0s3" path="res://UI/UI.tscn" id="12_gvknc"]
 [ext_resource type="PackedScene" uid="uid://c4bb5dcwvv8so" path="res://Objects/Props/Book/Obj_Book_01.tscn" id="17_68np3"]
-[ext_resource type="PackedScene" uid="uid://bgogck1k1rl0i" path="res://Characters/Rat/EnemyRat.tscn" id="17_lavig"]
+[ext_resource type="PackedScene" path="res://Characters/Rat/EnemyRat.tscn" id="17_lavig"]
 [ext_resource type="PackedScene" uid="uid://d286oxenjlily" path="res://Objects/Props/Pencil/Obj_Pencil_01.tscn" id="18_tdhot"]
 
 [node name="level1" type="Node2D"]
@@ -50,7 +50,7 @@ position = Vector2(320, 352)
 scale = Vector2(4, 4)
 
 [node name="EnemyGreenOoze3" parent="." node_paths=PackedStringArray("target") instance=ExtResource("11_opamk")]
-position = Vector2(438, 531)
+position = Vector2(297, 271)
 scale = Vector2(1.5, 1.5)
 slime_size = 400
 target = NodePath("../hero")
@@ -63,15 +63,18 @@ autoplay = true
 bus = &"music"
 
 [node name="EnemyRat" parent="." node_paths=PackedStringArray("target") instance=ExtResource("17_lavig")]
-position = Vector2(383, 74)
+position = Vector2(262, 146)
+scale = Vector2(0.9, 0.9)
 target = NodePath("../hero")
 
 [node name="EnemyRat2" parent="." node_paths=PackedStringArray("target") instance=ExtResource("17_lavig")]
-position = Vector2(58, 404)
+position = Vector2(181, 327)
+scale = Vector2(0.9, 0.9)
 target = NodePath("../hero")
 
 [node name="EnemyRat3" parent="." node_paths=PackedStringArray("target") instance=ExtResource("17_lavig")]
-position = Vector2(275, 209)
+position = Vector2(376, 160)
+scale = Vector2(0.9, 0.9)
 target = NodePath("../hero")
 
 [node name="Out of bounds" type="StaticBody2D" parent="."]
