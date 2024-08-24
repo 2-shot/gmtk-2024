@@ -9,6 +9,7 @@ extends CanvasLayer
 @onready var debug = $Control/Debug
 @onready var window : Window = get_window()
 @onready var viewport : Viewport = get_viewport()
+@onready var pause_button = $Control/HBoxContainer/PauseButton
 
 var is_mobile : bool = false
 
@@ -25,7 +26,7 @@ func _ready():
 		is_mobile = true
 
 	joystick.visible = is_mobile
-	# TODO show settings icon for mobile
+	pause_button.visible = is_mobile
 
 	if get_tree().root.content_scale_mode == Window.CONTENT_SCALE_MODE_DISABLED:
 		resize()
@@ -35,6 +36,7 @@ func _input(event):
 	if event.is_action_pressed("terminal"):
 		debug.visible = not debug.visible
 		joystick.visible = debug.visible
+		pause_button.visible = debug.visible
 
 	if event is InputEventScreenTouch:
 		joystick.visible = true
