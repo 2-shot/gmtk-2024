@@ -43,7 +43,7 @@ show_percentage = false
 script = ExtResource("1_0ykeg")
 metadata/_edit_use_anchors_ = true
 
-[node name="Label" type="Label" parent="Control"]
+[node name="Debug" type="Label" parent="Control"]
 layout_mode = 0
 offset_left = 739.0
 offset_top = 62.0
@@ -55,4 +55,4 @@ script = ExtResource("2_i4ly0")
 metadata/_edit_use_anchors_ = true
 
 [node name="Joystick" parent="." instance=ExtResource("4_cyln3")]
-position = Vector2(114, 532)
+position = Vector2(1034, 525)

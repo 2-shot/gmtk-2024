@@ -80,9 +80,9 @@ scene_path = "res://Menus/TestsMenu.tscn"
 layout_mode = 2
 text = "Quit"
 
-[node name="Gmtk2024-logo" type="Sprite2D" parent="Panel"]
+[node name="Gmtk2024-logo" type="Sprite2D" parent="."]
 position = Vector2(1016.4, 567.125)
-scale = Vector2(0.127493, 0.127493)
+scale = Vector2(0.125, 0.125)
 texture = ExtResource("4_xf6fx")
 
 [connection signal="pressed" from="Panel/MarginContainer/PanelContainer/GridContainer/VBoxContainer/Quit" to="." method="_on_quit_pressed"]

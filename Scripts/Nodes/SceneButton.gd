@@ -28,7 +28,6 @@ func _get_configuration_warnings() -> PackedStringArray:
 	return []
 
 func load_scene() -> void:
-	prints("Changing scene to", scene_path)
 	GlobalSignals.request_scene.emit(scene_path)
 
 func _ready():

@@ -4,17 +4,18 @@ extends Node2D
 
 var pressing := false
 var posVector : Vector2
-var show_debug := false
 
 @export var maxLength = 64
 @export var deadzone = 5
 
+func toggle_joystick():
+	GameManager.game_state.erase("joystick")
+	set_process(visible)
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	maxLength *= scale.x
-	prints(OS.has_feature("mobile"), show_debug)
-	visible = OS.has_feature("mobile") or show_debug
-	set_process(visible)
+	visibility_changed.connect(toggle_joystick)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -42,14 +43,3 @@ func _on_button_button_down():
 
 func _on_button_button_up():
 	pressing = false
-
-
-func _input(event):
-	if event.is_action_pressed("terminal"):
-		show_debug = not show_debug;
-		if show_debug:
-			visible = true
-			set_process(true)
-		else:
-			posVector = Vector2.ZERO
-			GameManager.game_state.erase("joystick")

@@ -4,10 +4,7 @@ const main_menu := "res://Menus/MainMenu.tscn"
 const pause_menu := "res://Menus/PauseMenu.tscn"
 var pause := preload(pause_menu).instantiate()
 
-var is_menu := true
-
 var scene_path : String
-
 var game_state = {}
 
 # ---
