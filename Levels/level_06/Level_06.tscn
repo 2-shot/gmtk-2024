@@ -1,7 +1,7 @@
 [gd_scene load_steps=18 format=4 uid="uid://dapo50skmtngs"]
 
+[ext_resource type="Script" path="res://Levels/basic_level.gd" id="1_64dcw"]
 [ext_resource type="TileSet" uid="uid://btn2hyppj2rla" path="res://TileSets/TestTileSet.tres" id="1_atfta"]
-[ext_resource type="Script" path="res://Levels/level_06/level_06.gd" id="1_qkjec"]
 [ext_resource type="PackedScene" uid="uid://csbw7e8w63gif" path="res://Characters/Hero/hero.tscn" id="7_f8ujk"]
 [ext_resource type="PackedScene" uid="uid://jieygowtle5v" path="res://Objects/Props/Chests/Obj_Chest_01.tscn" id="8_fmn3b"]
 [ext_resource type="PackedScene" uid="uid://cpm1xkkqq5ofc" path="res://Objects/Props/Chairs/Obj_Chair_01.tscn" id="9_gybfj"]
@@ -24,7 +24,9 @@ stream_0 = ExtResource("15_hl0ie")
 
 [node name="level6" type="Node2D"]
 y_sort_enabled = true
-script = ExtResource("1_qkjec")
+script = ExtResource("1_64dcw")
+size_target = 6000
+level_number = 6
 level_complete = "res://Levels/outro/Outro.tscn"
 next_level = "res://Menus/MainMenu.tscn"
 
