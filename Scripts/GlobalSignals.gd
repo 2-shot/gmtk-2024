@@ -1,15 +1,16 @@
 extends Node
 
 signal hero_size(size : int)
-signal change_scene
+signal scene_changed
 signal debug(key : String, value)
 signal request_scene(scene: String)
 
-func debug_signal(arg1 = null, arg2 = null):
-	pass
+func debug_scene_changed():
+	prints("scene_changed")
+
+func debug_request_scene(scene = null):
+	prints("request_scene", scene)
 
 func _ready():
-	hero_size.connect(debug_signal)
-	change_scene.connect(debug_signal)
-	debug.connect(debug_signal)
-	request_scene.connect(debug_signal)
+	scene_changed.connect(debug_scene_changed)
+	request_scene.connect(debug_request_scene)

@@ -31,9 +31,4 @@ func load_scene() -> void:
 	GlobalSignals.request_scene.emit(scene_path)
 
 func _ready():
-	update_configuration_warnings()
-	var scene_status = check_scene_path()
-	disabled = not scene_status.is_empty()
-	if not disabled:
-		pressed.connect(load_scene)
-	set_process(false)
+	pressed.connect(load_scene)

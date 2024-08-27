@@ -35,9 +35,10 @@ func _ready():
 func _input(event):
 	if event.is_action_pressed("terminal"):
 		debug.visible = not debug.visible
-		joystick.visible = debug.visible
-		pause_button.visible = debug.visible
+		joystick.visible = true
+		pause_button.visible = true
 
 	if event is InputEventScreenTouch:
 		joystick.visible = true
+		pause_button.visible = true
 		is_mobile = true

@@ -50,7 +50,10 @@ layout_mode = 2
 size_flags_horizontal = 8
 
 [node name="Debug" type="Label" parent="Control"]
-layout_mode = 0
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.00607639
+anchor_right = -0.00607639
 offset_left = 747.0
 offset_top = 75.0
 offset_right = 1145.0

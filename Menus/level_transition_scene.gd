@@ -1,13 +1,13 @@
 extends Control
 
-@onready var next_button := $"MarginContainer/PanelContainer/GridContainer/VBoxContainer/VSplitContainer/Next Level Button"
+@onready var next_button : SceneButton = $"MarginContainer/PanelContainer/GridContainer/VBoxContainer/VSplitContainer/Next Level Button"
 @onready var completed_label := $MarginContainer/PanelContainer/GridContainer/Label
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	$AnimationPlayer.play("twerk")
 	if GameManager.game_state.has("next_level"):
 		var next_level = GameManager.game_state["next_level"]
-		next_button.scene_path = next_level
+		next_button.set_scene(next_level)
 		GameManager.game_state.erase("next_level")
 	if GameManager.game_state.has("level_number"):
 		var level_number = GameManager.game_state["level_number"]

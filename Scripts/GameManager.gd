@@ -62,7 +62,7 @@ func do_scene_change():
 		push_error("failed to change scenes: %d" % err)
 		get_tree().quit(1)
 	scene_path = ""
-	GlobalSignals.change_scene.emit()
+	GlobalSignals.scene_changed.emit()
 
 func load_scene() -> void:
 	if ResourceLoader.has_cached(scene_path):
@@ -99,8 +99,8 @@ func check_scene_status():
 
 func _ready():
 	process_mode = Node.PROCESS_MODE_ALWAYS
-	GlobalSignals.change_scene.connect(hide_menu)
 	GlobalSignals.request_scene.connect(change_scene)
+	GlobalSignals.scene_changed.connect(hide_menu)
 	set_process(false)
 
 func _input(event: InputEvent):
