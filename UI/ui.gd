@@ -22,7 +22,10 @@ func _ready():
 	hunger_bar.max_value = hunger_goal
 	debug.visible = show_debug
 
-	if OS.has_feature("mobile") or JavaScriptBridge.eval("/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)", true):
+	if OS.has_feature("mobile"):
+		is_mobile = true
+
+	if OS.has_feature("web") and JavaScriptBridge.eval("navigator.maxTouchPoints > 0", true):
 		is_mobile = true
 
 	joystick.visible = is_mobile

@@ -24,4 +24,5 @@ func _input(event):
 	if event.is_action_pressed("skip"):
 		skip.load_scene()
 	if event is InputEventScreenTouch or event is InputEventMouseButton:
-		animation_player.seek(animation_player.current_animation_length, true)
+		if event.is_pressed():
+			animation_player.speed_scale = 100

@@ -77,7 +77,12 @@ func change_scene(scene: String):
 	prints("Changing scene to", scene_path)
 	if not valid_scene_path():
 		return
-	load_scene()
+	if OS.has_feature("web"):
+		get_tree().change_scene_to_file(scene_path)
+		GlobalSignals.scene_changed.emit()
+	else:
+		load_scene()
+	
 
 func get_scene_status() -> ResourceLoader.ThreadLoadStatus:
 	if not valid_scene_path():
