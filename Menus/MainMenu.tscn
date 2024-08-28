@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://diufct4yn4n1i"]
+[gd_scene load_steps=6 format=3 uid="uid://diufct4yn4n1i"]
 
 [ext_resource type="Theme" uid="uid://bewgrgj1ylev2" path="res://Menus/MenuTheme.tres" id="1_lgf1a"]
 [ext_resource type="Script" path="res://Menus/MainMenu.gd" id="2_dukak"]
 [ext_resource type="Script" path="res://Scripts/Nodes/SceneButton.gd" id="3_o5i7w"]
+[ext_resource type="AudioStream" uid="uid://g6jcymarlp06" path="res://Audio/Sound Effects/UI/go back/drop_004.ogg" id="4_oyydm"]
 [ext_resource type="Texture2D" uid="uid://qa8kh38eudaj" path="res://Menus/gmtk2024-logo.png" id="4_xf6fx"]
 
 [node name="MainMenu" type="Control"]
@@ -57,6 +58,7 @@ layout_mode = 2
 text = "Start"
 script = ExtResource("3_o5i7w")
 scene_path = "res://Levels/introduction/Introduction.tscn"
+stream = ExtResource("4_oyydm")
 
 [node name="Info" type="Button" parent="Panel/MarginContainer/PanelContainer/GridContainer/VBoxContainer"]
 layout_mode = 2

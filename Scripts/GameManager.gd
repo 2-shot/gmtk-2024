@@ -2,7 +2,8 @@ extends Node
 
 const main_menu := "res://Menus/MainMenu.tscn"
 const pause_menu := "res://Menus/PauseMenu.tscn"
-var pause := preload(pause_menu).instantiate()
+var pause : CanvasLayer = preload(pause_menu).instantiate()
+var sfx : AudioStreamPlayer = preload("res://UI/SelectSFX.tscn").instantiate()
 
 var scene_path : String
 var game_state = {}
@@ -98,6 +99,9 @@ func check_scene_status():
 # ---
 
 func _ready():
+	add_child(sfx)
+	var resetStream = sfx.stream
+	sfx.finished.connect(func(): sfx.stream = resetStream)
 	process_mode = Node.PROCESS_MODE_ALWAYS
 	GlobalSignals.request_scene.connect(change_scene)
 	GlobalSignals.scene_changed.connect(hide_menu)
