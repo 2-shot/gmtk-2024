@@ -45,6 +45,7 @@ func size_changed(size: int):
 
 func _ready():
 	get_tree().create_timer(1).timeout.connect(func (): GlobalSignals.hero_size.emit(hero_size))
+	$ResetTimer.connect("timeout", get_tree().reload_current_scene)
 	#GlobalSignals.hero_size.emit(hero_size)
 
 func _physics_process(_delta):
@@ -66,7 +67,7 @@ func get_input():
 	if GameManager.game_state.has("joystick") && GameManager.game_state["joystick"]:
 		input_direction = GameManager.game_state["joystick"]
 	var rest = input_direction == Vector2.ZERO
-	#var interact := Input.is_action_pressed("interact")
+	var interact := Input.is_action_pressed("interact")
 	#var interact2 := Input.is_action_pressed("interact2")
 	
 	if state != EXPLODE and eating == 0 and being_eaten == false:
@@ -82,6 +83,7 @@ func get_input():
 		if interact:
 			state=EXPLODE
 			velocity = Vector2.ZERO
+			$ResetTimer.start()
 
 	if eating or being_eaten:
 		velocity = input_direction * hero_speed
@@ -124,7 +126,6 @@ func eaten_by(_enemy : Node2D):
 	being_eaten=true
 	hero_speed = 10
 	#state_machine.travel(animTree_state_keys[state])
-	$ResetTimer.connect("timeout", get_tree().reload_current_scene)
 	$ResetTimer.start()
 
 func _on_area_2d_body_entered(body : Node2D):
