@@ -53,12 +53,9 @@ func valid_scene_path() -> bool:
 
 func do_scene_change():
 	var resource = ResourceLoader.load_threaded_get(scene_path)
-	var err = get_tree().change_scene_to_packed(resource)
-	if err:
-		push_error("failed to change scenes: %d" % err)
-		get_tree().quit(1)
+	var status = get_tree().change_scene_to_packed(resource)
 	scene_path = ""
-	GlobalSignals.scene_changed.emit()
+	GlobalSignals.scene_changed.emit(status)
 
 func load_scene() -> void:
 	if ResourceLoader.has_cached(scene_path):
@@ -73,8 +70,9 @@ func change_scene(scene: String):
 	if not valid_scene_path():
 		return
 	if OS.has_feature("web"):
-		get_tree().change_scene_to_file(scene_path)
-		GlobalSignals.scene_changed.emit()
+		var status = get_tree().change_scene_to_file(scene_path)
+		scene_path = ""
+		GlobalSignals.scene_changed.emit(status)
 	else:
 		load_scene()
 
@@ -104,7 +102,7 @@ func _ready():
 	var resetStream = sfx.stream
 	sfx.finished.connect(func(): sfx.stream = resetStream)
 	GlobalSignals.request_scene.connect(change_scene)
-	GlobalSignals.scene_changed.connect(hide_menu)
+	GlobalSignals.scene_changed.connect(func (_status): hide_menu())
 
 func _input(event: InputEvent):
 	if(event.is_action_pressed("escape")):
