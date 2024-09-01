@@ -1,6 +1,7 @@
 extends Node2D
 @export var size_target : int = 400
 @export var level_number : int = 1
+@export var win_timeout : int = 1
 
 @export_file("*.tscn") var level_complete : String
 @export_file("*.tscn") var next_level : String
@@ -14,7 +15,7 @@ func check_level_finished(hero_size: int):
 		print("YOU'RE WINNER")
 		GameManager.game_state["next_level"] = next_level
 		GameManager.game_state["level_number"] = level_number
-		get_tree().create_timer(1).timeout.connect(func(): GlobalSignals.request_scene.emit(level_complete))
+		get_tree().create_timer(win_timeout).timeout.connect(func(): GlobalSignals.request_scene.emit(level_complete))
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:

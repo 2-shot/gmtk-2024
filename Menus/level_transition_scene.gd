@@ -25,3 +25,7 @@ func _ready() -> void:
 func _on_grow_timeout() -> void:
 	if sprite_2d.scale.x < 5:
 		sprite_2d.scale +=  Vector2(0.05,0.05)
+
+func _input(event):
+	if event.is_action_pressed("skip"):
+		next_button.load_scene()

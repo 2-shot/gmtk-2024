@@ -22,6 +22,7 @@ y_sort_enabled = true
 script = ExtResource("1_64dcw")
 size_target = 6000
 level_number = 6
+win_timeout = 2
 level_complete = "res://Levels/outro/Outro.tscn"
 next_level = "res://Menus/MainMenu.tscn"
 
@@ -446,8 +447,8 @@ hunger_goal = 6000
 
 [node name="EnemyGreenOozeHuge3" parent="." node_paths=PackedStringArray("target") instance=ExtResource("19_kq05h")]
 modulate = Color(1, 0.615686, 0.584314, 1)
-position = Vector2(51, 235)
-scale = Vector2(3, 3)
+position = Vector2(52, 155)
+scale = Vector2(2.7, 2.7)
 movement_speed = 45
 slime_size = 2000
 target = NodePath("../hero")
@@ -455,10 +456,10 @@ target = NodePath("../hero")
 [node name="EnemyGreenOozeFinal" parent="." node_paths=PackedStringArray("target") instance=ExtResource("19_kq05h")]
 modulate = Color(1, 0.615686, 0.584314, 1)
 position = Vector2(263, 304)
-scale = Vector2(5, 5)
+scale = Vector2(3.5, 3.5)
 movement_speed = 10
 runaway_speed = -25
-slime_size = 3000
+slime_size = 4000
 target = NodePath("../hero")
 
 [node name="EnemyGreenOoze_small2" parent="." node_paths=PackedStringArray("target") instance=ExtResource("19_kq05h")]

@@ -128,12 +128,10 @@ func eaten_by(_enemy : Node2D):
 	$ResetTimer.start()
 
 func _on_area_2d_body_entered(body : Node2D):
-	#print(body)
 	if body.is_in_group("Enemy"):
 		var slime_size = body.slime_size
-		#prints(hero_size, slime_size)
+		#prints(hero_size, scale.x)
 		if hero_size >= slime_size:
-			#prints("Eat me!")
 			start_eating(body)
 		else:
 			if body.position.x > position.x:
