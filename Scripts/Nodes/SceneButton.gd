@@ -31,9 +31,8 @@ func _get_configuration_warnings() -> PackedStringArray:
 func load_scene() -> void:
 	if stream:
 		GameManager.sfx.stream = stream
-
 	GameManager.sfx.play()
-	GlobalSignals.request_scene.emit(scene_path)
+	GlobalSignals.request_scene.emit.call_deferred(scene_path)
 
 func _ready():
 	pressed.connect(load_scene)

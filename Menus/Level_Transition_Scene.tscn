@@ -84,7 +84,7 @@ size_flags_vertical = 4
 layout_mode = 2
 theme_type_variation = &"GameTitle"
 bbcode_enabled = true
-text = "[center] [b][color=Purple]Level %s Completed![/color][/b]
+text = "[center] [b][color=Purple]Level {lvl} Completed![/color][/b]
 "
 fit_content = true
 

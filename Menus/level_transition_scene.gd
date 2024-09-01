@@ -18,11 +18,10 @@ func _ready() -> void:
 		next_button.set_scene(menu)
 	if GameManager.game_state.has("level_number"):
 		var level_number = GameManager.game_state["level_number"]
-		completed_label.text = completed_label.text % level_number
+		completed_label.text = completed_label.text.format({"lvl" : level_number})
 	else:
-		completed_label.text = completed_label.text % ""
+		completed_label.text = completed_label.text.format({"lvl" : 0})
 
 func _on_grow_timeout() -> void:
 	if sprite_2d.scale.x < 5:
 		sprite_2d.scale +=  Vector2(0.05,0.05)
-	#
