@@ -15,7 +15,6 @@ var is_mobile : bool = false
 
 func resize():
 	var joystick_height = joystick.maxLength * 2
-	# TODO Scale joystick
 	joystick.global_position.y = viewport.size.y - joystick_height
 
 func _ready():
