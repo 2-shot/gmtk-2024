@@ -1,30 +1,32 @@
-[gd_scene load_steps=6 format=3 uid="uid://c4f4xoibdq0s3"]
+[gd_scene load_steps=7 format=3 uid="uid://c4f4xoibdq0s3"]
 
 [ext_resource type="Script" path="res://UI/progress_bar.gd" id="1_0ykeg"]
 [ext_resource type="Theme" uid="uid://bewgrgj1ylev2" path="res://Menus/MenuTheme.tres" id="1_1l0h6"]
 [ext_resource type="Script" path="res://UI/ui.gd" id="1_elht5"]
 [ext_resource type="Script" path="res://Scripts/Debug.gd" id="2_i4ly0"]
 [ext_resource type="PackedScene" uid="uid://crd0d1dxajbfi" path="res://UI/Joystick.tscn" id="4_cyln3"]
+[ext_resource type="PackedScene" uid="uid://ckpou34uticjk" path="res://UI/PauseButton.tscn" id="4_hyulb"]
 
 [node name="UI" type="CanvasLayer"]
 script = ExtResource("1_elht5")
 
 [node name="Control" type="Control" parent="."]
 layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 theme = ExtResource("1_1l0h6")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Control"]
+custom_minimum_size = Vector2(40, 40)
 layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = 888.0
-offset_top = 10.0
-offset_right = 1097.0
-offset_bottom = 50.0
+offset_left = -221.0
+offset_bottom = 25.0
 grow_horizontal = 0
 
 [node name="Hunger" type="Label" parent="Control/HBoxContainer"]
@@ -43,16 +45,23 @@ show_percentage = false
 script = ExtResource("1_0ykeg")
 metadata/_edit_use_anchors_ = true
 
-[node name="Label" type="Label" parent="Control"]
-layout_mode = 0
-offset_left = 739.0
-offset_top = 62.0
-offset_right = 1137.0
-offset_bottom = 138.0
+[node name="PauseButton" parent="Control/HBoxContainer" instance=ExtResource("4_hyulb")]
+layout_mode = 2
+size_flags_horizontal = 8
+
+[node name="Debug" type="Label" parent="Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.00607639
+anchor_right = -0.00607639
+offset_left = 747.0
+offset_top = 75.0
+offset_right = 1145.0
+offset_bottom = 151.0
 text = "Debug"
 horizontal_alignment = 2
 script = ExtResource("2_i4ly0")
 metadata/_edit_use_anchors_ = true
 
 [node name="Joystick" parent="." instance=ExtResource("4_cyln3")]
-position = Vector2(114, 532)
+position = Vector2(1034, 525)

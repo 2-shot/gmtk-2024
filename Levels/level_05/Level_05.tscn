@@ -1,7 +1,7 @@
-[gd_scene load_steps=17 format=4 uid="uid://ds48pystsani0"]
+[gd_scene load_steps=16 format=4 uid="uid://ds48pystsani0"]
 
 [ext_resource type="TileSet" uid="uid://btn2hyppj2rla" path="res://TileSets/TestTileSet.tres" id="1_3itpt"]
-[ext_resource type="Script" path="res://Levels/level_05/level_05.gd" id="1_rhhw5"]
+[ext_resource type="Script" path="res://Levels/basic_level.gd" id="1_bqxmh"]
 [ext_resource type="PackedScene" uid="uid://csbw7e8w63gif" path="res://Characters/Hero/hero.tscn" id="7_5qovs"]
 [ext_resource type="PackedScene" uid="uid://jieygowtle5v" path="res://Objects/Props/Chests/Obj_Chest_01.tscn" id="8_cejmw"]
 [ext_resource type="PackedScene" uid="uid://cpm1xkkqq5ofc" path="res://Objects/Props/Chairs/Obj_Chair_01.tscn" id="9_4m11e"]
@@ -16,15 +16,11 @@
 [ext_resource type="PackedScene" uid="uid://d2glbpj75vbl8" path="res://Characters/Enemy/EnemyGreenOoze.tscn" id="18_ibk7t"]
 [ext_resource type="PackedScene" uid="uid://c4f4xoibdq0s3" path="res://UI/UI.tscn" id="19_sxjxh"]
 
-[sub_resource type="AudioStreamPlaylist" id="AudioStreamPlaylist_g43te"]
-shuffle = true
-stream_count = 1
-stream_0 = ExtResource("14_o8tex")
-
 [node name="level5" type="Node2D"]
 y_sort_enabled = true
-script = ExtResource("1_rhhw5")
+script = ExtResource("1_bqxmh")
 size_target = 2600
+level_number = 5
 level_complete = "res://Menus/Level_Transition_Scene.tscn"
 next_level = "res://Levels/level_06/Level_06.tscn"
 
@@ -190,7 +186,7 @@ position = Vector2(312, 248)
 scale = Vector2(2, 2)
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = SubResource("AudioStreamPlaylist_g43te")
+stream = ExtResource("14_o8tex")
 autoplay = true
 bus = &"music"
 

@@ -84,7 +84,7 @@ size_flags_vertical = 4
 layout_mode = 2
 theme_type_variation = &"GameTitle"
 bbcode_enabled = true
-text = "[center] [b][color=Purple]Level %s Completed![/color][/b]
+text = "[center] [b][color=Purple]Level {lvl} Completed![/color][/b]
 "
 fit_content = true
 
@@ -97,9 +97,9 @@ layout_mode = 2
 
 [node name="Next Level Button" type="Button" parent="MarginContainer/PanelContainer/GridContainer/VBoxContainer/VSplitContainer"]
 layout_mode = 2
+disabled = true
 text = "Go to Next Level"
 script = ExtResource("2_teyae")
-scene_path = "res://Levels/level_02/Level_02.tscn"
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(698, 252)

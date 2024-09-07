@@ -4,6 +4,7 @@ class_name SceneButton
 extends Button
 
 @export_file("*.tscn") var scene_path : String : set = set_scene
+@export var stream : AudioStream
 
 func set_scene(value : String) -> void:
 	scene_path = value
@@ -28,13 +29,10 @@ func _get_configuration_warnings() -> PackedStringArray:
 	return []
 
 func load_scene() -> void:
-	prints("Changing scene to", scene_path)
-	GlobalSignals.request_scene.emit(scene_path)
+	if stream:
+		GameManager.sfx.stream = stream
+	GameManager.sfx.play()
+	GlobalSignals.request_scene.emit.call_deferred(scene_path)
 
 func _ready():
-	update_configuration_warnings()
-	var scene_status = check_scene_path()
-	disabled = not scene_status.is_empty()
-	if not disabled:
-		pressed.connect(load_scene)
-	set_process(false)
+	pressed.connect(load_scene)

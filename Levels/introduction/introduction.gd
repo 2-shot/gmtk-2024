@@ -1,21 +1,21 @@
 extends Control
 
-#@onready var next_button := $"MarginContainer/PanelContainer/GridContainer/VBoxContainer/VSplitContainer/Next Level Button"
+@onready var skip : SceneButton = $"Skip Introduction"
+@onready var animation_player : AnimationPlayer = $AnimationPlayer
+@onready var enemy_intro : AnimationPlayer = $Sprite2D/enemy_intro/AnimationPlayer
+@onready var hero_intro : AnimationPlayer = $Sprite2D/hero_intro/AnimationPlayer
 
-# Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	$AnimationPlayer.play("intro_animation")
-	$Sprite2D/enemy_intro/AnimationPlayer.play("idle")
-	$Sprite2D/hero_intro/AnimationPlayer.play("idle")
-	#if next_level:
-		#next_button.scene_path = next_level
+	animation_player.play("intro_animation")
+	enemy_intro.play("idle")
+	hero_intro.play("idle")
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
 	pass
 
-
-#func _on_grow_timeout() -> void:
-	#if $Sprite2D.scale.x < 5:
-		#$Sprite2D.scale +=  Vector2(0.05,0.05)
-	#
+func _input(event):
+	if event.is_action_pressed("skip"):
+		print(animation_player.current_animation_position)
+		if not animation_player.is_playing():
+			skip.load_scene()
+		animation_player.speed_scale = 100

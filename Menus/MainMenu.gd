@@ -2,7 +2,6 @@ extends Control
 
 @onready var quit := $Panel/MarginContainer/PanelContainer/GridContainer/VBoxContainer/Quit
 
-# Called when the node enters the scene tree for the first time.
 func _ready():
 	var is_web : bool = OS.has_feature("web")
 	quit.visible = not is_web

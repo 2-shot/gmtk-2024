@@ -121,3 +121,26 @@ size_flags_vertical = 3
 text = "Test Level 6"
 script = ExtResource("1_6xlkx")
 scene_path = "res://Levels/level_06/Level_06.tscn"
+
+[node name="Transition Level" type="Button" parent="Panel/MarginContainer/PanelContainer/VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Level Transition"
+script = ExtResource("1_6xlkx")
+scene_path = "res://Menus/Level_Transition_Scene.tscn"
+
+[node name="You Win" type="Button" parent="Panel/MarginContainer/PanelContainer/VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "You Win"
+script = ExtResource("1_6xlkx")
+scene_path = "res://Menus/You_Win.tscn"
+
+[node name="Exit" type="Button" parent="Panel/MarginContainer/PanelContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 10
+text = "Back"
+script = ExtResource("1_6xlkx")
+scene_path = "res://Menus/MainMenu.tscn"

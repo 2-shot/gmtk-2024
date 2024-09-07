@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://bcdbwg76iq3dk"]
+[gd_scene load_steps=4 format=3 uid="uid://bcdbwg76iq3dk"]
 
 [ext_resource type="Theme" uid="uid://bewgrgj1ylev2" path="res://Menus/MenuTheme.tres" id="1_r5h2d"]
 [ext_resource type="PackedScene" uid="uid://bdnl0pgy68e2n" path="res://UI/VolumeSlider.tscn" id="2_yehdp"]
+[ext_resource type="Script" path="res://Scripts/Nodes/SceneButton.gd" id="3_q761e"]
 
 [node name="SettingsMenu" type="Control"]
 layout_mode = 3
@@ -92,3 +93,10 @@ text = "Sound Effects Volume"
 [node name="Volume Slider3" parent="Panel/MarginContainer/PanelContainer/VBoxContainer/GridContainer" instance=ExtResource("2_yehdp")]
 layout_mode = 2
 bus_name = "sfx"
+
+[node name="Exit" type="Button" parent="Panel/MarginContainer/PanelContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 10
+text = "Back"
+script = ExtResource("3_q761e")
+scene_path = "res://Menus/MainMenu.tscn"

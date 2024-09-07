@@ -1,7 +1,7 @@
-[gd_scene load_steps=18 format=4 uid="uid://dapo50skmtngs"]
+[gd_scene load_steps=17 format=4 uid="uid://dapo50skmtngs"]
 
+[ext_resource type="Script" path="res://Levels/basic_level.gd" id="1_64dcw"]
 [ext_resource type="TileSet" uid="uid://btn2hyppj2rla" path="res://TileSets/TestTileSet.tres" id="1_atfta"]
-[ext_resource type="Script" path="res://Levels/level_06/level_06.gd" id="1_qkjec"]
 [ext_resource type="PackedScene" uid="uid://csbw7e8w63gif" path="res://Characters/Hero/hero.tscn" id="7_f8ujk"]
 [ext_resource type="PackedScene" uid="uid://jieygowtle5v" path="res://Objects/Props/Chests/Obj_Chest_01.tscn" id="8_fmn3b"]
 [ext_resource type="PackedScene" uid="uid://cpm1xkkqq5ofc" path="res://Objects/Props/Chairs/Obj_Chair_01.tscn" id="9_gybfj"]
@@ -17,14 +17,12 @@
 [ext_resource type="PackedScene" uid="uid://d2glbpj75vbl8" path="res://Characters/Enemy/EnemyGreenOoze.tscn" id="19_kq05h"]
 [ext_resource type="PackedScene" uid="uid://c4f4xoibdq0s3" path="res://UI/UI.tscn" id="20_tlnke"]
 
-[sub_resource type="AudioStreamPlaylist" id="AudioStreamPlaylist_vfsqf"]
-shuffle = true
-stream_count = 1
-stream_0 = ExtResource("15_hl0ie")
-
 [node name="level6" type="Node2D"]
 y_sort_enabled = true
-script = ExtResource("1_qkjec")
+script = ExtResource("1_64dcw")
+size_target = 6000
+level_number = 6
+win_timeout = 2
 level_complete = "res://Levels/outro/Outro.tscn"
 next_level = "res://Menus/MainMenu.tscn"
 
@@ -412,7 +410,7 @@ position = Vector2(256, 360)
 scale = Vector2(0.5, 0.5)
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = SubResource("AudioStreamPlaylist_vfsqf")
+stream = ExtResource("15_hl0ie")
 autoplay = true
 bus = &"music"
 
@@ -449,8 +447,8 @@ hunger_goal = 6000
 
 [node name="EnemyGreenOozeHuge3" parent="." node_paths=PackedStringArray("target") instance=ExtResource("19_kq05h")]
 modulate = Color(1, 0.615686, 0.584314, 1)
-position = Vector2(51, 235)
-scale = Vector2(3, 3)
+position = Vector2(52, 155)
+scale = Vector2(2.7, 2.7)
 movement_speed = 45
 slime_size = 2000
 target = NodePath("../hero")
@@ -458,10 +456,10 @@ target = NodePath("../hero")
 [node name="EnemyGreenOozeFinal" parent="." node_paths=PackedStringArray("target") instance=ExtResource("19_kq05h")]
 modulate = Color(1, 0.615686, 0.584314, 1)
 position = Vector2(263, 304)
-scale = Vector2(5, 5)
+scale = Vector2(3.5, 3.5)
 movement_speed = 10
 runaway_speed = -25
-slime_size = 3000
+slime_size = 4000
 target = NodePath("../hero")
 
 [node name="EnemyGreenOoze_small2" parent="." node_paths=PackedStringArray("target") instance=ExtResource("19_kq05h")]

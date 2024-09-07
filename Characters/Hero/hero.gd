@@ -29,7 +29,7 @@ enum{IDLE, RUN, EAT, IS_EATEN, EXPLODE}
 var state = IDLE
 var blend_position : Vector2 =Vector2.ZERO
 var animTree_state_keys = ["idle","run","eat","is_eaten","explode"]
-var eating : bool = false
+var eating : int = 0
 var being_eaten : bool = false
 var hero_speed := walk_speed
 
@@ -45,6 +45,7 @@ func size_changed(size: int):
 
 func _ready():
 	get_tree().create_timer(1).timeout.connect(func (): GlobalSignals.hero_size.emit(hero_size))
+	$ResetTimer.connect("timeout", get_tree().reload_current_scene)
 	#GlobalSignals.hero_size.emit(hero_size)
 
 func _physics_process(_delta):
@@ -67,14 +68,14 @@ func get_input():
 		input_direction = GameManager.game_state["joystick"]
 	var rest = input_direction == Vector2.ZERO
 	var interact := Input.is_action_pressed("interact")
-	var interact2 := Input.is_action_pressed("interact2")
+	#var interact2 := Input.is_action_pressed("interact2")
 	
-	if state != EXPLODE and eating==false and being_eaten==false:
+	if state != EXPLODE and eating == 0 and being_eaten == false:
 		if input_direction:
 			last_dir = input_direction
 		if rest:
 			state=IDLE
-			velocity = Vector2.ZERO	
+			velocity = Vector2.ZERO
 		else:
 			state=RUN
 			velocity = input_direction * hero_speed
@@ -82,9 +83,10 @@ func get_input():
 		if interact:
 			state=EXPLODE
 			velocity = Vector2.ZERO
+			$ResetTimer.start()
 
 	if eating or being_eaten:
-		velocity = input_direction * hero_speed		
+		velocity = input_direction * hero_speed
 
 	GlobalSignals.debug.emit("Hero Speed", "Player velocity: %f, %f" % [velocity.x, velocity.y])
 
@@ -93,50 +95,44 @@ func animate() -> void:
 	if (state==IDLE or state==RUN or state==EAT or state==IS_EATEN):
 		animationTree.set(blend_pos_paths[state],blend_position)
 
-
-func _on_eat_timer_timeout() -> void:
-	eating=false
-	print("eating")
-
 func _on_grow_timeout():
 	hero_size += 10
 	if hero_size > 200:
 		hero_size = 50
 
 func start_eating(enemy : Node2D):
+	if being_eaten:
+		return
 	state=EAT
-	eating=true
+	eating += 1
+	var num = eating
+	prints("eating", eating)
 	enemy.eaten_by(self)
 	hero_speed = eat_speed
 	
-	finished_func = finished_eating(enemy)
-	$EatTimer.connect("timeout", finished_func)
-	$EatTimer.start()
+	get_tree().create_timer(0.7).timeout.connect(func():
+		prints("finished eating", num)
+		eating -= 1
+		if enemy:
+			hero_size += enemy.slime_size
+			enemy.queue_free()
+			hero_speed = walk_speed)
 
-func finished_eating(body : Node2D):
-	return func():
-		if body:
-			#print("finished")
-			hero_size += body.slime_size
-			body.queue_free()
-			hero_speed = walk_speed
-			$EatTimer.disconnect("timeout", finished_func)
-
-func eaten_by(enemy : Node2D):
+func eaten_by(_enemy : Node2D):
+	if being_eaten:
+		return
 	print("I've Been Eaten!!")
 	state=IS_EATEN
 	being_eaten=true
 	hero_speed = 10
 	#state_machine.travel(animTree_state_keys[state])
-	get_tree().create_timer(3).timeout.connect(get_tree().reload_current_scene)
+	$ResetTimer.start()
 
 func _on_area_2d_body_entered(body : Node2D):
-	#print(body)
 	if body.is_in_group("Enemy"):
 		var slime_size = body.slime_size
-		#prints(hero_size, slime_size)
+		#prints(hero_size, scale.x)
 		if hero_size >= slime_size:
-			#prints("Eat me!")
 			start_eating(body)
 		else:
 			if body.position.x > position.x:

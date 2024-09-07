@@ -2,12 +2,10 @@ extends Node
 
 const main_menu := "res://Menus/MainMenu.tscn"
 const pause_menu := "res://Menus/PauseMenu.tscn"
-var pause := preload(pause_menu).instantiate()
-
-var is_menu := true
+@onready var pause : CanvasLayer = preload(pause_menu).instantiate()
+@onready var sfx : AudioStreamPlayer = preload("res://UI/SelectSFX.tscn").instantiate()
 
 var scene_path : String
-
 var game_state = {}
 
 # ---
@@ -15,11 +13,7 @@ var game_state = {}
 # ---
 
 func check_menu() -> bool:
-	var children = get_tree().root.get_children()
-	for child in children:
-		if child is Control and child != pause:
-			return true
-	return false
+	return get_tree().current_scene is Control
 
 func hide_menu():
 	if pause.is_inside_tree():
@@ -27,7 +21,6 @@ func hide_menu():
 		get_tree().paused = false
 
 func toggle_menu():
-	pause.process_mode = Node.PROCESS_MODE_ALWAYS
 	if pause.is_inside_tree():
 		get_tree().root.remove_child(pause)
 		get_tree().paused = false
@@ -60,12 +53,9 @@ func valid_scene_path() -> bool:
 
 func do_scene_change():
 	var resource = ResourceLoader.load_threaded_get(scene_path)
-	var err = get_tree().change_scene_to_packed(resource)
-	if err:
-		push_error("failed to change scenes: %d" % err)
-		get_tree().quit(1)
+	var status = get_tree().change_scene_to_packed(resource)
 	scene_path = ""
-	GlobalSignals.change_scene.emit()
+	GlobalSignals.scene_changed.emit(status)
 
 func load_scene() -> void:
 	if ResourceLoader.has_cached(scene_path):
@@ -79,7 +69,12 @@ func change_scene(scene: String):
 	prints("Changing scene to", scene_path)
 	if not valid_scene_path():
 		return
-	load_scene()
+	if OS.has_feature("web"):
+		var status = get_tree().change_scene_to_file(scene_path)
+		scene_path = ""
+		GlobalSignals.scene_changed.emit(status)
+	else:
+		load_scene()
 
 func get_scene_status() -> ResourceLoader.ThreadLoadStatus:
 	if not valid_scene_path():
@@ -102,14 +97,17 @@ func check_scene_status():
 
 func _ready():
 	process_mode = Node.PROCESS_MODE_ALWAYS
-	GlobalSignals.change_scene.connect(hide_menu)
-	GlobalSignals.request_scene.connect(change_scene)
 	set_process(false)
+	add_child(sfx)
+	var resetStream = sfx.stream
+	sfx.finished.connect(func(): sfx.stream = resetStream)
+	GlobalSignals.request_scene.connect(change_scene)
+	GlobalSignals.scene_changed.connect(func (_status): hide_menu())
 
 func _input(event: InputEvent):
 	if(event.is_action_pressed("escape")):
 		if check_menu():
-			get_tree().change_scene_to_file(main_menu)
+			GlobalSignals.request_scene.emit(main_menu)
 		else:
 			toggle_menu()
 

@@ -3,8 +3,8 @@ extends ProgressBar
 # Get a local copy of your fill StyleBoxFlat
 @onready var progress_style : StyleBoxFlat = get_theme_stylebox("fill").duplicate()
 
-func size_changed(size : int):
-	value = size
+func size_changed(new_size : int):
+	value = new_size
 	var percent = (value - min_value) / (max_value - min_value)
 	modulate = Color.RED.lerp(Color.GREEN, percent)
 

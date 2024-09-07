@@ -6,7 +6,7 @@
 [ext_resource type="Theme" uid="uid://bewgrgj1ylev2" path="res://Menus/MenuTheme.tres" id="1_quje6"]
 
 [node name="CanvasLayer" type="CanvasLayer"]
-process_mode = 3
+process_mode = 2
 script = ExtResource("1_gmyn3")
 
 [node name="PauseMenu" type="Control" parent="."]

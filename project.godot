@@ -10,7 +10,8 @@ config_version=5
 
 [application]
 
-config/name="gmtk-2024"
+config/name="slimeageddon"
+config/tags=PackedStringArray("2shot")
 run/main_scene="res://Menus/MainMenu.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 boot_splash/image="res://splash.png"
@@ -20,6 +21,10 @@ config/icon="res://icon.svg"
 
 GlobalSignals="*res://Scripts/GlobalSignals.gd"
 GameManager="*res://Scripts/GameManager.gd"
+
+[display]
+
+window/stretch/mode="viewport"
 
 [global_group]
 
@@ -72,6 +77,11 @@ terminal={
 "events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":96,"key_label":0,"unicode":96,"location":0,"echo":false,"script":null)
 ]
 }
+skip={
+"deadzone": 0.5,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":32,"key_label":0,"unicode":32,"location":0,"echo":false,"script":null)
+]
+}
 
 [layer_names]
 
@@ -82,3 +92,6 @@ terminal={
 [rendering]
 
 textures/canvas_textures/default_texture_filter=0
+renderer/rendering_method="gl_compatibility"
+renderer/rendering_method.mobile="gl_compatibility"
+textures/vram_compression/import_etc2_astc=true

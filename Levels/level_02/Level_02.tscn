@@ -1,6 +1,6 @@
 [gd_scene load_steps=14 format=4 uid="uid://bxug41xovxe8p"]
 
-[ext_resource type="Script" path="res://Levels/level_02/level_02.gd" id="1_4rviw"]
+[ext_resource type="Script" path="res://Levels/basic_level.gd" id="1_e6btq"]
 [ext_resource type="TileSet" uid="uid://btn2hyppj2rla" path="res://TileSets/TestTileSet.tres" id="1_o4wht"]
 [ext_resource type="PackedScene" uid="uid://csbw7e8w63gif" path="res://Characters/Hero/hero.tscn" id="7_o4cwa"]
 [ext_resource type="PackedScene" uid="uid://b1p77kho11wc" path="res://Objects/Props/Barrels/Obj_Barrel_01.tscn" id="8_2i7lh"]
@@ -16,8 +16,9 @@
 
 [node name="level2" type="Node2D"]
 y_sort_enabled = true
-script = ExtResource("1_4rviw")
+script = ExtResource("1_e6btq")
 size_target = 1100
+level_number = 2
 level_complete = "res://Menus/Level_Transition_Scene.tscn"
 next_level = "res://Levels/level_03/Level_03.tscn"
 

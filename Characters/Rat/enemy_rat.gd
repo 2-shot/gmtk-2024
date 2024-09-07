@@ -45,7 +45,7 @@ func _on_detection_timeout_timer_timeout() -> void:
 	player_detected=false
 
 
-func eaten_by(player : Node2D):
+func eaten_by(_player : Node2D):
 	being_eaten = true
 	#if player.position.x > position.x:
 		#state = EATEN_RIGHT
