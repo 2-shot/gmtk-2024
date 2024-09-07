@@ -12,7 +12,7 @@ y_sort_enabled = true
 position = Vector2(0, 0.5)
 shape = SubResource("RectangleShape2D_1x5br")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Sprite2D" type="Sprite2D" parent="." groups=["navigation"]]
 position = Vector2(2.68221e-07, -11)
 scale = Vector2(0.631579, 0.592593)
 texture = ExtResource("1_c1se4")
