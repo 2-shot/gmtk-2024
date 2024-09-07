@@ -5,7 +5,7 @@
 [ext_resource type="Script" path="res://Characters/line_of_sight.gd" id="3_lpnfg"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_mmf26"]
-radius = 4.00003
+radius = 5.0
 height = 18.5
 
 [sub_resource type="Animation" id="Animation_3layy"]
@@ -181,14 +181,14 @@ states/run/position = Vector2(328, 261)
 transitions = ["Start", "idle", SubResource("AnimationNodeStateMachineTransition_on6sh"), "idle", "run", SubResource("AnimationNodeStateMachineTransition_75hwq"), "run", "idle", SubResource("AnimationNodeStateMachineTransition_swycp"), "idle", "eaten_left", SubResource("AnimationNodeStateMachineTransition_chj2c"), "eaten_left", "End", SubResource("AnimationNodeStateMachineTransition_qul8h"), "run", "eaten_left", SubResource("AnimationNodeStateMachineTransition_01n5f"), "idle", "eaten_right", SubResource("AnimationNodeStateMachineTransition_vvhs2"), "eaten_right", "End", SubResource("AnimationNodeStateMachineTransition_h64ga"), "run", "eaten_right", SubResource("AnimationNodeStateMachineTransition_8nv36")]
 graph_offset = Vector2(-41, 3)
 
-[node name="EnemyGreenOoze" type="CharacterBody2D" groups=["Enemy"]]
+[node name="EnemyGreenOoze" type="CharacterBody2D" groups=["Enemy", "navigation"]]
 collision_layer = 5
 motion_mode = 1
 wall_min_slide_angle = 0.0
 script = ExtResource("1_7s7n4")
 
 [node name="Collision" type="CollisionShape2D" parent="."]
-position = Vector2(0, 5)
+position = Vector2(0, 4)
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_mmf26")
 
