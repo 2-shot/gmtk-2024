@@ -26,6 +26,7 @@ source_geometry_group_name = &"navigation"
 [node name="level4" type="Node2D"]
 y_sort_enabled = true
 script = ExtResource("1_i6fjf")
+total_size = 3200
 size_target = 2900
 level_number = 4
 level_complete = "res://Menus/Level_Transition_Scene.tscn"
@@ -180,76 +181,65 @@ hunger_goal = 2900
 [node name="EnemyGreenOozeHuge" parent="." node_paths=PackedStringArray("target") instance=ExtResource("17_qhrm2")]
 modulate = Color(1, 0.615686, 0.584314, 1)
 position = Vector2(298, 255)
-scale = Vector2(2, 2)
+scale = Vector2(1.91293, 1.91293)
 slime_size = 700
 target = NodePath("../hero")
 
 [node name="EnemyGreenOoze_small2" parent="." node_paths=PackedStringArray("target") instance=ExtResource("17_qhrm2")]
 position = Vector2(267, 404)
-scale = Vector2(0.8, 0.8)
 runaway_speed = 35
 target = NodePath("../hero")
 
 [node name="EnemyGreenOoze_small1" parent="." node_paths=PackedStringArray("target") instance=ExtResource("17_qhrm2")]
 position = Vector2(241, 407)
-scale = Vector2(0.8, 0.8)
 runaway_speed = 35
 target = NodePath("../hero")
 
 [node name="EnemyGreenOoze_small3" parent="." node_paths=PackedStringArray("target") instance=ExtResource("17_qhrm2")]
 modulate = Color(0, 0.631939, 0.710698, 1)
 position = Vector2(277, 377)
-scale = Vector2(0.8, 0.8)
 runaway_speed = 35
 target = NodePath("../hero")
 
 [node name="EnemyGreenOoze_small4" parent="." node_paths=PackedStringArray("target") instance=ExtResource("17_qhrm2")]
 modulate = Color(0, 0.631939, 0.710698, 1)
 position = Vector2(238, 365)
-scale = Vector2(0.8, 0.8)
 runaway_speed = 35
 target = NodePath("../hero")
 
 [node name="EnemyGreenOoze_XXLarge" parent="." node_paths=PackedStringArray("target") instance=ExtResource("17_qhrm2")]
 modulate = Color(0.245946, 0.470284, 0.122621, 1)
 position = Vector2(231, 193)
-scale = Vector2(2.75, 2.75)
+scale = Vector2(2.35133, 2.35133)
 slime_size = 1300
 target = NodePath("../hero")
 
 [node name="EnemyGreenOoze_small5" parent="." node_paths=PackedStringArray("target") instance=ExtResource("17_qhrm2")]
 position = Vector2(231, 439)
-scale = Vector2(0.8, 0.8)
 target = NodePath("../hero")
 
 [node name="EnemyGreenOoze_small6" parent="." node_paths=PackedStringArray("target") instance=ExtResource("17_qhrm2")]
 position = Vector2(150, 343)
-scale = Vector2(0.8, 0.8)
 target = NodePath("../hero")
 
 [node name="EnemyGreenOoze_small7" parent="." node_paths=PackedStringArray("target") instance=ExtResource("17_qhrm2")]
 modulate = Color(0, 0.631939, 0.710698, 1)
 position = Vector2(210, 361)
-scale = Vector2(0.8, 0.8)
 target = NodePath("../hero")
 
 [node name="EnemyGreenOoze_small8" parent="." node_paths=PackedStringArray("target") instance=ExtResource("17_qhrm2")]
 position = Vector2(383, 337)
-scale = Vector2(0.8, 0.8)
 target = NodePath("../hero")
 
 [node name="EnemyGreenOoze_small9" parent="." node_paths=PackedStringArray("target") instance=ExtResource("17_qhrm2")]
 position = Vector2(259, 367)
-scale = Vector2(0.8, 0.8)
 target = NodePath("../hero")
 
 [node name="EnemyGreenOoze_small10" parent="." node_paths=PackedStringArray("target") instance=ExtResource("17_qhrm2")]
 position = Vector2(319, 430)
-scale = Vector2(0.8, 0.8)
 target = NodePath("../hero")
 
 [node name="EnemyGreenOoze_small11" parent="." node_paths=PackedStringArray("target") instance=ExtResource("17_qhrm2")]
 position = Vector2(271, 420)
-scale = Vector2(0.8, 0.8)
 runaway_speed = 35
 target = NodePath("../hero")

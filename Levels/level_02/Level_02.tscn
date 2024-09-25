@@ -24,6 +24,7 @@ source_geometry_group_name = &"navigation"
 [node name="level2" type="Node2D"]
 y_sort_enabled = true
 script = ExtResource("1_e6btq")
+total_size = 1300
 size_target = 1100
 level_number = 2
 level_complete = "res://Menus/Level_Transition_Scene.tscn"
@@ -107,7 +108,7 @@ target = NodePath("../hero")
 [node name="EnemyGreenOozeLarge" parent="." node_paths=PackedStringArray("target") instance=ExtResource("18_bakr2")]
 modulate = Color(1, 0.615686, 0.584314, 1)
 position = Vector2(194, 251)
-scale = Vector2(1.5, 1.5)
+scale = Vector2(1.5874, 1.5874)
 slime_size = 400
 target = NodePath("../hero")
 
@@ -123,18 +124,20 @@ hunger_goal = 1100
 [node name="EnemyGreenOozeLarge2" parent="." node_paths=PackedStringArray("target") instance=ExtResource("18_bakr2")]
 modulate = Color(1, 0.615686, 0.584314, 1)
 position = Vector2(341, 340)
-scale = Vector2(1.5, 1.5)
+scale = Vector2(1.5874, 1.5874)
 slime_size = 400
 target = NodePath("../hero")
 
 [node name="EnemyRat" parent="." node_paths=PackedStringArray("target") instance=ExtResource("13_6t26n")]
 position = Vector2(374, 164)
-scale = Vector2(0.7, 0.7)
+scale = Vector2(0.793701, 0.793701)
 runaway_speed = 40
+slime_size = 50
 target = NodePath("../hero")
 
 [node name="EnemyRat2" parent="." node_paths=PackedStringArray("target") instance=ExtResource("13_6t26n")]
 position = Vector2(154, 352)
-scale = Vector2(0.7, 0.7)
+scale = Vector2(0.793701, 0.793701)
 runaway_speed = 40
+slime_size = 50
 target = NodePath("../hero")

@@ -27,6 +27,7 @@ source_geometry_group_name = &"navigation"
 [node name="level6" type="Node2D"]
 y_sort_enabled = true
 script = ExtResource("1_64dcw")
+total_size = 8525
 size_target = 6000
 level_number = 6
 win_timeout = 2
@@ -426,28 +427,28 @@ bus = &"music"
 
 [node name="EnemyGreenOoze_small7" parent="." node_paths=PackedStringArray("target") instance=ExtResource("19_kq05h")]
 position = Vector2(359, 64)
-scale = Vector2(0.5, 0.5)
+scale = Vector2(0.793701, 0.793701)
 runaway_speed = -25
 slime_size = 50
 target = NodePath("../hero")
 
 [node name="EnemyGreenOoze_small1" parent="." node_paths=PackedStringArray("target") instance=ExtResource("19_kq05h")]
 position = Vector2(175, 46)
-scale = Vector2(0.5, 0.5)
+scale = Vector2(0.793701, 0.793701)
 runaway_speed = -35
 slime_size = 50
 target = NodePath("../hero")
 
 [node name="EnemyGreenOoze_small3" parent="." node_paths=PackedStringArray("target") instance=ExtResource("19_kq05h")]
 position = Vector2(51, 79)
-scale = Vector2(0.5, 0.5)
+scale = Vector2(0.793701, 0.793701)
 runaway_speed = -35
 slime_size = 50
 target = NodePath("../hero")
 
 [node name="EnemyGreenOoze_small4" parent="." node_paths=PackedStringArray("target") instance=ExtResource("19_kq05h")]
 position = Vector2(114, 47)
-scale = Vector2(0.5, 0.5)
+scale = Vector2(0.793701, 0.793701)
 runaway_speed = -35
 slime_size = 50
 target = NodePath("../hero")
@@ -458,7 +459,7 @@ hunger_goal = 6000
 [node name="EnemyGreenOozeHuge3" parent="." node_paths=PackedStringArray("target") instance=ExtResource("19_kq05h")]
 modulate = Color(1, 0.615686, 0.584314, 1)
 position = Vector2(52, 155)
-scale = Vector2(2.7, 2.7)
+scale = Vector2(2.71442, 2.71442)
 movement_speed = 45
 slime_size = 2000
 target = NodePath("../hero")
@@ -466,7 +467,7 @@ target = NodePath("../hero")
 [node name="EnemyGreenOozeFinal" parent="." node_paths=PackedStringArray("target") instance=ExtResource("19_kq05h")]
 modulate = Color(1, 0.615686, 0.584314, 1)
 position = Vector2(263, 304)
-scale = Vector2(3.5, 3.5)
+scale = Vector2(3.41995, 3.41995)
 movement_speed = 14
 runaway_speed = 7
 slime_size = 4000
@@ -474,119 +475,119 @@ target = NodePath("../hero")
 
 [node name="EnemyGreenOoze_small2" parent="." node_paths=PackedStringArray("target") instance=ExtResource("19_kq05h")]
 position = Vector2(227, 64)
-scale = Vector2(0.5, 0.5)
+scale = Vector2(0.793701, 0.793701)
 runaway_speed = -50
 slime_size = 50
 target = NodePath("../hero")
 
 [node name="EnemyGreenOoze_small18" parent="." node_paths=PackedStringArray("target") instance=ExtResource("19_kq05h")]
 position = Vector2(218, 41)
-scale = Vector2(0.5, 0.5)
+scale = Vector2(0.793701, 0.793701)
 runaway_speed = -50
 slime_size = 50
 target = NodePath("../hero")
 
 [node name="EnemyGreenOoze_small8" parent="." node_paths=PackedStringArray("target") instance=ExtResource("19_kq05h")]
 position = Vector2(66, 123)
-scale = Vector2(0.5, 0.5)
+scale = Vector2(0.793701, 0.793701)
 runaway_speed = -50
 slime_size = 50
 target = NodePath("../hero")
 
 [node name="EnemyGreenOoze_small22" parent="." node_paths=PackedStringArray("target") instance=ExtResource("19_kq05h")]
 position = Vector2(437, 39)
-scale = Vector2(0.5, 0.5)
+scale = Vector2(0.793701, 0.793701)
 runaway_speed = -50
 slime_size = 50
 target = NodePath("../hero")
 
 [node name="EnemyGreenOoze_small23" parent="." node_paths=PackedStringArray("target") instance=ExtResource("19_kq05h")]
 position = Vector2(428, 16)
-scale = Vector2(0.5, 0.5)
+scale = Vector2(0.793701, 0.793701)
 runaway_speed = -50
 slime_size = 50
 target = NodePath("../hero")
 
 [node name="EnemyGreenOoze_small30" parent="." node_paths=PackedStringArray("target") instance=ExtResource("19_kq05h")]
 position = Vector2(218, 29)
-scale = Vector2(0.5, 0.5)
+scale = Vector2(0.793701, 0.793701)
 runaway_speed = -50
 slime_size = 50
 target = NodePath("../hero")
 
 [node name="EnemyGreenOoze_small31" parent="." node_paths=PackedStringArray("target") instance=ExtResource("19_kq05h")]
 position = Vector2(66, 123)
-scale = Vector2(0.7, 0.7)
+scale = Vector2(0.90856, 0.90856)
 runaway_speed = -50
 slime_size = 75
 target = NodePath("../hero")
 
 [node name="EnemyGreenOoze_small32" parent="." node_paths=PackedStringArray("target") instance=ExtResource("19_kq05h")]
 position = Vector2(284, 32)
-scale = Vector2(0.7, 0.7)
+scale = Vector2(0.90856, 0.90856)
 runaway_speed = -50
 slime_size = 75
 target = NodePath("../hero")
 
 [node name="EnemyGreenOoze_small33" parent="." node_paths=PackedStringArray("target") instance=ExtResource("19_kq05h")]
 position = Vector2(428, 16)
-scale = Vector2(0.7, 0.7)
+scale = Vector2(0.90856, 0.90856)
 runaway_speed = -50
 slime_size = 75
 target = NodePath("../hero")
 
 [node name="EnemyGreenOoze_small24" parent="." node_paths=PackedStringArray("target") instance=ExtResource("19_kq05h")]
 position = Vector2(276, 98)
-scale = Vector2(0.7, 0.7)
+scale = Vector2(0.90856, 0.90856)
 runaway_speed = -50
 slime_size = 75
 target = NodePath("../hero")
 
 [node name="EnemyGreenOoze_small25" parent="." node_paths=PackedStringArray("target") instance=ExtResource("19_kq05h")]
 position = Vector2(166, 114)
-scale = Vector2(0.7, 0.7)
+scale = Vector2(0.90856, 0.90856)
 runaway_speed = -50
 slime_size = 75
 target = NodePath("../hero")
 
 [node name="EnemyGreenOoze_small26" parent="." node_paths=PackedStringArray("target") instance=ExtResource("19_kq05h")]
 position = Vector2(12, 91)
-scale = Vector2(0.7, 0.7)
+scale = Vector2(0.90856, 0.90856)
 runaway_speed = -50
 slime_size = 75
 target = NodePath("../hero")
 
 [node name="EnemyGreenOoze_small27" parent="." node_paths=PackedStringArray("target") instance=ExtResource("19_kq05h")]
 position = Vector2(288, 54)
-scale = Vector2(0.7, 0.7)
+scale = Vector2(0.90856, 0.90856)
 runaway_speed = -50
 slime_size = 75
 target = NodePath("../hero")
 
 [node name="EnemyGreenOoze_small28" parent="." node_paths=PackedStringArray("target") instance=ExtResource("19_kq05h")]
 position = Vector2(397, 109)
-scale = Vector2(0.7, 0.7)
+scale = Vector2(0.90856, 0.90856)
 runaway_speed = -50
 slime_size = 75
 target = NodePath("../hero")
 
 [node name="EnemyGreenOoze_small29" parent="." node_paths=PackedStringArray("target") instance=ExtResource("19_kq05h")]
 position = Vector2(206, 92)
-scale = Vector2(0.7, 0.7)
+scale = Vector2(0.90856, 0.90856)
 runaway_speed = -50
 slime_size = 75
 target = NodePath("../hero")
 
 [node name="EnemyGreenOoze_small9" parent="." node_paths=PackedStringArray("target") instance=ExtResource("19_kq05h")]
 position = Vector2(32, 110)
-scale = Vector2(0.5, 0.5)
+scale = Vector2(0.793701, 0.793701)
 runaway_speed = -50
 slime_size = 50
 target = NodePath("../hero")
 
 [node name="EnemyGreenOoze_small19" parent="." node_paths=PackedStringArray("target") instance=ExtResource("19_kq05h")]
 position = Vector2(235, 16)
-scale = Vector2(0.5, 0.5)
+scale = Vector2(0.793701, 0.793701)
 runaway_speed = -50
 slime_size = 50
 target = NodePath("../hero")
@@ -603,133 +604,133 @@ target = NodePath("../hero")
 
 [node name="EnemyGreenOoze_small12" parent="." node_paths=PackedStringArray("target") instance=ExtResource("19_kq05h")]
 position = Vector2(100, 34)
-scale = Vector2(0.5, 0.5)
+scale = Vector2(0.793701, 0.793701)
 runaway_speed = -50
 slime_size = 50
 target = NodePath("../hero")
 
 [node name="EnemyGreenOoze_small13" parent="." node_paths=PackedStringArray("target") instance=ExtResource("19_kq05h")]
 position = Vector2(148, 58)
-scale = Vector2(0.5, 0.5)
+scale = Vector2(0.793701, 0.793701)
 runaway_speed = -50
 slime_size = 50
 target = NodePath("../hero")
 
 [node name="EnemyGreenOoze_small14" parent="." node_paths=PackedStringArray("target") instance=ExtResource("19_kq05h")]
 position = Vector2(83, 89)
-scale = Vector2(0.5, 0.5)
+scale = Vector2(0.793701, 0.793701)
 runaway_speed = -50
 slime_size = 50
 target = NodePath("../hero")
 
 [node name="EnemyGreenOoze_small15" parent="." node_paths=PackedStringArray("target") instance=ExtResource("19_kq05h")]
 position = Vector2(198, 43)
-scale = Vector2(0.5, 0.5)
+scale = Vector2(0.793701, 0.793701)
 runaway_speed = -50
 slime_size = 50
 target = NodePath("../hero")
 
 [node name="EnemyGreenOoze_small34" parent="." node_paths=PackedStringArray("target") instance=ExtResource("19_kq05h")]
 position = Vector2(135, 35)
-scale = Vector2(0.5, 0.5)
+scale = Vector2(0.793701, 0.793701)
 runaway_speed = -35
 slime_size = 50
 target = NodePath("../hero")
 
 [node name="EnemyGreenOoze_small35" parent="." node_paths=PackedStringArray("target") instance=ExtResource("19_kq05h")]
 position = Vector2(208, 63)
-scale = Vector2(0.5, 0.5)
+scale = Vector2(0.793701, 0.793701)
 runaway_speed = -50
 slime_size = 50
 target = NodePath("../hero")
 
 [node name="EnemyGreenOoze_small36" parent="." node_paths=PackedStringArray("target") instance=ExtResource("19_kq05h")]
 position = Vector2(271, 44)
-scale = Vector2(0.5, 0.5)
+scale = Vector2(0.793701, 0.793701)
 runaway_speed = -50
 slime_size = 50
 target = NodePath("../hero")
 
 [node name="EnemyGreenOoze_small37" parent="." node_paths=PackedStringArray("target") instance=ExtResource("19_kq05h")]
 position = Vector2(132, 19)
-scale = Vector2(0.5, 0.5)
+scale = Vector2(0.793701, 0.793701)
 runaway_speed = -50
 slime_size = 50
 target = NodePath("../hero")
 
 [node name="EnemyGreenOoze_small38" parent="." node_paths=PackedStringArray("target") instance=ExtResource("19_kq05h")]
 position = Vector2(195, 5)
-scale = Vector2(0.5, 0.5)
+scale = Vector2(0.793701, 0.793701)
 runaway_speed = -50
 slime_size = 50
 target = NodePath("../hero")
 
 [node name="EnemyGreenOoze_small39" parent="." node_paths=PackedStringArray("target") instance=ExtResource("19_kq05h")]
 position = Vector2(158, 32)
-scale = Vector2(0.5, 0.5)
+scale = Vector2(0.793701, 0.793701)
 runaway_speed = -50
 slime_size = 50
 target = NodePath("../hero")
 
 [node name="EnemyGreenOoze_small16" parent="." node_paths=PackedStringArray("target") instance=ExtResource("19_kq05h")]
 position = Vector2(71, 81)
-scale = Vector2(0.5, 0.5)
+scale = Vector2(0.793701, 0.793701)
 runaway_speed = -50
 slime_size = 50
 target = NodePath("../hero")
 
 [node name="EnemyGreenOoze_small17" parent="." node_paths=PackedStringArray("target") instance=ExtResource("19_kq05h")]
 position = Vector2(119, 105)
-scale = Vector2(0.5, 0.5)
+scale = Vector2(0.793701, 0.793701)
 runaway_speed = -50
 slime_size = 50
 target = NodePath("../hero")
 
 [node name="EnemyGreenOoze_small5" parent="." node_paths=PackedStringArray("target") instance=ExtResource("19_kq05h")]
 position = Vector2(103, 97)
-scale = Vector2(0.5, 0.5)
+scale = Vector2(0.793701, 0.793701)
 runaway_speed = -25
 slime_size = 50
 target = NodePath("../hero")
 
 [node name="EnemyGreenOoze_small40" parent="." node_paths=PackedStringArray("target") instance=ExtResource("19_kq05h")]
 position = Vector2(64, 108)
-scale = Vector2(0.5, 0.5)
+scale = Vector2(0.793701, 0.793701)
 runaway_speed = -35
 slime_size = 50
 target = NodePath("../hero")
 
 [node name="EnemyGreenOoze_small41" parent="." node_paths=PackedStringArray("target") instance=ExtResource("19_kq05h")]
 position = Vector2(45, 139)
-scale = Vector2(0.5, 0.5)
+scale = Vector2(0.793701, 0.793701)
 runaway_speed = -50
 slime_size = 50
 target = NodePath("../hero")
 
 [node name="EnemyGreenOoze_small42" parent="." node_paths=PackedStringArray("target") instance=ExtResource("19_kq05h")]
 position = Vector2(110, 83)
-scale = Vector2(0.5, 0.5)
+scale = Vector2(0.793701, 0.793701)
 runaway_speed = -50
 slime_size = 50
 target = NodePath("../hero")
 
 [node name="EnemyGreenOoze_small43" parent="." node_paths=PackedStringArray("target") instance=ExtResource("19_kq05h")]
 position = Vector2(84, 110)
-scale = Vector2(0.5, 0.5)
+scale = Vector2(0.793701, 0.793701)
 runaway_speed = -50
 slime_size = 50
 target = NodePath("../hero")
 
 [node name="EnemyGreenOoze_small44" parent="." node_paths=PackedStringArray("target") instance=ExtResource("19_kq05h")]
 position = Vector2(116, 126)
-scale = Vector2(0.5, 0.5)
+scale = Vector2(0.793701, 0.793701)
 runaway_speed = -25
 slime_size = 50
 target = NodePath("../hero")
 
 [node name="EnemyGreenOoze_small6" parent="." node_paths=PackedStringArray("target") instance=ExtResource("19_kq05h")]
 position = Vector2(172, 95)
-scale = Vector2(0.5, 0.5)
+scale = Vector2(0.793701, 0.793701)
 runaway_speed = -25
 slime_size = 50
 target = NodePath("../hero")

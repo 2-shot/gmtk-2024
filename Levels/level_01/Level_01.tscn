@@ -22,6 +22,7 @@ source_geometry_group_name = &"navigation"
 [node name="level1" type="Node2D"]
 y_sort_enabled = true
 script = ExtResource("1_6x71g")
+total_size = 800
 size_target = 800
 level_complete = "res://Menus/Level_Transition_Scene.tscn"
 next_level = "res://Levels/level_02/Level_02.tscn"
@@ -61,7 +62,7 @@ scale = Vector2(4, 4)
 
 [node name="EnemyGreenOoze3" parent="." node_paths=PackedStringArray("target") instance=ExtResource("11_opamk")]
 position = Vector2(297, 271)
-scale = Vector2(1.5, 1.5)
+scale = Vector2(1.5874, 1.5874)
 slime_size = 400
 target = NodePath("../hero")
 
@@ -74,17 +75,14 @@ bus = &"music"
 
 [node name="EnemyRat" parent="." node_paths=PackedStringArray("target") instance=ExtResource("17_lavig")]
 position = Vector2(262, 146)
-scale = Vector2(0.9, 0.9)
 target = NodePath("../hero")
 
 [node name="EnemyRat2" parent="." node_paths=PackedStringArray("target") instance=ExtResource("17_lavig")]
 position = Vector2(181, 327)
-scale = Vector2(0.9, 0.9)
 target = NodePath("../hero")
 
 [node name="EnemyRat3" parent="." node_paths=PackedStringArray("target") instance=ExtResource("17_lavig")]
 position = Vector2(376, 160)
-scale = Vector2(0.9, 0.9)
 target = NodePath("../hero")
 
 [node name="Out of bounds" type="StaticBody2D" parent="."]

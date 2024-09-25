@@ -26,6 +26,7 @@ agent_radius = 9.0
 [node name="level3" type="Node2D"]
 y_sort_enabled = true
 script = ExtResource("1_h470l")
+total_size = 2100
 size_target = 2000
 level_number = 3
 level_complete = "res://Menus/Level_Transition_Scene.tscn"
@@ -105,14 +106,14 @@ target = NodePath("../hero")
 [node name="EnemyGreenOozeLarge" parent="." node_paths=PackedStringArray("target") instance=ExtResource("14_nvsyv")]
 modulate = Color(1, 0.615686, 0.584314, 1)
 position = Vector2(317, 185)
-scale = Vector2(1.5, 1.5)
+scale = Vector2(1.5874, 1.5874)
 slime_size = 400
 target = NodePath("../hero")
 
 [node name="EnemyGreenOozeLarge2" parent="." node_paths=PackedStringArray("target") instance=ExtResource("14_nvsyv")]
 modulate = Color(1, 0.615686, 0.584314, 1)
 position = Vector2(173, 210)
-scale = Vector2(1.5, 1.5)
+scale = Vector2(1.5874, 1.5874)
 slime_size = 400
 target = NodePath("../hero")
 
@@ -122,14 +123,14 @@ target = NodePath("../hero")
 
 [node name="EnemyRat" parent="." node_paths=PackedStringArray("target") instance=ExtResource("15_h3epo")]
 position = Vector2(202, 446)
-scale = Vector2(0.5, 0.5)
+scale = Vector2(0.793701, 0.793701)
 runaway_speed = 100
 slime_size = 50
 target = NodePath("../hero")
 
 [node name="EnemyRat2" parent="." node_paths=PackedStringArray("target") instance=ExtResource("15_h3epo")]
 position = Vector2(140, 215)
-scale = Vector2(0.5, 0.5)
+scale = Vector2(0.793701, 0.793701)
 runaway_speed = 100
 slime_size = 50
 target = NodePath(".")
@@ -140,6 +141,6 @@ hunger_goal = 2000
 [node name="EnemyGreenOozeXLarge" parent="." node_paths=PackedStringArray("target") instance=ExtResource("14_nvsyv")]
 modulate = Color(0.999987, 0.372258, 0.35613, 1)
 position = Vector2(279, 278)
-scale = Vector2(2.25, 2.25)
+scale = Vector2(2, 2)
 slime_size = 800
 target = NodePath("../hero")

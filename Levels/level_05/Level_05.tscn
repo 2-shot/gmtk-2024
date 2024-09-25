@@ -27,6 +27,7 @@ agent_radius = 7.0
 [node name="level5" type="Node2D"]
 y_sort_enabled = true
 script = ExtResource("1_bqxmh")
+total_size = 2900
 size_target = 2600
 level_number = 5
 level_complete = "res://Menus/Level_Transition_Scene.tscn"
@@ -204,7 +205,7 @@ bus = &"music"
 [node name="EnemyGreenOoze_medium1" parent="." node_paths=PackedStringArray("target") instance=ExtResource("18_ibk7t")]
 modulate = Color(1, 0.615686, 0.584314, 1)
 position = Vector2(182, 284)
-scale = Vector2(1.5, 1.5)
+scale = Vector2(1.5874, 1.5874)
 movement_speed = 60
 runaway_speed = 40
 slime_size = 400
@@ -228,7 +229,7 @@ target = NodePath("../hero")
 [node name="EnemyGreenOoze_Large" parent="." node_paths=PackedStringArray("target") instance=ExtResource("18_ibk7t")]
 modulate = Color(0.999984, 0.340296, 0.330384, 1)
 position = Vector2(285, 272)
-scale = Vector2(2.5, 2.5)
+scale = Vector2(2, 2)
 slime_size = 800
 target = NodePath("../hero")
 
@@ -238,7 +239,7 @@ hunger_goal = 2600
 [node name="EnemyGreenOoze_XLarge" parent="." node_paths=PackedStringArray("target") instance=ExtResource("18_ibk7t")]
 modulate = Color(0.272385, 0.231333, 0.0928313, 1)
 position = Vector2(323, 155)
-scale = Vector2(3, 3)
+scale = Vector2(2.28943, 2.28943)
 slime_size = 1200
 target = NodePath("../hero")
 
